@@ -1,0 +1,10 @@
+framework module TSSwiftMarkdownParser {
+  umbrella header "TSSwiftMarkdownParser-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module TSSwiftMarkdownParser.__Swift {
+    exclude header "TSSwiftMarkdownParser-Swift.h"
+}

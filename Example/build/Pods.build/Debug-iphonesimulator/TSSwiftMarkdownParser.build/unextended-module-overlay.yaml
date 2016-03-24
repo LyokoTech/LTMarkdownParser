@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': '/Users/rhett/Developer/Source/TSSwiftMarkdownParser/Example/build/Debug-iphonesimulator/TSSwiftMarkdownParser.framework/Modules'
+    'contents': [{
+      'type': 'file',
+      'name': 'module.modulemap',
+      'external-contents': '/Users/rhett/Developer/Source/TSSwiftMarkdownParser/Example/build/Pods.build/Debug-iphonesimulator/TSSwiftMarkdownParser.build/unextended-module.modulemap',
+    }]
+  }]
+}

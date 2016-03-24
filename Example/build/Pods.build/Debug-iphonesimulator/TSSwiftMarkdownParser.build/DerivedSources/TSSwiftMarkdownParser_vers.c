@@ -1,0 +1,1 @@
+ const unsigned char TSSwiftMarkdownParserVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:TSSwiftMarkdownParser  PROJECT:Pods-1" "\n"; const double TSSwiftMarkdownParserVersionNumber __attribute__ ((used)) = (double)1.;
