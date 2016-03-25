@@ -11,7 +11,7 @@ import Foundation
 typealias TSSwiftMarkdownParserFormattingBlock = ((NSMutableAttributedString, NSRange) -> Void)
 typealias TSSwiftMarkdownParserLevelFormattingBlock = ((NSMutableAttributedString, NSRange, Int) -> Void)
 
-class TSSwiftMarkdownParser: TSBaseParser {
+public class TSSwiftMarkdownParser: TSBaseParser {
     
     var headerAttributes = [[String: AnyObject]]()
     var listAttributes = [[String: AnyObject]]()
