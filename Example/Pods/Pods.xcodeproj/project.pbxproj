@@ -40,6 +40,8 @@
 		54EF840A1A3EC5DFB16446469A9060DE /* Quick-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 702D610886AA829A76EF79A25B88E1AC /* Quick-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		55C748862A2B26029E966DC1039E878F /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBDF6FF6B666A3D102EDD81DFE416 /* Filter.swift */; };
 		5749DDB6B7F7E517DEDF8F6B5B23CB39 /* World+DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299FCFFDCC88E9151397B8D50F79E36E /* World+DSL.swift */; };
+		590B8BCF1CA5A0B100890A98 /* TSBaseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B451E8DEFCFA183F1B7A48ECC17AF /* TSBaseParser.swift */; };
+		590B8BD01CA5A0B100890A98 /* TSSwiftMarkdownParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193F4EFC4AF2E11D12131FD4BD2D675 /* TSSwiftMarkdownParser.swift */; };
 		5EF5C00C6AECE1FCFFF118577817F5CE /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3661DD977D936FA0FEA7FDE08D852 /* Equal.swift */; };
 		63BBD83995BA60FA7D2E6AD4138C0D71 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354B5315AD30C24D1172D4F1524B068D /* Functional.swift */; };
 		64539BE196D1741570018FFF86F14133 /* MatcherFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971FBD63640E42D5B13E199D80A38E44 /* MatcherFunc.swift */; };
@@ -909,6 +911,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				590B8BD01CA5A0B100890A98 /* TSSwiftMarkdownParser.swift in Sources */,
+				590B8BCF1CA5A0B100890A98 /* TSBaseParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
