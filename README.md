@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/TSSwiftMarkdownParser.svg?style=flat)](http://cocoapods.org/pods/TSSwiftMarkdownParser)
 [![Platform](https://img.shields.io/cocoapods/p/TSSwiftMarkdownParser.svg?style=flat)](http://cocoapods.org/pods/TSSwiftMarkdownParser)
 
+Based off of [TSMarkdownParser](http://github.com/laptobbe/TSMarkdownParser)
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
