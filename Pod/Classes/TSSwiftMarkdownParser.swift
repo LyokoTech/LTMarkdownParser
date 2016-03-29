@@ -253,7 +253,15 @@ public class TSSwiftMarkdownParser: TSBaseParser {
             let linkTextRange = NSRange(location: match.range.location + 1, length: linkStartinResult - match.range.location - 2)
             attributedString.deleteCharactersInRange(NSRange(location: linkRange.location - 1, length: linkRange.length + 2))
             
-            if let URL = NSURL(string: linkURLString) ?? NSURL(string: linkURLString.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding) ?? linkURLString) {
+            let urlCharacterSet: NSMutableCharacterSet = NSMutableCharacterSet(charactersInString: "")
+            urlCharacterSet.formUnionWithCharacterSet(NSCharacterSet.URLPathAllowedCharacterSet())
+            urlCharacterSet.formUnionWithCharacterSet(NSCharacterSet.URLPathAllowedCharacterSet())
+            urlCharacterSet.formUnionWithCharacterSet(NSCharacterSet.URLQueryAllowedCharacterSet())
+            urlCharacterSet.formUnionWithCharacterSet(NSCharacterSet.URLFragmentAllowedCharacterSet())
+
+            
+            
+            if let URL = NSURL(string: linkURLString) ?? NSURL(string: linkURLString.stringByAddingPercentEncodingWithAllowedCharacters(urlCharacterSet) ?? linkURLString) {
                 attributedString.addAttribute(NSLinkAttributeName, value: URL, range: linkTextRange)
             }
             formattingBlock(attributedString, linkTextRange)
@@ -298,7 +306,7 @@ public class TSSwiftMarkdownParser: TSBaseParser {
     }
     
     private class func stringWithHexaString(hexaString: String, atIndex index: Int) -> String {
-        let range = Range<String.Index>(start: hexaString.startIndex.advancedBy(index), end: hexaString.startIndex.advancedBy(index + 4))
+        let range = hexaString.startIndex.advancedBy(index)..<hexaString.startIndex.advancedBy(index + 4)
         let sub = hexaString.substringWithRange(range)
         
         let char = Character(UnicodeScalar(Int(strtoul(sub, nil, 16))))
