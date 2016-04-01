@@ -101,11 +101,10 @@ public class TSSwiftMarkdownParser: TSBaseParser {
             addEscapingParsing()
             addCodeEscapingParsing()
             
-            
-            addHeaderParsingWithMaxLevel(0, leadFormattingBlock: { (attributedString, range, level) in
+            addHeaderParsingWithMaxLevel(0, leadFormattingBlock: { attributedString, range, level in
                 attributedString.replaceCharactersInRange(range, withString: "")
             }) { attributedString, range, level in
-                TSSwiftMarkdownParser.addAttributes(self.headerAttributes, atIndex: level-1, toString: attributedString, range: range)
+                TSSwiftMarkdownParser.addAttributes(self.headerAttributes, atIndex: level - 1, toString: attributedString, range: range)
             }
             
             addListParsingWithMaxLevel(0, leadFormattingBlock: { attributedString, range, level in
@@ -133,9 +132,7 @@ public class TSSwiftMarkdownParser: TSBaseParser {
                 TSSwiftMarkdownParser.addAttributes(self.quoteAttributes, atIndex: level - 1, toString: attributedString, range: range)
             }
             
-            addImageParsingWithImageFormattingBlock({ attributedString, range in
-                //No default formatting
-            }) { attributedString, range in
+            addImageParsingWithImageFormattingBlock(nil) { attributedString, range in
                 attributedString.addAttributes(self.imageAttributes, range: range)
             }
             
@@ -148,7 +145,6 @@ public class TSSwiftMarkdownParser: TSBaseParser {
             }
             
             addStrongParsingWithFormattingBlock { attributedString, range in
-                
                 if let font = attributedString.attributesAtIndex(range.location, longestEffectiveRange: nil, inRange: range)[NSFontAttributeName] as? UIFont,
                     italicFont = self.emphasisAttributes[NSFontAttributeName] as? UIFont where font == italicFont {
                     attributedString.addAttributes(self.strongAndEmphasisAttributes, range: range)
@@ -176,7 +172,6 @@ public class TSSwiftMarkdownParser: TSBaseParser {
             
             addUnescapingParsing()
         }
-        
     }
     
     public func addEscapingParsing() {

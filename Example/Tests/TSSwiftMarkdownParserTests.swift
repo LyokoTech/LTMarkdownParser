@@ -577,4 +577,5 @@ class TSSwiftMarkdownParserTests: XCTestCase {
         XCTAssertEqual(boldItalicFont, controlledBoldItalicFont)
         XCTAssertEqual(attributedString?.string, "Hello this string is bold and italic")
     }
+    
 }
