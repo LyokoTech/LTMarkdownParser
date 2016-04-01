@@ -1,1 +1,3 @@
+language: objective-c
+
 install: echo "DID IT"
