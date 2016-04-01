@@ -1,3 +1,7 @@
 language: objective-c
 
+xcode_workspace: Example/TSSwiftMarkdownParser.xcworkspace
+xcode_scheme: TSSwiftMarkdownParser-Example
+xcode_sdk: iphonesimulator9.3
+podfile: Example/Podfile
 install: echo "DID IT"
