@@ -6,5 +6,10 @@ xcode_workspace: Example/TSSwiftMarkdownParser.xcworkspace
 xcode_scheme: TSSwiftMarkdownParser-Example
 xcode_sdk: iphonesimulator9.3
 
+install:
+- cd Example
+- travis_wait pod install
+- cd ..
+
 script:
 - xcodebuild test -workspace Example/TSSwiftMarkdownParser.xcworkspace/ -scheme TSSwiftMarkdownParser-Example -sdk iphonesimulator9.3 -destination "platform=iOS Simulator,name=iPhone 6S" | xcpretty 
