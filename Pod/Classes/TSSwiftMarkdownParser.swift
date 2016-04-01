@@ -26,6 +26,7 @@ public struct TSSwiftMarkdownRegex {
     public static let Monospace = "(`+)(\\s*.*?[^`]\\s*)(\\1)(?!`)"
     public static let Strong = "(\\*\\*|__)(.+?)(\\1)"
     public static let Emphasis = "(\\*|_)(.+?)(\\1)"
+    public static let StrongAndEmphasis = "(((\\*\\*\\*)(.|\\s)*(\\*\\*\\*))|((___)(.|\\s)*(___)))"
     
     public static func regexForString(regexString: String, options: NSRegularExpressionOptions = []) -> NSRegularExpression? {
         do {
@@ -50,72 +51,10 @@ public class TSSwiftMarkdownParser: TSBaseParser {
     public var monospaceAttributes = [String: AnyObject]()
     public var strongAttributes = [String: AnyObject]()
     public var emphasisAttributes = [String: AnyObject]()
-    
+    public var strongAndEmphasisAttributes = [String: AnyObject]()
     
     public static var standardParser: TSSwiftMarkdownParser {
         let defaultParser = TSSwiftMarkdownParser()
-        
-        defaultParser.addEscapingParsing()
-        defaultParser.addCodeEscapingParsing()
-        
-        defaultParser.addHeaderParsingWithMaxLevel(0, leadFormattingBlock: { (attributedString, range, level) in
-            attributedString.replaceCharactersInRange(range, withString: "")
-        }) { attributedString, range, level in
-            self.addAttributes(defaultParser.headerAttributes, atIndex: level - 1, toString: attributedString, range: range)
-        }
-        
-        defaultParser.addListParsingWithMaxLevel(0, leadFormattingBlock: { attributedString, range, level in
-            var listString = ""
-            var currentLevel = level - 1
-            while currentLevel > 0 {
-                listString = "\(listString)\t"
-                currentLevel -= 1
-            }
-            listString = "\(listString)•\t"
-            attributedString.replaceCharactersInRange(range, withString: listString)
-        }) { attributedString, range, level in
-            self.addAttributes(defaultParser.listAttributes, atIndex: level - 1, toString: attributedString, range: range)
-        }
-        
-        defaultParser.addQuoteParsingWithMaxLevel(0, leadFormattingBlock: { attributedString, range, level in
-            var quoteString = ""
-            var currentLevel = level
-            while currentLevel > 0 {
-                currentLevel -= 1
-                quoteString = "\(quoteString)\t"
-            }
-            attributedString.replaceCharactersInRange(range, withString: quoteString)
-        }) { attributedString, range, level in
-            self.addAttributes(defaultParser.quoteAttributes, atIndex: level - 1, toString: attributedString, range: range)
-        }
-        
-        defaultParser.addImageParsingWithImageFormattingBlock({ attributedString, range in
-            //No default formatting
-        }) { attributedString, range in
-            attributedString.addAttributes(defaultParser.imageAttributes, range: range)
-        }
-        
-        defaultParser.addLinkParsingWithFormattingBlock { attributedString, range in
-            attributedString.addAttributes(defaultParser.linkAttributes, range: range)
-        }
-        
-        defaultParser.addLinkDetectionWithFormattingBlock { attributedString, range in
-            attributedString.addAttributes(defaultParser.linkAttributes, range: range)
-        }
-        
-        defaultParser.addStrongParsingWithFormattingBlock { attributedString, range in
-            attributedString.addAttributes(defaultParser.strongAttributes, range: range)
-        }
-        
-        defaultParser.addEmphasisParsingWithFormattingBlock { attributedString, range in
-            attributedString.addAttributes(defaultParser.emphasisAttributes, range: range)
-        }
-        
-        defaultParser.addCodeUnescapingParsingWithFormattingBlock { attributedString, range in
-            attributedString.addAttributes(defaultParser.monospaceAttributes, range: range)
-        }
-        
-        defaultParser.addUnescapingParsing()
         
         return defaultParser
     }
@@ -128,7 +67,7 @@ public class TSSwiftMarkdownParser: TSBaseParser {
         attributedString.addAttributes(newAttributes, range: range)
     }
     
-    public override init() {
+    public init(withDefaultParsing: Bool = true) {
         super.init()
         
         defaultAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(12)]
@@ -153,6 +92,86 @@ public class TSSwiftMarkdownParser: TSBaseParser {
         
         strongAttributes = [NSFontAttributeName: UIFont.boldSystemFontOfSize(12)]
         emphasisAttributes = [NSFontAttributeName: UIFont.italicSystemFontOfSize(12)]
+        
+        var strongAndEmphasisFont = UIFont.systemFontOfSize(12)
+        strongAndEmphasisFont = UIFont(descriptor: strongAndEmphasisFont.fontDescriptor().fontDescriptorWithSymbolicTraits([.TraitItalic, .TraitBold]), size: strongAndEmphasisFont.pointSize)
+        strongAndEmphasisAttributes = [NSFontAttributeName: strongAndEmphasisFont]
+        
+        if withDefaultParsing {
+            addEscapingParsing()
+            addCodeEscapingParsing()
+            
+            addHeaderParsingWithMaxLevel(0, leadFormattingBlock: { attributedString, range, level in
+                attributedString.replaceCharactersInRange(range, withString: "")
+            }) { attributedString, range, level in
+                TSSwiftMarkdownParser.addAttributes(self.headerAttributes, atIndex: level - 1, toString: attributedString, range: range)
+            }
+            
+            addListParsingWithMaxLevel(0, leadFormattingBlock: { attributedString, range, level in
+                var listString = ""
+                var currentLevel = level - 1
+                while currentLevel > 0 {
+                    listString = "\(listString)\t"
+                    currentLevel -= 1
+                }
+                listString = "\(listString)•\t"
+                attributedString.replaceCharactersInRange(range, withString: listString)
+            }) { attributedString, range, level in
+                TSSwiftMarkdownParser.addAttributes(self.listAttributes, atIndex: level - 1, toString: attributedString, range: range)
+            }
+            
+            addQuoteParsingWithMaxLevel(0, leadFormattingBlock: { attributedString, range, level in
+                var quoteString = ""
+                var currentLevel = level
+                while currentLevel > 0 {
+                    currentLevel -= 1
+                    quoteString = "\(quoteString)\t"
+                }
+                attributedString.replaceCharactersInRange(range, withString: quoteString)
+            }) { attributedString, range, level in
+                TSSwiftMarkdownParser.addAttributes(self.quoteAttributes, atIndex: level - 1, toString: attributedString, range: range)
+            }
+            
+            addImageParsingWithImageFormattingBlock(nil) { attributedString, range in
+                attributedString.addAttributes(self.imageAttributes, range: range)
+            }
+            
+            addLinkParsingWithFormattingBlock { attributedString, range in
+                attributedString.addAttributes(self.linkAttributes, range: range)
+            }
+            
+            addLinkDetectionWithFormattingBlock { attributedString, range in
+                attributedString.addAttributes(self.linkAttributes, range: range)
+            }
+            
+            addStrongParsingWithFormattingBlock { attributedString, range in
+                if let font = attributedString.attributesAtIndex(range.location, longestEffectiveRange: nil, inRange: range)[NSFontAttributeName] as? UIFont,
+                    italicFont = self.emphasisAttributes[NSFontAttributeName] as? UIFont where font == italicFont {
+                    attributedString.addAttributes(self.strongAndEmphasisAttributes, range: range)
+                } else {
+                    attributedString.addAttributes(self.strongAttributes, range: range)
+                }
+            }
+            
+            addEmphasisParsingWithFormattingBlock { attributedString, range in
+                if let font = attributedString.attributesAtIndex(range.location, longestEffectiveRange: nil, inRange: range)[NSFontAttributeName] as? UIFont,
+                    boldFont = self.strongAttributes[NSFontAttributeName] as? UIFont where font == boldFont {
+                    attributedString.addAttributes(self.strongAndEmphasisAttributes, range: range)
+                } else {
+                    attributedString.addAttributes(self.emphasisAttributes, range: range)
+                }
+            }
+            
+            addStrongAndEmphasisParsingWithFormattingBlock { attributedString, range in
+                attributedString.addAttributes(self.strongAndEmphasisAttributes, range: range)
+            }
+            
+            addCodeUnescapingParsingWithFormattingBlock { attributedString, range in
+                attributedString.addAttributes(self.monospaceAttributes, range: range)
+            }
+            
+            addUnescapingParsing()
+        }
     }
     
     public func addEscapingParsing() {
@@ -290,6 +309,10 @@ public class TSSwiftMarkdownParser: TSBaseParser {
     
     public func addEmphasisParsingWithFormattingBlock(formattingBlock: TSSwiftMarkdownParserFormattingBlock) {
         addEnclosedParsingWithPattern(TSSwiftMarkdownRegex.Emphasis, formattingBlock: formattingBlock)
+    }
+    
+    public func addStrongAndEmphasisParsingWithFormattingBlock(formattingBlock: TSSwiftMarkdownParserFormattingBlock) {
+        addEnclosedParsingWithPattern(TSSwiftMarkdownRegex.StrongAndEmphasis, formattingBlock: formattingBlock)
     }
     
     public func addLinkDetectionWithFormattingBlock(formattingBlock: TSSwiftMarkdownParserFormattingBlock) {

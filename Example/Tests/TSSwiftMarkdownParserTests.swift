@@ -12,7 +12,7 @@ import TSSwiftMarkdownParser
 
 class TSSwiftMarkdownParserTests: XCTestCase {
     
-    var parser = TSSwiftMarkdownParser()
+    var parser = TSSwiftMarkdownParser(withDefaultParsing: false)
     var standardParser = TSSwiftMarkdownParser.standardParser
     
     func testBasicBoldParsing() {
@@ -566,5 +566,16 @@ class TSSwiftMarkdownParserTests: XCTestCase {
     
     func testNestedBoldAndItalic() {
         // Test Still Needs to be written
+        let attributedString = standardParser.attributedStringFromMarkdown("Hello **this string is bold _and italic_**")
+        let boldFont = attributedString?.attribute(NSFontAttributeName, atIndex: 6, effectiveRange: nil) as? UIFont
+        let boldItalicFont = attributedString?.attribute(NSFontAttributeName, atIndex: 26, effectiveRange: nil) as? UIFont
+        
+        let controlledBoldFont = standardParser.strongAttributes[NSFontAttributeName] as? UIFont
+        let controlledBoldItalicFont = standardParser.strongAndEmphasisAttributes[NSFontAttributeName] as? UIFont
+        
+        XCTAssertEqual(boldFont, controlledBoldFont)
+        XCTAssertEqual(boldItalicFont, controlledBoldItalicFont)
+        XCTAssertEqual(attributedString?.string, "Hello this string is bold and italic")
     }
+    
 }
