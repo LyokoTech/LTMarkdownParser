@@ -26,6 +26,7 @@ public struct TSSwiftMarkdownRegex {
     public static let Monospace = "(`+)(\\s*.*?[^`]\\s*)(\\1)(?!`)"
     public static let Strong = "(\\*\\*|__)(.+?)(\\1)"
     public static let Emphasis = "(\\*|_)(.+?)(\\1)"
+    public static let StrongAndEmphasis = "(((\\*\\*\\*)(.|\\s)*(\\*\\*\\*))|((___)(.|\\s)*(___)))"
     
     public static func regexForString(regexString: String, options: NSRegularExpressionOptions = []) -> NSRegularExpression? {
         do {
@@ -50,7 +51,7 @@ public class TSSwiftMarkdownParser: TSBaseParser {
     public var monospaceAttributes = [String: AnyObject]()
     public var strongAttributes = [String: AnyObject]()
     public var emphasisAttributes = [String: AnyObject]()
-    
+    public var strongAndEmphasisAttributes = [String: AnyObject]()
     
     public static var standardParser: TSSwiftMarkdownParser {
         let defaultParser = TSSwiftMarkdownParser()
@@ -104,11 +105,26 @@ public class TSSwiftMarkdownParser: TSBaseParser {
         }
         
         defaultParser.addStrongParsingWithFormattingBlock { attributedString, range in
-            attributedString.addAttributes(defaultParser.strongAttributes, range: range)
+            
+            if let font = attributedString.attributesAtIndex(range.location, longestEffectiveRange: nil, inRange: range)[NSFontAttributeName] as? UIFont,
+                italicFont = defaultParser.emphasisAttributes[NSFontAttributeName] as? UIFont where font == italicFont {
+                attributedString.addAttributes(defaultParser.strongAndEmphasisAttributes, range: range)
+            } else {
+                attributedString.addAttributes(defaultParser.strongAttributes, range: range)
+            }
         }
         
         defaultParser.addEmphasisParsingWithFormattingBlock { attributedString, range in
-            attributedString.addAttributes(defaultParser.emphasisAttributes, range: range)
+            if let font = attributedString.attributesAtIndex(range.location, longestEffectiveRange: nil, inRange: range)[NSFontAttributeName] as? UIFont,
+                boldFont = defaultParser.strongAttributes[NSFontAttributeName] as? UIFont where font == boldFont {
+                attributedString.addAttributes(defaultParser.strongAndEmphasisAttributes, range: range)
+            } else {
+                attributedString.addAttributes(defaultParser.emphasisAttributes, range: range)
+            }
+        }
+        
+        defaultParser.addStrongAndEmphasisParsingWithFormattingBlock { attributedString, range in
+            attributedString.addAttributes(defaultParser.strongAndEmphasisAttributes, range: range)
         }
         
         defaultParser.addCodeUnescapingParsingWithFormattingBlock { attributedString, range in
@@ -153,6 +169,11 @@ public class TSSwiftMarkdownParser: TSBaseParser {
         
         strongAttributes = [NSFontAttributeName: UIFont.boldSystemFontOfSize(12)]
         emphasisAttributes = [NSFontAttributeName: UIFont.italicSystemFontOfSize(12)]
+        
+        var strongAndEmphasisFont = UIFont.systemFontOfSize(12)
+        strongAndEmphasisFont = UIFont(descriptor: strongAndEmphasisFont.fontDescriptor().fontDescriptorWithSymbolicTraits([.TraitItalic, .TraitBold]), size: strongAndEmphasisFont.pointSize)
+        strongAndEmphasisAttributes = [NSFontAttributeName: strongAndEmphasisFont]
+        
     }
     
     public func addEscapingParsing() {
@@ -290,6 +311,10 @@ public class TSSwiftMarkdownParser: TSBaseParser {
     
     public func addEmphasisParsingWithFormattingBlock(formattingBlock: TSSwiftMarkdownParserFormattingBlock) {
         addEnclosedParsingWithPattern(TSSwiftMarkdownRegex.Emphasis, formattingBlock: formattingBlock)
+    }
+    
+    public func addStrongAndEmphasisParsingWithFormattingBlock(formattingBlock: TSSwiftMarkdownParserFormattingBlock) {
+        addEnclosedParsingWithPattern(TSSwiftMarkdownRegex.StrongAndEmphasis, formattingBlock: formattingBlock)
     }
     
     public func addLinkDetectionWithFormattingBlock(formattingBlock: TSSwiftMarkdownParserFormattingBlock) {

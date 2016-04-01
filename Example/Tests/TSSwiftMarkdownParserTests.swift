@@ -566,5 +566,7 @@ class TSSwiftMarkdownParserTests: XCTestCase {
     
     func testNestedBoldAndItalic() {
         // Test Still Needs to be written
+        let attributedString = standardParser.attributedStringFromMarkdown("Hello **this string is bold _and italic_**")
+        print(attributedString)
     }
 }
