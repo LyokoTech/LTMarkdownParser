@@ -4,22 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Nimble.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-TSSwiftMarkdownParser_Example.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-TSSwiftMarkdownParser_Tests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Quick.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,12 +32,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6D4DA300D3EB3E799861C2B64901A070</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>82FAB4B3620196BE535C6D84DEE766DA</key>
+		<key>4D44473E276B66734F7C47B60B83B4E4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -58,11 +43,6 @@
 			<true/>
 		</dict>
 		<key>FDA4AF3CDC550E030EBF478989537F0C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FF61C7C740C1B196A3B33F37B77DBC68</key>
 		<dict>
 			<key>primary</key>
 			<true/>

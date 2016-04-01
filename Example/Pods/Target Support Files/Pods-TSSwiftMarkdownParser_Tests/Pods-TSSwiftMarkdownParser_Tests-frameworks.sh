@@ -85,11 +85,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-TSSwiftMarkdownParser_Tests/TSSwiftMarkdownParser.framework"
-  install_framework "Pods-TSSwiftMarkdownParser_Tests/Nimble.framework"
-  install_framework "Pods-TSSwiftMarkdownParser_Tests/Quick.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-TSSwiftMarkdownParser_Tests/TSSwiftMarkdownParser.framework"
-  install_framework "Pods-TSSwiftMarkdownParser_Tests/Nimble.framework"
-  install_framework "Pods-TSSwiftMarkdownParser_Tests/Quick.framework"
 fi

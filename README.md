@@ -1,6 +1,6 @@
 # TSSwiftMarkdownParser
 
-[![CI Status](http://img.shields.io/travis/Rhett Rogers/TSSwiftMarkdownParser.svg?style=flat)](https://travis-ci.org/Rhett Rogers/TSSwiftMarkdownParser)
+[![CI Status](https://img.shields.io/travis/LyokoTech/TSSwiftMarkdownParser.svg?style=flat)](https://travis-ci.org/LyokoTech/TSSwiftMarkdownParser)
 [![Version](https://img.shields.io/cocoapods/v/TSSwiftMarkdownParser.svg?style=flat)](http://cocoapods.org/pods/TSSwiftMarkdownParser)
 [![License](https://img.shields.io/cocoapods/l/TSSwiftMarkdownParser.svg?style=flat)](http://cocoapods.org/pods/TSSwiftMarkdownParser)
 [![Platform](https://img.shields.io/cocoapods/p/TSSwiftMarkdownParser.svg?style=flat)](http://cocoapods.org/pods/TSSwiftMarkdownParser)
