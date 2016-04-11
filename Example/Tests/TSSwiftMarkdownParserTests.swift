@@ -181,12 +181,7 @@ class TSSwiftMarkdownParserTests: XCTestCase {
     
     func testDefaultListWithAsteriskParsing() {
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n* I drink in a café everyday\nto use Wi-Fi")
-        XCTAssertEqual(attributedString!.string, "Hello\n•\tI drink in a café everyday\nto use Wi-Fi")
-    }
-    
-    func testDefaultListWith2AsterisksParsing() {
-        let attributedString = standardParser.attributedStringFromMarkdown("Hello\n** I drink in a café everyday\nto use Wi-Fi")
-        XCTAssertEqual(attributedString!.string, "Hello\n\t•\tI drink in a café everyday\nto use Wi-Fi")
+        XCTAssertEqual(attributedString!.string, "Hello\n•\u{00A0}I drink in a café everyday\nto use Wi-Fi")
     }
     
     func testDefaultQuoteParsing() {
@@ -201,7 +196,7 @@ class TSSwiftMarkdownParserTests: XCTestCase {
     
     func testDefaultListWithAsteriskParsingMultiple() {
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n* I drink in a café everyday\n* to use Wi-Fi")
-        XCTAssertEqual(attributedString!.string, "Hello\n•\tI drink in a café everyday\n•\tto use Wi-Fi")
+        XCTAssertEqual(attributedString!.string, "Hello\n•\u{00A0}I drink in a café everyday\n•\u{00A0}to use Wi-Fi")
     }
     
     func testCustomListWithAsterisksParsingWithStrongText() {
@@ -238,22 +233,22 @@ class TSSwiftMarkdownParserTests: XCTestCase {
     
     func testDefaultListWithPlusParsing() {
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n+ I drink in a café everyday\nto use Wi-Fi")
-        XCTAssertEqual(attributedString!.string, "Hello\n•\tI drink in a café everyday\nto use Wi-Fi")
+        XCTAssertEqual(attributedString!.string, "Hello\n•\u{00A0}I drink in a café everyday\nto use Wi-Fi")
     }
     
     func testDefaultListWithDashParsing() {
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n- I drink in a café everyday\nto use Wi-Fi")
-        XCTAssertEqual(attributedString!.string, "Hello\n•\tI drink in a café everyday\nto use Wi-Fi")
+        XCTAssertEqual(attributedString!.string, "Hello\n•\u{00A0}I drink in a café everyday\nto use Wi-Fi")
     }
     
     func testDefaultListWithPlusParsingMultiple() {
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n+ I drink in a café everyday\n+ to use Wi-Fi")
-        XCTAssertEqual(attributedString!.string, "Hello\n•\tI drink in a café everyday\n•\tto use Wi-Fi")
+        XCTAssertEqual(attributedString!.string, "Hello\n•\u{00A0}I drink in a café everyday\n•\u{00A0}to use Wi-Fi")
     }
     
     func testThatDefaultListWorksWithMultipleDifferentListOptions() {
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n+ item1\n- item2\n* item3")
-        XCTAssertEqual(attributedString!.string, "Hello\n•\titem1\n•\titem2\n•\titem3")
+        XCTAssertEqual(attributedString!.string, "Hello\n•\u{00A0}item1\n•\u{00A0}item2\n•\u{00A0}item3")
     }
     
     func testDefaultLinkParsing() {
@@ -479,7 +474,7 @@ class TSSwiftMarkdownParserTests: XCTestCase {
     
     func testMultipleMatches() {
         let attributedString = standardParser.attributedStringFromMarkdown("## Hello\nMen att *Pär* är här\n+ men inte Pia")
-        XCTAssertEqual(attributedString?.string, "Hello\nMen att Pär är här\n•\tmen inte Pia")
+        XCTAssertEqual(attributedString?.string, "Hello\nMen att Pär är här\n•\u{00A0}men inte Pia")
     }
     
     func testDefaultImage() {
