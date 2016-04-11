@@ -109,12 +109,10 @@ public class TSSwiftMarkdownParser: TSBaseParser {
             
             addListParsingWithMaxLevel(0, leadFormattingBlock: { attributedString, range, level in
                 var listString = ""
-                var currentLevel = level - 1
-                while currentLevel > 0 {
-                    listString = "\(listString)\t"
-                    currentLevel -= 1
+                for _ in (level - 1).stride(to: 0, by: 1) {
+                    listString = "\(listString)\u{0A00}"
                 }
-                listString = "\(listString)•\t"
+                listString = "\(listString)•\u{00A0}"
                 attributedString.replaceCharactersInRange(range, withString: listString)
             }) { attributedString, range, level in
                 TSSwiftMarkdownParser.addAttributes(self.listAttributes, atIndex: level - 1, toString: attributedString, range: range)
