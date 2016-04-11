@@ -111,10 +111,10 @@ public class TSSwiftMarkdownParser: TSBaseParser {
                 var listString = ""
                 var currentLevel = level - 1
                 while currentLevel > 0 {
-                    listString = "\(listString)\t"
+                    listString = "\(listString)\u{0A00}"
                     currentLevel -= 1
                 }
-                listString = "\(listString)•\t"
+                listString = "\(listString)•\u{00A0}"
                 attributedString.replaceCharactersInRange(range, withString: listString)
             }) { attributedString, range, level in
                 TSSwiftMarkdownParser.addAttributes(self.listAttributes, atIndex: level - 1, toString: attributedString, range: range)
