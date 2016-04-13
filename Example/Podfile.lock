@@ -1,5 +1,5 @@
 PODS:
-  - TSSwiftMarkdownParser (0.1.0)
+  - TSSwiftMarkdownParser (0.3.0)
 
 DEPENDENCIES:
   - TSSwiftMarkdownParser (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  TSSwiftMarkdownParser: cb05d457ac41148558493b2db0bd12098456ed2e
+  TSSwiftMarkdownParser: c30af85d33b9d61c522f8291c9efe620b2fc3a1a
 
 COCOAPODS: 0.39.0

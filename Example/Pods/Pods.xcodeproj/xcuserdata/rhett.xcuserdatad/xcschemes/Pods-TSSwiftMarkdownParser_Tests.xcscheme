@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'ECD757533B698169A2473080'
+               BlueprintIdentifier = 'C8EC49CE917C3A172CBCF85A'
                BlueprintName = 'Pods-TSSwiftMarkdownParser_Tests'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_TSSwiftMarkdownParser_Tests.framework'>

@@ -205,9 +205,10 @@ class TSSwiftMarkdownParserTests: XCTestCase {
             attributedString.replaceCharactersInRange(range, withString: "    • ")
         }, textFormattingBlock: nil)
         
-        parser.addStrongParsingWithFormattingBlock { attributedString, range in
+        
+        parser.addStrongParsingWithFormattingBlock({ attributedString, range in
             attributedString.addAttribute(NSFontAttributeName, value: strongFont, range: range)
-        }
+        })
         
         let expectedNumberOfStrongBlocks = 1
         var actualNumberOfStrongBlocks = 0
@@ -571,6 +572,19 @@ class TSSwiftMarkdownParserTests: XCTestCase {
         XCTAssertEqual(boldFont, controlledBoldFont)
         XCTAssertEqual(boldItalicFont, controlledBoldItalicFont)
         XCTAssertEqual(attributedString?.string, "Hello this string is bold and italic")
+    }
+    
+    func testNestedItalicAndBold() {
+        let attributedString = standardParser.attributedStringFromMarkdown("Hello _this string is italic **and bold**_")
+        let italicFont = attributedString?.attribute(NSFontAttributeName, atIndex: 6, effectiveRange: nil) as? UIFont
+        let boldItalicFont = attributedString?.attribute(NSFontAttributeName, atIndex: 28, effectiveRange: nil) as? UIFont
+        
+        let controlledItalicFont = standardParser.emphasisAttributes[NSFontAttributeName] as? UIFont
+        let controlledBoldItalicFont = standardParser.strongAndEmphasisAttributes[NSFontAttributeName] as? UIFont
+        
+        XCTAssertEqual(italicFont, controlledItalicFont)
+        XCTAssertEqual(boldItalicFont, controlledBoldItalicFont)
+        XCTAssertEqual(attributedString?.string, "Hello this string is italic and bold")
     }
     
 }
