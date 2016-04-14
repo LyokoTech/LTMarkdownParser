@@ -4,5 +4,8 @@ notifications:
   slack: lyokotech:7AmemNHORB2ShidELPFrYeUO
   email: false
 script:
-- rm -rf /Users/travis/Library/Developer/DerivedData && set -o pipefail && xcodebuild test -workspace Example/TSSwiftMarkdownParser.xcworkspace -scheme TSSwiftMarkdownParser-Example -sdk iphonesimulator9.3 | xcpretty 
+- cd Example
+- pod install
+- cd ../
+- set -o pipefail && xcodebuild test -workspace Example/TSSwiftMarkdownParser.xcworkspace -scheme TSSwiftMarkdownParser-Example -sdk iphonesimulator9.3 | xcpretty 
 - pod lib lint
