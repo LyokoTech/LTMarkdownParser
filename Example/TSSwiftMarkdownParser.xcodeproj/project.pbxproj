@@ -14,7 +14,6 @@
 		590E00B71CA9C39E0069EEA5 /* markdown_test_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E00B61CA9C39E0069EEA5 /* markdown_test_image.png */; };
 		590E00B81CA9C39E0069EEA5 /* markdown_test_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E00B61CA9C39E0069EEA5 /* markdown_test_image.png */; };
 		598875781CBEDA47006EE226 /* TSSwiftMarkdownParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 598875761CBEDA31006EE226 /* TSSwiftMarkdownParser.framework */; };
-		598875791CBEDA47006EE226 /* TSSwiftMarkdownParser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 598875761CBEDA31006EE226 /* TSSwiftMarkdownParser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		59BE00F91CBEDBCF0053D12D /* NSAttributedString+MarkdownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE00F71CBEDBBE0053D12D /* NSAttributedString+MarkdownTests.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -33,20 +32,6 @@
 			remoteInfo = TSSwiftMarkdownParser;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		5988757A1CBEDA47006EE226 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				598875791CBEDA47006EE226 /* TSSwiftMarkdownParser.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		328F36DD48A25803D195FC3C /* Pods-TSSwiftMarkdownParser_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSSwiftMarkdownParser_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSSwiftMarkdownParser_Example/Pods-TSSwiftMarkdownParser_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -202,7 +187,6 @@
 				607FACCE1AFB9204008FA782 /* Resources */,
 				56382ABE8D53DE11607FA844 /* Embed Pods Frameworks */,
 				63B0E7EA3770F4742917F27C /* Copy Pods Resources */,
-				5988757A1CBEDA47006EE226 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
