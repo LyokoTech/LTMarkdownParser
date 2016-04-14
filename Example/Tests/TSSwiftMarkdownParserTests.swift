@@ -205,10 +205,9 @@ class TSSwiftMarkdownParserTests: XCTestCase {
             attributedString.replaceCharactersInRange(range, withString: "    • ")
         }, textFormattingBlock: nil)
         
-        
-        parser.addStrongParsingWithFormattingBlock({ attributedString, range in
+        parser.addStrongParsingWithFormattingBlock { attributedString, range in
             attributedString.addAttribute(NSFontAttributeName, value: strongFont, range: range)
-        })
+        }
         
         let expectedNumberOfStrongBlocks = 1
         var actualNumberOfStrongBlocks = 0

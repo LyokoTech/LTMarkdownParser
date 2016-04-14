@@ -75,7 +75,7 @@ public extension NSAttributedString {
             }
             
             let preprocessedString = (self.string as NSString).substringWithRange(range)
-            let processedString = preprocessedString.characters.reduce("") { resultString, character -> String in
+            let processedString = preprocessedString.characters.reduce("") { resultString, character in
                 var stringToAppend = ""
                 
                 switch character {
@@ -90,15 +90,14 @@ public extension NSAttributedString {
                     if previousCharacter == "\n" || previousCharacter == nil {
                         openedNumberedListStarter = true
                     }
-                    if previousCharacter == nil { numberedListIsFirstLine = true }
                     
+                    numberedListIsFirstLine = previousCharacter == nil ? true : numberedListIsFirstLine
                     stringToAppend = "\(character)"
                 case bulletCharacter:
                     characterOnBulletedListLine = true
                     stringToAppend = "+ \(previousCharacter != nil ? String(closingString.characters.reverse()) : markdownString)"
-                    if previousCharacter == nil { markdownString = "" }
+                    markdownString = previousCharacter == nil ? "" : markdownString
                 case ".":
-                    
                     if openedNumberedListStarter {
                         openedNumberedListStarter = false
                         characterOnNumberedListLine = true
@@ -128,7 +127,6 @@ public extension NSAttributedString {
             }
             
             markdownString += processedString
-            
         }
         
         markdownString += previousCharacter == "\n" ? "" : closingString

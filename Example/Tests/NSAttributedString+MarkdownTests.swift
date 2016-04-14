@@ -12,6 +12,7 @@ import XCTest
 import TSSwiftMarkdownParser
 
 class NSAttributedStringTests: XCTestCase {
+    
     func testTextWithNoFormatting() {
         assertRoundTripFromMarkdownString("Some text that does not have formatting")
     }
@@ -78,4 +79,5 @@ class NSAttributedStringTests: XCTestCase {
         let attributedString = TSSwiftMarkdownParser(withDefaultParsing: true).attributedStringFromMarkdown(markdownString)
         XCTAssertEqual(attributedString!.markdownString(), markdownString)
     }
+    
 }

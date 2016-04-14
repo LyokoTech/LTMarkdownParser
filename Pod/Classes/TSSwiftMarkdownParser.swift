@@ -67,8 +67,6 @@ public class TSSwiftMarkdownParser: TSBaseParser {
         attributedString.addAttributes(newAttributes, range: range)
     }
     
-    
-    
     public init(withDefaultParsing: Bool = true) {
         super.init()
         
@@ -145,13 +143,13 @@ public class TSSwiftMarkdownParser: TSBaseParser {
             }
             
             addStrongParsingWithFormattingBlock { attributedString, range in
-                    attributedString.enumerateAttributesInRange(range, options: []) { attributes, range, _ in
-                        if let font = attributes[NSFontAttributeName] as? UIFont, italicFont = self.emphasisAttributes[NSFontAttributeName] as? UIFont where font == italicFont {
-                            attributedString.addAttributes(self.strongAndEmphasisAttributes, range: range)
-                        } else {
-                            attributedString.addAttributes(self.strongAttributes, range: range)
-                        }
+                attributedString.enumerateAttributesInRange(range, options: []) { attributes, range, _ in
+                    if let font = attributes[NSFontAttributeName] as? UIFont, italicFont = self.emphasisAttributes[NSFontAttributeName] as? UIFont where font == italicFont {
+                        attributedString.addAttributes(self.strongAndEmphasisAttributes, range: range)
+                    } else {
+                        attributedString.addAttributes(self.strongAttributes, range: range)
                     }
+                }
             }
             
             addEmphasisParsingWithFormattingBlock { attributedString, range in
