@@ -4,7 +4,6 @@ import UIKit
 public extension NSAttributedString {
     
     public func markdownString() -> String {
-        
         let bulletCharacter = Character("\u{2022}")
         let nonBreakingSpaceCharacter = Character("\u{00A0}")
         

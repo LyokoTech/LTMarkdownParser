@@ -31,9 +31,7 @@ class NSAttributedStringTests: XCTestCase {
             "_italic **double**_** bold**"
         ]
         
-        for string in strings {
-            assertRoundTripFromMarkdownString(string)
-        }
+        strings.forEach { assertRoundTripFromMarkdownString($0) }
     }
     
     func testLotsOfCases() {
@@ -44,9 +42,7 @@ class NSAttributedStringTests: XCTestCase {
             "bible **studies**   \n**open the door**"
         ]
         
-        for string in strings {
-            assertRoundTripFromMarkdownString(string)
-        }
+        strings.forEach { assertRoundTripFromMarkdownString($0) }
     }
     
     func testTwoLineBreaks() {
