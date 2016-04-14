@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		33CE294AD24E71F25427884D /* Pods_TSSwiftMarkdownParser_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1DD59A1BBBAB8CE6801612 /* Pods_TSSwiftMarkdownParser_Example.framework */; };
 		590B8BD21CA5A10F00890A98 /* TSSwiftMarkdownParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B8BD11CA5A10F00890A98 /* TSSwiftMarkdownParserTests.swift */; };
-		590E00B21CA98D160069EEA5 /* TSSwiftMarkdownParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590E00B11CA98D160069EEA5 /* TSSwiftMarkdownParser.framework */; };
 		590E00B41CA9C3950069EEA5 /* markdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E00B31CA9C3950069EEA5 /* markdown.png */; };
 		590E00B51CA9C3950069EEA5 /* markdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E00B31CA9C3950069EEA5 /* markdown.png */; };
 		590E00B71CA9C39E0069EEA5 /* markdown_test_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E00B61CA9C39E0069EEA5 /* markdown_test_image.png */; };
 		590E00B81CA9C39E0069EEA5 /* markdown_test_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E00B61CA9C39E0069EEA5 /* markdown_test_image.png */; };
+		598875781CBEDA47006EE226 /* TSSwiftMarkdownParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 598875761CBEDA31006EE226 /* TSSwiftMarkdownParser.framework */; };
+		59BE00F91CBEDBCF0053D12D /* NSAttributedString+MarkdownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE00F71CBEDBBE0053D12D /* NSAttributedString+MarkdownTests.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -40,9 +41,10 @@
 		4C265977CEBCF94AEBB966CA /* Pods_TSSwiftMarkdownParser_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TSSwiftMarkdownParser_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F44336E14ED858D44EBBB47 /* Pods-TSSwiftMarkdownParser_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSSwiftMarkdownParser_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-TSSwiftMarkdownParser_Example/Pods-TSSwiftMarkdownParser_Example.release.xcconfig"; sourceTree = "<group>"; };
 		590B8BD11CA5A10F00890A98 /* TSSwiftMarkdownParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSwiftMarkdownParserTests.swift; sourceTree = "<group>"; };
-		590E00B11CA98D160069EEA5 /* TSSwiftMarkdownParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TSSwiftMarkdownParser.framework; path = "../../../Derived Data/TSSwiftMarkdownParser-eckkmtfcyijkwefegikmvpjwktsn/Build/Products/Debug-iphonesimulator/TSSwiftMarkdownParser.framework"; sourceTree = "<group>"; };
 		590E00B31CA9C3950069EEA5 /* markdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = markdown.png; sourceTree = "<group>"; };
 		590E00B61CA9C39E0069EEA5 /* markdown_test_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = markdown_test_image.png; sourceTree = "<group>"; };
+		598875761CBEDA31006EE226 /* TSSwiftMarkdownParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TSSwiftMarkdownParser.framework; path = "../../../../Library/Developer/Xcode/DerivedData/TSSwiftMarkdownParser-eckkmtfcyijkwefegikmvpjwktsn/Build/Products/Debug-iphonesimulator/TSSwiftMarkdownParser.framework"; sourceTree = "<group>"; };
+		59BE00F71CBEDBBE0053D12D /* NSAttributedString+MarkdownTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+MarkdownTests.swift"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* TSSwiftMarkdownParser_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSSwiftMarkdownParser_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33CE294AD24E71F25427884D /* Pods_TSSwiftMarkdownParser_Example.framework in Frameworks */,
+				598875781CBEDA47006EE226 /* TSSwiftMarkdownParser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				590E00B21CA98D160069EEA5 /* TSSwiftMarkdownParser.framework in Frameworks */,
 				796CA6DC13FEEB004FB00A61 /* Pods_TSSwiftMarkdownParser_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +139,7 @@
 			children = (
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				590B8BD11CA5A10F00890A98 /* TSSwiftMarkdownParserTests.swift */,
+				59BE00F71CBEDBBE0053D12D /* NSAttributedString+MarkdownTests.swift */,
 				590E00B61CA9C39E0069EEA5 /* markdown_test_image.png */,
 				590E00B31CA9C3950069EEA5 /* markdown.png */,
 			);
@@ -164,7 +167,7 @@
 		6A3F42632880ADEA9AA95A03 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				590E00B11CA98D160069EEA5 /* TSSwiftMarkdownParser.framework */,
+				598875761CBEDA31006EE226 /* TSSwiftMarkdownParser.framework */,
 				EE1DD59A1BBBAB8CE6801612 /* Pods_TSSwiftMarkdownParser_Example.framework */,
 				4C265977CEBCF94AEBB966CA /* Pods_TSSwiftMarkdownParser_Tests.framework */,
 			);
@@ -384,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59BE00F91CBEDBCF0053D12D /* NSAttributedString+MarkdownTests.swift in Sources */,
 				590B8BD21CA5A10F00890A98 /* TSSwiftMarkdownParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

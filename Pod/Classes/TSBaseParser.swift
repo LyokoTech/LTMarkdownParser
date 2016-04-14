@@ -45,17 +45,24 @@ public class TSBaseParser {
         let mutableAttributedString = NSMutableAttributedString(attributedString: attributedString)
         
         for expressionBlockPair in parsingPairs {
-            var location = 0
-            while let match = expressionBlockPair.regularExpression.firstMatchInString(mutableAttributedString.string, options: .WithoutAnchoringBounds, range: NSRange(location: location, length: mutableAttributedString.length - location)) {
-                let oldLength = mutableAttributedString.length
-                expressionBlockPair.block(match, mutableAttributedString)
-                let newLength = mutableAttributedString.length
-                location = match.range.location + match.range.length + newLength - oldLength
-            }
-            
+            parseExpressionBlockPairForMutableString(mutableAttributedString, expressionBlockPair: expressionBlockPair)
         }
         
         return mutableAttributedString
+    }
+    
+    func parseExpressionBlockPairForMutableString(mutableAttributedString: NSMutableAttributedString, expressionBlockPair: TSExpressionBlockPair) {
+        parseExpressionForMutableString(mutableAttributedString, expression: expressionBlockPair.regularExpression, block: expressionBlockPair.block)
+    }
+    
+    func parseExpressionForMutableString(mutableAttributedString: NSMutableAttributedString, expression: NSRegularExpression, block: TSSwiftMarkdownParserMatchBlock) {
+        var location = 0
+        while let match = expression.firstMatchInString(mutableAttributedString.string, options: .WithoutAnchoringBounds, range: NSRange(location: location, length: mutableAttributedString.length - location)) {
+            let oldLength = mutableAttributedString.length
+            block(match, mutableAttributedString)
+            let newLength = mutableAttributedString.length
+            location = match.range.location + match.range.length + newLength - oldLength
+        }
     }
     
     public func addParsingRuleWithRegularExpression(regularExpression: NSRegularExpression, block: TSSwiftMarkdownParserMatchBlock) {

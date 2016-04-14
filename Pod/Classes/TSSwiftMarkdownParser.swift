@@ -143,20 +143,22 @@ public class TSSwiftMarkdownParser: TSBaseParser {
             }
             
             addStrongParsingWithFormattingBlock { attributedString, range in
-                if let font = attributedString.attributesAtIndex(range.location, longestEffectiveRange: nil, inRange: range)[NSFontAttributeName] as? UIFont,
-                    italicFont = self.emphasisAttributes[NSFontAttributeName] as? UIFont where font == italicFont {
-                    attributedString.addAttributes(self.strongAndEmphasisAttributes, range: range)
-                } else {
-                    attributedString.addAttributes(self.strongAttributes, range: range)
+                attributedString.enumerateAttributesInRange(range, options: []) { attributes, range, _ in
+                    if let font = attributes[NSFontAttributeName] as? UIFont, italicFont = self.emphasisAttributes[NSFontAttributeName] as? UIFont where font == italicFont {
+                        attributedString.addAttributes(self.strongAndEmphasisAttributes, range: range)
+                    } else {
+                        attributedString.addAttributes(self.strongAttributes, range: range)
+                    }
                 }
             }
             
             addEmphasisParsingWithFormattingBlock { attributedString, range in
-                if let font = attributedString.attributesAtIndex(range.location, longestEffectiveRange: nil, inRange: range)[NSFontAttributeName] as? UIFont,
-                    boldFont = self.strongAttributes[NSFontAttributeName] as? UIFont where font == boldFont {
-                    attributedString.addAttributes(self.strongAndEmphasisAttributes, range: range)
-                } else {
-                    attributedString.addAttributes(self.emphasisAttributes, range: range)
+                attributedString.enumerateAttributesInRange(range, options: []) { attributes, range, _ in
+                    if let font = attributes[NSFontAttributeName] as? UIFont, boldFont = self.strongAttributes[NSFontAttributeName] as? UIFont where font == boldFont {
+                        attributedString.addAttributes(self.strongAndEmphasisAttributes, range: range)
+                    } else {
+                        attributedString.addAttributes(self.emphasisAttributes, range: range)
+                    }
                 }
             }
             
