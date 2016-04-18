@@ -13,6 +13,7 @@
 		590E00B51CA9C3950069EEA5 /* markdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E00B31CA9C3950069EEA5 /* markdown.png */; };
 		590E00B71CA9C39E0069EEA5 /* markdown_test_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E00B61CA9C39E0069EEA5 /* markdown_test_image.png */; };
 		590E00B81CA9C39E0069EEA5 /* markdown_test_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E00B61CA9C39E0069EEA5 /* markdown_test_image.png */; };
+		594003DE1CC5557300A9622A /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594003DD1CC5557300A9622A /* TextViewController.swift */; };
 		598875781CBEDA47006EE226 /* TSSwiftMarkdownParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 598875761CBEDA31006EE226 /* TSSwiftMarkdownParser.framework */; };
 		59BE00F91CBEDBCF0053D12D /* NSAttributedString+MarkdownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE00F71CBEDBBE0053D12D /* NSAttributedString+MarkdownTests.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 		590B8BD11CA5A10F00890A98 /* TSSwiftMarkdownParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSwiftMarkdownParserTests.swift; sourceTree = "<group>"; };
 		590E00B31CA9C3950069EEA5 /* markdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = markdown.png; sourceTree = "<group>"; };
 		590E00B61CA9C39E0069EEA5 /* markdown_test_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = markdown_test_image.png; sourceTree = "<group>"; };
+		594003DD1CC5557300A9622A /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		598875761CBEDA31006EE226 /* TSSwiftMarkdownParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TSSwiftMarkdownParser.framework; path = "../../../../Library/Developer/Xcode/DerivedData/TSSwiftMarkdownParser-eckkmtfcyijkwefegikmvpjwktsn/Build/Products/Debug-iphonesimulator/TSSwiftMarkdownParser.framework"; sourceTree = "<group>"; };
 		59BE00F71CBEDBBE0053D12D /* NSAttributedString+MarkdownTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+MarkdownTests.swift"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* TSSwiftMarkdownParser_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSSwiftMarkdownParser_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				594003DD1CC5557300A9622A /* TextViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -380,6 +383,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				594003DE1CC5557300A9622A /* TextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

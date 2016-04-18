@@ -1,0 +1,6 @@
+framework module RichTextVC_iOS {
+  umbrella header "RichTextVC-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RichTextVC-iOS-RichTextVC-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RichTextVC-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>TSSwiftMarkdownParser-TSSwiftMarkdownParser.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2BC58FCDA2C90E9E3DDD61D792A8D373</key>
+		<key>179D77C89F897E58EAC1C94F020014CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3197886E0A3ED1F276295FA5ED48C640</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C9715B8739753C8C6484D3B78C0F61FC</key>
+		<key>91A71C03B7F1F89091E25EFDE4141B28</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FDA4AF3CDC550E030EBF478989537F0C</key>
+		<key>BD9721A40BBA2E97BFAEE8E8243F6D43</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E69A6426EDDA861EC6682E7A0691F4B2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
