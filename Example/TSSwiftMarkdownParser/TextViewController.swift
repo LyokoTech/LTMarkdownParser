@@ -44,6 +44,10 @@ class TextViewController: RichTextViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        
         textView.delegate = self
         let fontSize: CGFloat = 12
         regularFont = UIFont.systemFontOfSize(fontSize)
@@ -57,7 +61,7 @@ class TextViewController: RichTextViewController {
         
         let views = ["textView": textView]
         textView.translatesAutoresizingMaskIntoConstraints = false
-//        view.translatesAutoresizingMaskIntoConstraints = false
+        
         view.addSubview(textView)
         view.backgroundColor = UIColor.blueColor()
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[textView]|", options: [], metrics: nil, views: views))
@@ -112,6 +116,36 @@ class TextViewController: RichTextViewController {
         super.textViewDidChangeSelection(textView)
         
         adjustButtons()
+    }
+    
+    // MARK: Keyboard Actions
+    
+    func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue() else { return }
+        
+        let animationDuration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSTimeInterval ?? 0.4
+        
+        dispatch_async(dispatch_get_main_queue()) { [weak self] in
+            UIView.animateWithDuration(animationDuration) {
+                guard let toolbar = self?.navigationController?.toolbar else { return }
+                
+                toolbar.frame = CGRect(x: toolbar.frame.origin.x, y: toolbar.frame.origin.y - (keyboardFrame.height/2), width: toolbar.frame.width, height: toolbar.frame.height)
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        let animationDuration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSTimeInterval ?? 0.4
+        
+        dispatch_async(dispatch_get_main_queue()) { [weak self] in
+            guard let view = self?.view else { return }
+            
+            UIView.animateWithDuration(animationDuration) {
+                guard let toolbar = self?.navigationController?.toolbar else { return }
+                
+                toolbar.frame = CGRect(x: toolbar.frame.origin.x, y: view.frame.height - toolbar.frame.height, width: toolbar.frame.width, height: toolbar.frame.height)
+            }
+        }
     }
     
 }

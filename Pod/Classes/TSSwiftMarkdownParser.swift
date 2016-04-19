@@ -17,6 +17,7 @@ public struct TSSwiftMarkdownRegex {
     public static let ShortHeader = "^(#{1,%@})\\s*([^#].*)$"
     public static let List = "^([\\*\\+\\-]{1,%@})\\s+(.+)$"
     public static let ShortList = "^([\\*\\+\\-]{1,%@})\\s*([^\\*\\+\\-].*)$"
+    public static let NumberedList = "^([0-9]*\\.{1,})\\s+(.+)$"
     public static let Quote = "^(\\>{1,%@})\\s+(.+)$"
     public static let ShortQuote = "^(\\>{1,%@})\\s*([^\\>].*)$"
     
@@ -44,6 +45,7 @@ public class TSSwiftMarkdownParser: TSBaseParser {
     
     public var headerAttributes = [[String: AnyObject]]()
     public var listAttributes = [[String: AnyObject]]()
+    public var numberedListAttributes = [[String: AnyObject]]()
     public var quoteAttributes = [[String: AnyObject]]()
     
     public var imageAttributes = [String: AnyObject]()
@@ -112,10 +114,22 @@ public class TSSwiftMarkdownParser: TSBaseParser {
                 for _ in (level - 1).stride(to: 0, by: 1) {
                     listString = "\(listString)\u{0A00}"
                 }
-                listString = "\(listString)•\u{00A0}"
+                listString = "\(listString)\u{2022}\u{00A0}"
                 attributedString.replaceCharactersInRange(range, withString: listString)
             }) { attributedString, range, level in
                 TSSwiftMarkdownParser.addAttributes(self.listAttributes, atIndex: level - 1, toString: attributedString, range: range)
+            }
+            
+            addNumberedListParsingWithMaxLevel(0, leadFormattingBlock: { (attributedString, range, level) in
+                var listString = ""
+                for _ in (level - 1).stride(to: 0, by: 1) {
+                    listString = "\(listString)\u{0A00}"
+                }
+                let substring = attributedString.attributedSubstringFromRange(range).string
+                listString = "\(listString)\(substring)\u{0A00}"
+                attributedString.replaceCharactersInRange(range, withString: listString)
+            }) { attributedString, range, level in
+                TSSwiftMarkdownParser.addAttributes(self.numberedListAttributes, atIndex: level - 1, toString: attributedString, range: range)
             }
             
             addQuoteParsingWithMaxLevel(0, leadFormattingBlock: { attributedString, range, level in
@@ -218,6 +232,10 @@ public class TSSwiftMarkdownParser: TSBaseParser {
     
     public func addListParsingWithMaxLevel(maxLevel: Int, leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, textFormattingBlock formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {
         addLeadParsingWithPattern(TSSwiftMarkdownRegex.List, maxLevel: maxLevel, leadFormattingBlock: leadFormattingBlock, formattingBlock: formattingBlock)
+    }
+    
+    public func addNumberedListParsingWithMaxLevel(maxLevel: Int, leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, textFormattingBlock formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {
+        addLeadParsingWithPattern(TSSwiftMarkdownRegex.NumberedList, maxLevel: maxLevel, leadFormattingBlock: leadFormattingBlock, formattingBlock: formattingBlock)
     }
     
     public func addQuoteParsingWithMaxLevel(maxLevel: Int, leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, textFormattingBlock formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {

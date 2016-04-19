@@ -129,6 +129,8 @@ public extension NSAttributedString {
         }
         
         markdownString += previousCharacter == "\n" ? "" : closingString
+        markdownString = markdownString.stringByReplacingOccurrencesOfString("****", withString: "")
+            .stringByReplacingOccurrencesOfString("__", withString: "")
         return markdownString
     }
     
