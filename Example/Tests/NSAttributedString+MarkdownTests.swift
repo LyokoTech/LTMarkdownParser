@@ -45,7 +45,6 @@ class NSAttributedStringTests: XCTestCase {
         strings.forEach { assertRoundTripFromMarkdownString($0) }
     }
     
-    
     func testNumberedLists() {
         assertRoundTripFromMarkdownString("1\\. Hi\n2\\. Hi\n3\\. Hi\n")
     }
@@ -76,6 +75,10 @@ class NSAttributedStringTests: XCTestCase {
         ]
         
         strings.forEach(assertRoundTripFromMarkdownString)
+    }
+    
+    func testBulletedFollowedByNumbered() {
+        assertRoundTripFromMarkdownString("+ a bullet\n1\\. a number\n2\\. another number")
     }
     
     func testTwoLineBreaks() {

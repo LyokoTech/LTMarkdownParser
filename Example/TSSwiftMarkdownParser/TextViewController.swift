@@ -71,16 +71,15 @@ class TextViewController: RichTextViewController {
     
     func parse() {
         if parsed {
-            //Switch to attributedString
+            // Switch to attributedString
             textView.attributedText = TSSwiftMarkdownParser.standardParser.attributedStringFromMarkdown(textView.text)
         } else {
-            //Switch to markdownString
+            // Switch to markdownString
             textView.attributedText = NSAttributedString(string: textView.attributedText?.markdownString() ?? "")
         }
-        parseButton.tintColor = parsed ? UIColor.blueColor() : UIColor.redColor()
+        parseButton.tintColor = parsed ? .blueColor() : .redColor()
         parsed = !parsed
     }
-    
     
     override func toggleBold() {
         super.toggleBold()
@@ -103,13 +102,13 @@ class TextViewController: RichTextViewController {
     }
    
     func adjustButtons() {
-        boldButton.tintColor = selectionContainsBold(textView.selectedRange) ? UIColor.redColor() : UIColor.blueColor()
+        boldButton.tintColor = selectionContainsBold(textView.selectedRange) ? .redColor() : .blueColor()
         
-        italicButton.tintColor = selectionContainsItalic(textView.selectedRange) ? UIColor.redColor() : UIColor.blueColor()
+        italicButton.tintColor = selectionContainsItalic(textView.selectedRange) ? .redColor() : .blueColor()
         
-        bulletedListButton.tintColor = selectionContainsBulletedList(textView.selectedRange) ? UIColor.redColor() : UIColor.blueColor()
+        bulletedListButton.tintColor = selectionContainsBulletedList(textView.selectedRange) ? .redColor() : .blueColor()
         
-        numberedListButton.tintColor = selectionContainsNumberedList(textView.selectedRange) ? UIColor.redColor() : UIColor.blueColor()
+        numberedListButton.tintColor = selectionContainsNumberedList(textView.selectedRange) ? .redColor() : .blueColor()
     }
     
     override func textViewDidChangeSelection(textView: UITextView) {

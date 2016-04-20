@@ -26,8 +26,7 @@ public class TSBaseParser {
     private var parsingPairs = [TSExpressionBlockPair]()
     
     public func attributedStringFromMarkdown(markdown: String) -> NSAttributedString? {
-        let attributedString = attributedStringFromMarkdown(markdown, attributes: defaultAttributes)
-        return attributedString
+        return attributedStringFromMarkdown(markdown, attributes: defaultAttributes)
     }
     
     public func attributedStringFromMarkdown(markdown: String, attributes: [String: AnyObject]?) -> NSAttributedString? {

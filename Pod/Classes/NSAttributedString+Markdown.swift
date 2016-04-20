@@ -85,8 +85,8 @@ public extension NSAttributedString {
                         stringToAppend += String(closingString.characters.reverse())
                     }
                     
-                    characterOnBulletedListLine = characterOnBulletedListLine ? false : characterOnBulletedListLine
-                    characterOnNumberedListLine = characterOnNumberedListLine ? false : characterOnNumberedListLine
+                    characterOnBulletedListLine = false
+                    characterOnNumberedListLine = false
                 case "1", "2", "3", "4", "5", "6", "7", "8", "9", "0":
                     if previousCharacter == "\n" || previousCharacter == nil {
                         openedNumberedListStarter = true
