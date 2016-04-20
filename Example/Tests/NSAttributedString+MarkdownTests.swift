@@ -36,17 +36,50 @@ class NSAttributedStringTests: XCTestCase {
     
     func testLotsOfCases() {
         let strings = [
-            "Bible **studies**   \n&nbsp;  \n+ jailed \n+ skd \n+ skd",
+            "Bible **studies**\n\n+ jailed\n+ skd\n+ skd",
             "hello",
             "**something**",
-            "bible **studies**   \n**open the door**"
+            "bible **studies**\n**open the door**"
         ]
         
         strings.forEach { assertRoundTripFromMarkdownString($0) }
     }
     
+    
+    func testNumberedLists() {
+        assertRoundTripFromMarkdownString("1\\. Hi\n2\\. Hi\n3\\. Hi\n")
+    }
+    
+    func testNumberedListsWithFormatting() {
+        let strings = [
+            "1\\. **this list has some bolded strings**\n2\\. **does it translate?**",
+            "1\\. _this list has some bolded strings_\n2\\. **does it translate?**",
+            "1\\. **this list has some bolded strings**\n2\\. _does it translate?_",
+            "1\\. _this list has some bolded strings_\n2\\. _does it translate?_",
+            "1\\. **this list has some bolded strings**\n2\\. **does it translate?**\n\n_I am also writing something in italics_"
+        ]
+        
+        strings.forEach(assertRoundTripFromMarkdownString)
+    }
+    
+    func testBulletedLists() {
+        assertRoundTripFromMarkdownString("+ Hi\n+ hi\n+ Hi")
+    }
+    
+    func testBulletedListsWithFormatting() {
+        let strings = [
+            "+ **this list has some bolded strings**\n+ **does it translate?**",
+            "+ _this list has some bolded strings_\n+ **does it translate?**",
+            "+ **this list has some bolded strings**\n+ _does it translate?_",
+            "+ _this list has some bolded strings_\n+ _does it translate?_",
+            "+ **this list has some bolded strings**\n+ **does it translate?**\n\n_I am also writing something in italics_"
+        ]
+        
+        strings.forEach(assertRoundTripFromMarkdownString)
+    }
+    
     func testTwoLineBreaks() {
-        assertRoundTripFromMarkdownString("Some text   \n&nbsp;  \nthat has two line breaks between it")
+        assertRoundTripFromMarkdownString("Some text\n\nthat has two line breaks between it")
     }
     
     func testUnorderedList() {

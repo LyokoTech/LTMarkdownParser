@@ -26,7 +26,8 @@ public class TSBaseParser {
     private var parsingPairs = [TSExpressionBlockPair]()
     
     public func attributedStringFromMarkdown(markdown: String) -> NSAttributedString? {
-        return attributedStringFromMarkdown(markdown, attributes: defaultAttributes)
+        let attributedString = attributedStringFromMarkdown(markdown, attributes: defaultAttributes)
+        return attributedString
     }
     
     public func attributedStringFromMarkdown(markdown: String, attributes: [String: AnyObject]?) -> NSAttributedString? {
@@ -57,6 +58,7 @@ public class TSBaseParser {
     
     func parseExpressionForMutableString(mutableAttributedString: NSMutableAttributedString, expression: NSRegularExpression, block: TSSwiftMarkdownParserMatchBlock) {
         var location = 0
+        
         while let match = expression.firstMatchInString(mutableAttributedString.string, options: .WithoutAnchoringBounds, range: NSRange(location: location, length: mutableAttributedString.length - location)) {
             let oldLength = mutableAttributedString.length
             block(match, mutableAttributedString)
