@@ -97,7 +97,7 @@ class NSAttributedStringTests: XCTestCase {
     
     func testLevelledLists() {
         let strings = [
-//            "+ Level One\n + Level Two\n  + Level Three",
+            "+ Level One\n + Level Two\n  + Level Three",
             "1\\. Level One\n 1\\. Level Two\n  1\\. Level Three"
         ]
         

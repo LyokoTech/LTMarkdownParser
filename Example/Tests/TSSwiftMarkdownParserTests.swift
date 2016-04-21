@@ -16,6 +16,7 @@ class TSSwiftMarkdownParserTests: XCTestCase {
     var standardParser = TSSwiftMarkdownParser()
     
     override func setUp() {
+        //We have to reinitialize the parser for every test because the parsing rules can change from test to test
         parser = TSSwiftMarkdownParser(withDefaultParsing: false)
         standardParser = TSSwiftMarkdownParser()
     }

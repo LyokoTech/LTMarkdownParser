@@ -101,32 +101,32 @@ public class TSSwiftMarkdownParser: TSBaseParser {
             addNumberedListParsingWithLeadFormattingBlock({ (attributedString, range, level) in
                 let substring = attributedString.attributedSubstringFromRange(range).string.stringByReplacingOccurrencesOfString(" ", withString: "\(nonBreakingSpaceCharacter)")
                 attributedString.replaceCharactersInRange(range, withString: "\(substring)")
-            }) { attributedString, range, level in
+            }, textFormattingBlock: { attributedString, range, level in
                 TSSwiftMarkdownParser.addAttributes(self.numberedListAttributes, atIndex: level - 1, toString: attributedString, range: range)
-            }
+            })
             
             addEscapingParsing()
             addCodeEscapingParsing()
             
             addHeaderParsingWithLeadFormattingBlock({ attributedString, range, level in
                 attributedString.replaceCharactersInRange(range, withString: "")
-            }) { attributedString, range, level in
+            }, textFormattingBlock: { attributedString, range, level in
                 TSSwiftMarkdownParser.addAttributes(self.headerAttributes, atIndex: level - 1, toString: attributedString, range: range)
-            }
+            })
             
             addListParsingWithLeadFormattingBlock({ attributedString, range, level in
                 let indentString = String(count: level, repeatedValue: nonBreakingSpaceCharacter)
                 attributedString.replaceCharactersInRange(range, withString: "\(indentString)\u{2022}\u{00A0}")
-            }) { attributedString, range, level in
+            }, textFormattingBlock: { attributedString, range, level in
                 TSSwiftMarkdownParser.addAttributes(self.listAttributes, atIndex: level - 1, toString: attributedString, range: range)
-            }
+            })
             
             addQuoteParsingWithLeadFormattingBlock({ attributedString, range, level in
                 let indentString = String(count: level, repeatedValue: Character("\t"))
                 attributedString.replaceCharactersInRange(range, withString: indentString)
-            }) { attributedString, range, level in
+            }, textFormattingBlock: { attributedString, range, level in
                 TSSwiftMarkdownParser.addAttributes(self.quoteAttributes, atIndex: level - 1, toString: attributedString, range: range)
-            }
+            })
             
             addImageParsingWithImageFormattingBlock(nil) { attributedString, range in
                 attributedString.addAttributes(self.imageAttributes, range: range)
