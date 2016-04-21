@@ -13,7 +13,12 @@ import TSSwiftMarkdownParser
 class TSSwiftMarkdownParserTests: XCTestCase {
     
     var parser = TSSwiftMarkdownParser(withDefaultParsing: false)
-    var standardParser = TSSwiftMarkdownParser.standardParser
+    var standardParser = TSSwiftMarkdownParser()
+    
+    override func setUp() {
+        parser = TSSwiftMarkdownParser(withDefaultParsing: false)
+        standardParser = TSSwiftMarkdownParser()
+    }
     
     func testBasicBoldParsing() {
         let font = UIFont(name: "HelveticaNeue-Bold", size: 14) ?? UIFont.systemFontOfSize(14)
@@ -87,6 +92,7 @@ class TSSwiftMarkdownParserTests: XCTestCase {
     func testDefaultBoldParsingUnderscores() {
         let font = UIFont.boldSystemFontOfSize(12)
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\nI drink in __a café__ everyday")
+
         XCTAssertEqual(attributedString?.attribute(NSFontAttributeName, atIndex: 20, effectiveRange: nil) as? UIFont, font)
         XCTAssertEqual(attributedString?.string, "Hello\nI drink in a café everyday")
     }
@@ -201,9 +207,9 @@ class TSSwiftMarkdownParserTests: XCTestCase {
     
     func testCustomListWithAsterisksParsingWithStrongText() {
         let strongFont = UIFont.boldSystemFontOfSize(12)
-        parser.addListParsingWithMaxLevel(1, leadFormattingBlock: { attributedString, range, level in
+        parser.addListParsingWithLeadFormattingBlock({ attributedString, range, level in
             attributedString.replaceCharactersInRange(range, withString: "    • ")
-        }, textFormattingBlock: nil)
+        }, textFormattingBlock: nil, maxLevel: 1)
         
         parser.addStrongParsingWithFormattingBlock { attributedString, range in
             attributedString.addAttribute(NSFontAttributeName, value: strongFont, range: range)
@@ -589,7 +595,6 @@ class TSSwiftMarkdownParserTests: XCTestCase {
     func testNumberedLists() {
         let markdownString = "1\\. Hi\n2\\. Hi\n3\\. Hi"
         let attributedString = standardParser.attributedStringFromMarkdown(markdownString)
-        
         XCTAssertEqual(attributedString?.string, "1.\u{00A0}Hi\n2.\u{00A0}Hi\n3.\u{00A0}Hi")
     }
 }

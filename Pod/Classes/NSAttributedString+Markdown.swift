@@ -113,7 +113,10 @@ public extension NSAttributedString {
                     }
                     stringToAppend = "\\\(character)"
                 case nonBreakingSpaceCharacter:
-                    break
+                    if characterOnBulletedListLine || characterOnNumberedListLine {
+                        break
+                    }
+                    stringToAppend = " "
                 default:
                     if (previousCharacter == "\n" || previousCharacter == "\u{2028}") && characterOnBulletedListLine {
                         characterOnBulletedListLine = false

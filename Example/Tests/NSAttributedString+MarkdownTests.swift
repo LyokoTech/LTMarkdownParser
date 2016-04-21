@@ -95,6 +95,15 @@ class NSAttributedStringTests: XCTestCase {
         XCTAssertEqual(attributedString.markdownString(), markdown)
     }
     
+    func testLevelledLists() {
+        let strings = [
+//            "+ Level One\n + Level Two\n  + Level Three",
+            "1\\. Level One\n 1\\. Level Two\n  1\\. Level Three"
+        ]
+        
+        strings.forEach(assertRoundTripFromMarkdownString)
+    }
+    
     func testEscapedMarkdownCharacters() {
         let attributedString = NSAttributedString(string: "This is text that has characters like *,+,- that aren't supposed to be converted to markdown.")
         let escapedMarkdown = "This is text that has characters like \\*,\\+,\\- that aren't supposed to be converted to markdown\\."
