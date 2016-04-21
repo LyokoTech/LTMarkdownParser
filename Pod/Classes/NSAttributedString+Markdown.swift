@@ -34,7 +34,6 @@ public extension NSAttributedString {
                 let boldChange = FormattingChange.getFormattingChange(stringHasBoldEnabled, after: traits.contains(.TraitBold))
                 let italicChange = FormattingChange.getFormattingChange(stringHasItalicEnabled, after: traits.contains(.TraitItalic))
                 var formatString = ""
-                
                 switch boldChange {
                 case .Enable:
                     formatString += "**"
@@ -85,6 +84,9 @@ public extension NSAttributedString {
                     if !characterOnBulletedListLine && !characterOnNumberedListLine {
                         stringToAppend += String(closingString.characters.reverse())
                     }
+                    
+                    characterOnBulletedListLine = false
+                    characterOnNumberedListLine = false
                 case "1", "2", "3", "4", "5", "6", "7", "8", "9", "0":
                     if previousCharacter == "\n" || previousCharacter == nil {
                         openedNumberedListStarter = true
@@ -111,7 +113,10 @@ public extension NSAttributedString {
                     }
                     stringToAppend = "\\\(character)"
                 case nonBreakingSpaceCharacter:
-                    break
+                    if characterOnBulletedListLine || characterOnNumberedListLine {
+                        break
+                    }
+                    stringToAppend = " "
                 default:
                     if (previousCharacter == "\n" || previousCharacter == "\u{2028}") && characterOnBulletedListLine {
                         characterOnBulletedListLine = false
@@ -125,10 +130,12 @@ public extension NSAttributedString {
                 return "\(resultString)\(stringToAppend)"
             }
             
+            
             markdownString += processedString
         }
-        
-        markdownString += previousCharacter == "\n" ? "" : closingString
+        markdownString += closingString
+        markdownString = markdownString.stringByReplacingOccurrencesOfString("****", withString: "")
+            .stringByReplacingOccurrencesOfString("__", withString: "")
         return markdownString
     }
     

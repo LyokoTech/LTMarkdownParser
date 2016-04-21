@@ -57,6 +57,7 @@ public class TSBaseParser {
     
     func parseExpressionForMutableString(mutableAttributedString: NSMutableAttributedString, expression: NSRegularExpression, block: TSSwiftMarkdownParserMatchBlock) {
         var location = 0
+        
         while let match = expression.firstMatchInString(mutableAttributedString.string, options: .WithoutAnchoringBounds, range: NSRange(location: location, length: mutableAttributedString.length - location)) {
             let oldLength = mutableAttributedString.length
             block(match, mutableAttributedString)

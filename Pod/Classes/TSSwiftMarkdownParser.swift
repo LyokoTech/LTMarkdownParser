@@ -9,14 +9,17 @@
 import Foundation
 import UIKit
 
+private let nonBreakingSpaceCharacter = Character("\u{00A0}")
+
 public struct TSSwiftMarkdownRegex {
     public static let Escaping = "\\\\."
     public static let Unescaping = "\\\\[0-9a-z]{4}"
     
     public static let Header = "^(#{1,%@})\\s+(.+)$"
     public static let ShortHeader = "^(#{1,%@})\\s*([^#].*)$"
-    public static let List = "^([\\*\\+\\-]{1,%@})\\s+(.+)$"
-    public static let ShortList = "^([\\*\\+\\-]{1,%@})\\s*([^\\*\\+\\-].*)$"
+    public static let List = "^( {0,%@})[\\*\\+\\-]\\s+(.+)$"
+    public static let ShortList = "^( {0,%@})[\\*\\+\\-]\\s+([^\\*\\+\\-].*)$"
+    public static let NumberedList = "^( {0,})[0-9]+\\\\\\.\\s(.+)$"
     public static let Quote = "^(\\>{1,%@})\\s+(.+)$"
     public static let ShortQuote = "^(\\>{1,%@})\\s*([^\\>].*)$"
     
@@ -44,6 +47,7 @@ public class TSSwiftMarkdownParser: TSBaseParser {
     
     public var headerAttributes = [[String: AnyObject]]()
     public var listAttributes = [[String: AnyObject]]()
+    public var numberedListAttributes = [[String: AnyObject]]()
     public var quoteAttributes = [[String: AnyObject]]()
     
     public var imageAttributes = [String: AnyObject]()
@@ -53,11 +57,7 @@ public class TSSwiftMarkdownParser: TSBaseParser {
     public var emphasisAttributes = [String: AnyObject]()
     public var strongAndEmphasisAttributes = [String: AnyObject]()
     
-    public static var standardParser: TSSwiftMarkdownParser {
-        let defaultParser = TSSwiftMarkdownParser()
-        
-        return defaultParser
-    }
+    public static var standardParser = TSSwiftMarkdownParser()
     
     class func addAttributes(attributesArray: [[String: AnyObject]], atIndex level: Int, toString attributedString: NSMutableAttributedString, range: NSRange) {
         guard !attributesArray.isEmpty else { return }
@@ -98,37 +98,35 @@ public class TSSwiftMarkdownParser: TSBaseParser {
         strongAndEmphasisAttributes = [NSFontAttributeName: strongAndEmphasisFont]
         
         if withDefaultParsing {
+            addNumberedListParsingWithLeadFormattingBlock({ (attributedString, range, level) in
+                let substring = attributedString.attributedSubstringFromRange(range).string.stringByReplacingOccurrencesOfString(" ", withString: "\(nonBreakingSpaceCharacter)")
+                attributedString.replaceCharactersInRange(range, withString: "\(substring)")
+            }, textFormattingBlock: { attributedString, range, level in
+                TSSwiftMarkdownParser.addAttributes(self.numberedListAttributes, atIndex: level - 1, toString: attributedString, range: range)
+            })
+            
             addEscapingParsing()
             addCodeEscapingParsing()
             
-            addHeaderParsingWithMaxLevel(0, leadFormattingBlock: { attributedString, range, level in
+            addHeaderParsingWithLeadFormattingBlock({ attributedString, range, level in
                 attributedString.replaceCharactersInRange(range, withString: "")
-            }) { attributedString, range, level in
+            }, textFormattingBlock: { attributedString, range, level in
                 TSSwiftMarkdownParser.addAttributes(self.headerAttributes, atIndex: level - 1, toString: attributedString, range: range)
-            }
+            })
             
-            addListParsingWithMaxLevel(0, leadFormattingBlock: { attributedString, range, level in
-                var listString = ""
-                for _ in (level - 1).stride(to: 0, by: 1) {
-                    listString = "\(listString)\u{0A00}"
-                }
-                listString = "\(listString)•\u{00A0}"
-                attributedString.replaceCharactersInRange(range, withString: listString)
-            }) { attributedString, range, level in
+            addListParsingWithLeadFormattingBlock({ attributedString, range, level in
+                let indentString = String(count: level, repeatedValue: nonBreakingSpaceCharacter)
+                attributedString.replaceCharactersInRange(range, withString: "\(indentString)\u{2022}\u{00A0}")
+            }, textFormattingBlock: { attributedString, range, level in
                 TSSwiftMarkdownParser.addAttributes(self.listAttributes, atIndex: level - 1, toString: attributedString, range: range)
-            }
+            })
             
-            addQuoteParsingWithMaxLevel(0, leadFormattingBlock: { attributedString, range, level in
-                var quoteString = ""
-                var currentLevel = level
-                while currentLevel > 0 {
-                    currentLevel -= 1
-                    quoteString = "\(quoteString)\t"
-                }
-                attributedString.replaceCharactersInRange(range, withString: quoteString)
-            }) { attributedString, range, level in
+            addQuoteParsingWithLeadFormattingBlock({ attributedString, range, level in
+                let indentString = String(count: level, repeatedValue: Character("\t"))
+                attributedString.replaceCharactersInRange(range, withString: indentString)
+            }, textFormattingBlock: { attributedString, range, level in
                 TSSwiftMarkdownParser.addAttributes(self.quoteAttributes, atIndex: level - 1, toString: attributedString, range: range)
-            }
+            })
             
             addImageParsingWithImageFormattingBlock(nil) { attributedString, range in
                 attributedString.addAttributes(self.imageAttributes, range: range)
@@ -201,8 +199,12 @@ public class TSSwiftMarkdownParser: TSBaseParser {
         }
     }
     
-    private func addLeadParsingWithPattern(pattern: String, maxLevel: Int, leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {
-        let regexString = NSString(format: pattern, maxLevel > 0 ? "\(maxLevel)" : "") as String
+    private func addLeadParsingWithPattern(pattern: String, maxLevel: Int?, leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {
+        let regexString: String = {
+            let maxLevel: Int = maxLevel ?? 0
+            return NSString(format: pattern, maxLevel > 0 ? "\(maxLevel)" : "") as String
+        }()
+        
         guard let regex = TSSwiftMarkdownRegex.regexForString(regexString, options: .AnchorsMatchLines) else { return }
         
         addParsingRuleWithRegularExpression(regex) { match, attributedString in
@@ -212,27 +214,31 @@ public class TSSwiftMarkdownParser: TSBaseParser {
         }
     }
     
-    public func addHeaderParsingWithMaxLevel(maxLevel: Int, leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, textFormattingBlock formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {
+    public func addHeaderParsingWithLeadFormattingBlock(leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, maxLevel: Int? = nil, textFormattingBlock formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {
         addLeadParsingWithPattern(TSSwiftMarkdownRegex.Header, maxLevel: maxLevel, leadFormattingBlock: leadFormattingBlock, formattingBlock: formattingBlock)
     }
     
-    public func addListParsingWithMaxLevel(maxLevel: Int, leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, textFormattingBlock formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {
+    public func addListParsingWithLeadFormattingBlock(leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, maxLevel: Int? = nil, textFormattingBlock formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {
         addLeadParsingWithPattern(TSSwiftMarkdownRegex.List, maxLevel: maxLevel, leadFormattingBlock: leadFormattingBlock, formattingBlock: formattingBlock)
     }
     
-    public func addQuoteParsingWithMaxLevel(maxLevel: Int, leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, textFormattingBlock formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {
+    public func addNumberedListParsingWithLeadFormattingBlock(leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, maxLevel: Int? = nil, textFormattingBlock formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {
+        addLeadParsingWithPattern(TSSwiftMarkdownRegex.NumberedList, maxLevel: maxLevel, leadFormattingBlock: leadFormattingBlock, formattingBlock: formattingBlock)
+    }
+    
+    public func addQuoteParsingWithLeadFormattingBlock(leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, maxLevel: Int? = nil, textFormattingBlock formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {
         addLeadParsingWithPattern(TSSwiftMarkdownRegex.Quote, maxLevel: maxLevel, leadFormattingBlock: leadFormattingBlock, formattingBlock: formattingBlock)
     }
     
-    public func addShortHeaderParsingWithMaxLevel(maxLevel: Int, leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, textFormattingBlock formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {
+    public func addShortHeaderParsingWithLeadFormattingBlock(leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, maxLevel: Int? = nil, textFormattingBlock formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {
         addLeadParsingWithPattern(TSSwiftMarkdownRegex.ShortHeader, maxLevel: maxLevel, leadFormattingBlock: leadFormattingBlock, formattingBlock: formattingBlock)
     }
     
-    public func addShortListParsingWithMaxLevel(maxLevel: Int, leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, textFormattingBlock formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {
+    public func addShortListParsingWithLeadFormattingBlock(leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, maxLevel: Int? = nil, textFormattingBlock formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {
         addLeadParsingWithPattern(TSSwiftMarkdownRegex.ShortList, maxLevel: maxLevel, leadFormattingBlock: leadFormattingBlock, formattingBlock: formattingBlock)
     }
     
-    public func addShortQuoteParsingWithMaxLevel(maxLevel: Int, leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, textFormattingBlock formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {
+    public func addShortQuoteParsingWithLeadFormattingBlock(leadFormattingBlock: TSSwiftMarkdownParserLevelFormattingBlock, maxLevel: Int? = nil, textFormattingBlock formattingBlock: TSSwiftMarkdownParserLevelFormattingBlock?) {
         addLeadParsingWithPattern(TSSwiftMarkdownRegex.ShortQuote, maxLevel: maxLevel, leadFormattingBlock: leadFormattingBlock, formattingBlock: formattingBlock)
     }
     

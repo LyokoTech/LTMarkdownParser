@@ -1,7 +1,9 @@
 PODS:
+  - RichTextVC-iOS (1.1.1)
   - TSSwiftMarkdownParser (0.3.0)
 
 DEPENDENCIES:
+  - RichTextVC-iOS
   - TSSwiftMarkdownParser (from `../`)
 
 EXTERNAL SOURCES:
@@ -9,6 +11,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
+  RichTextVC-iOS: ebddd79f65d54547d589aa27465305c3f73fac98
   TSSwiftMarkdownParser: c30af85d33b9d61c522f8291c9efe620b2fc3a1a
 
 COCOAPODS: 0.39.0
