@@ -209,7 +209,7 @@ class TSSwiftMarkdownParserTests: XCTestCase {
         let strongFont = UIFont.boldSystemFontOfSize(12)
         parser.addListParsingWithLeadFormattingBlock({ attributedString, range, level in
             attributedString.replaceCharactersInRange(range, withString: "    • ")
-        }, textFormattingBlock: nil, maxLevel: 1)
+        }, maxLevel: 1, textFormattingBlock: nil)
         
         parser.addStrongParsingWithFormattingBlock { attributedString, range in
             attributedString.addAttribute(NSFontAttributeName, value: strongFont, range: range)
