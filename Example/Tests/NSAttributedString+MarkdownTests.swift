@@ -1,6 +1,6 @@
 //
 //  NSAttributedString+MarkdownTests.swift
-//  TSSwiftMarkdownParser
+//  LTMarkdownParser
 //
 //  Created by Rhett Rogers on 4/13/16.
 //  Copyright © 2016 CocoaPods. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import XCTest
-import TSSwiftMarkdownParser
+import LTMarkdownParser
 
 class NSAttributedStringTests: XCTestCase {
     
@@ -46,16 +46,16 @@ class NSAttributedStringTests: XCTestCase {
     }
     
     func testNumberedLists() {
-        assertRoundTripFromMarkdownString("1\\. Hi\n2\\. Hi\n3\\. Hi\n")
+        assertRoundTripFromMarkdownString("1. Hi\n2. Hi\n3. Hi\n")
     }
     
     func testNumberedListsWithFormatting() {
         let strings = [
-            "1\\. **this list has some bolded strings**\n2\\. **does it translate?**",
-            "1\\. _this list has some bolded strings_\n2\\. **does it translate?**",
-            "1\\. **this list has some bolded strings**\n2\\. _does it translate?_",
-            "1\\. _this list has some bolded strings_\n2\\. _does it translate?_",
-            "1\\. **this list has some bolded strings**\n2\\. **does it translate?**\n\n_I am also writing something in italics_"
+            "1. **this list has some bolded strings**\n2. **does it translate?**",
+            "1. _this list has some bolded strings_\n2. **does it translate?**",
+            "1. **this list has some bolded strings**\n2. _does it translate?_",
+            "1. _this list has some bolded strings_\n2. _does it translate?_",
+            "1. **this list has some bolded strings**\n2. **does it translate?**\n\n_I am also writing something in italics_"
         ]
         
         strings.forEach(assertRoundTripFromMarkdownString)
@@ -78,7 +78,7 @@ class NSAttributedStringTests: XCTestCase {
     }
     
     func testBulletedFollowedByNumbered() {
-        assertRoundTripFromMarkdownString("+ a bullet\n1\\. a number\n2\\. another number")
+        assertRoundTripFromMarkdownString("+ a bullet\n1. a number\n2. another number")
     }
     
     func testTwoLineBreaks() {
@@ -98,7 +98,7 @@ class NSAttributedStringTests: XCTestCase {
     func testLevelledLists() {
         let strings = [
             "+ Level One\n + Level Two\n  + Level Three",
-            "1\\. Level One\n 1\\. Level Two\n  1\\. Level Three"
+            "1. Level One\n 1. Level Two\n  1. Level Three"
         ]
         
         strings.forEach(assertRoundTripFromMarkdownString)
@@ -117,7 +117,7 @@ class NSAttributedStringTests: XCTestCase {
     }
     
     func assertRoundTripFromMarkdownString(markdownString: String) {
-        let attributedString = TSSwiftMarkdownParser(withDefaultParsing: true).attributedStringFromMarkdown(markdownString)
+        let attributedString = LTMarkdownParser(withDefaultParsing: true).attributedStringFromMarkdown(markdownString)
         XCTAssertEqual(attributedString!.markdownString(), markdownString)
     }
     

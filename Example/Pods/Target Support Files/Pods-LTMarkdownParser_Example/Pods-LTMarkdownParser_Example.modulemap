@@ -1,0 +1,6 @@
+framework module Pods_LTMarkdownParser_Example {
+  umbrella header "Pods-LTMarkdownParser_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

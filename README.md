@@ -1,9 +1,9 @@
-# TSSwiftMarkdownParser
+# LTMarkdownParser
 
-[![CI Status](https://img.shields.io/travis/LyokoTech/TSSwiftMarkdownParser.svg?style=flat)](https://travis-ci.org/LyokoTech/TSSwiftMarkdownParser)
-[![Version](https://img.shields.io/cocoapods/v/TSSwiftMarkdownParser.svg?style=flat)](http://cocoapods.org/pods/TSSwiftMarkdownParser)
-[![License](https://img.shields.io/cocoapods/l/TSSwiftMarkdownParser.svg?style=flat)](http://cocoapods.org/pods/TSSwiftMarkdownParser)
-[![Platform](https://img.shields.io/cocoapods/p/TSSwiftMarkdownParser.svg?style=flat)](http://cocoapods.org/pods/TSSwiftMarkdownParser)
+[![CI Status](https://img.shields.io/travis/LyokoTech/LTMarkdownParser.svg?style=flat)](https://travis-ci.org/LyokoTech/LTMarkdownParser)
+[![Version](https://img.shields.io/cocoapods/v/LTMarkdownParser.svg?style=flat)](http://cocoapods.org/pods/LTMarkdownParser)
+[![License](https://img.shields.io/cocoapods/l/LTMarkdownParser.svg?style=flat)](http://cocoapods.org/pods/LTMarkdownParser)
+[![Platform](https://img.shields.io/cocoapods/p/LTMarkdownParser.svg?style=flat)](http://cocoapods.org/pods/LTMarkdownParser)
 
 Based off of [TSMarkdownParser](http://github.com/laptobbe/TSMarkdownParser)
 
@@ -15,11 +15,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-TSSwiftMarkdownParser is available through [CocoaPods](http://cocoapods.org). To install
+LTMarkdownParser is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "TSSwiftMarkdownParser"
+pod "LTMarkdownParser"
 ```
 
 ## Author
@@ -28,4 +28,4 @@ Rhett Rogers, serenade.xs@icloud.com
 
 ## License
 
-TSSwiftMarkdownParser is available under the MIT license. See the LICENSE file for more info.
+LTMarkdownParser is available under the MIT license. See the LICENSE file for more info.

@@ -4,5 +4,5 @@ notifications:
   slack: lyokotech:7AmemNHORB2ShidELPFrYeUO
   email: false
 script:
-- set -o pipefail && xcodebuild test -workspace Example/TSSwiftMarkdownParser.xcworkspace -scheme TSSwiftMarkdownParser-Example -sdk iphonesimulator9.3 | xcpretty
+- set -o pipefail && xcodebuild test -workspace Example/LTMarkdownParser.xcworkspace -scheme LTMarkdownParser_Example -sdk iphonesimulator9.3 | xcpretty
 - pod lib lint
