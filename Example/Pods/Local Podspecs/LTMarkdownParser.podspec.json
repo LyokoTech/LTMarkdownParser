@@ -1,6 +1,6 @@
 {
   "name": "LTMarkdownParser",
-  "version": "0.3.1",
+  "version": "1.0.0",
   "summary": "A markdown parser written in swift",
   "description": "A parser written to convert a string containing markdown to an NSAttributedString.  It was based off of TSMarkdownParser, but rewritten in Swift.",
   "homepage": "https://github.com/LyokoTech/LTMarkdownParser",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/LyokoTech/LTwiftMarkdownParser.git",
-    "tag": "0.3.1"
+    "tag": "1.0.0"
   },
   "platforms": {
     "ios": "8.0"
