@@ -19,7 +19,7 @@ public struct TSSwiftMarkdownRegex {
     public static let ShortHeader = "^(#{1,%@})\\s*([^#].*)$"
     public static let List = "^( {0,%@})[\\*\\+\\-]\\s+(.+)$"
     public static let ShortList = "^( {0,%@})[\\*\\+\\-]\\s+([^\\*\\+\\-].*)$"
-    public static let NumberedList = "^( {0,})[0-9]+\\\\\\.\\s(.+)$"
+    public static let NumberedList = "^( {0,})[0-9]+\\.\\s(.+)$"
     public static let Quote = "^(\\>{1,%@})\\s+(.+)$"
     public static let ShortQuote = "^(\\>{1,%@})\\s*([^\\>].*)$"
     

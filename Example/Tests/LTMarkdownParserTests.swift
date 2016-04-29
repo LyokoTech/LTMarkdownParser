@@ -594,7 +594,7 @@ class LTMarkdownParserTests: XCTestCase {
     }
     
     func testNumberedLists() {
-        let markdownString = "1\\. Hi\n2\\. Hi\n3\\. Hi"
+        let markdownString = "1. Hi\n2. Hi\n3. Hi"
         let attributedString = standardParser.attributedStringFromMarkdown(markdownString)
         XCTAssertEqual(attributedString?.string, "1.\u{00A0}Hi\n2.\u{00A0}Hi\n3.\u{00A0}Hi")
     }

@@ -88,7 +88,7 @@ public extension NSAttributedString {
                     characterOnBulletedListLine = false
                     characterOnNumberedListLine = false
                 case "1", "2", "3", "4", "5", "6", "7", "8", "9", "0":
-                    if previousCharacter == "\n" || previousCharacter == nil {
+                    if previousCharacter == "\n" || previousCharacter == nil || previousCharacter == nonBreakingSpaceCharacter {
                         openedNumberedListStarter = true
                     }
                     
@@ -103,7 +103,7 @@ public extension NSAttributedString {
                         openedNumberedListStarter = false
                         characterOnNumberedListLine = true
                         
-                        stringToAppend = "\\\(character) \(!numberedListIsFirstLine ? String(closingString.characters.reverse()) : markdownString)"
+                        stringToAppend = "\(character) \(!numberedListIsFirstLine ? String(closingString.characters.reverse()) : markdownString)"
                         
                         if numberedListIsFirstLine {
                             markdownString = ""
