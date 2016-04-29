@@ -28,6 +28,12 @@ public class RichTextViewController: UIViewController {
 
     private var disableBold = false
     private var disableItalic = false
+    
+    private var defaultListAttributes: [String: AnyObject]? {
+        guard let regularFont = regularFont else { return nil }
+        
+        return [NSFontAttributeName: regularFont]
+    }
 
     /// Replaces text in a range with text in parameter
     ///
@@ -82,8 +88,11 @@ public class RichTextViewController: UIViewController {
     /// - parameter text: The text to add.
     /// - parameter toTextView: The `UITextView` to add the text to.
     /// - parameter atIndex: The index to insert the text at.
+    /// - parameter withAttributes: Optional.  Attributes to apply to the added text.  Will use attributes at the index otherwise.
     private func addText(text: String, toTextView textView: UITextView, atIndex index: Int) {
-        let attributes = index < textView.text.length ? textView.attributedText.attributesAtIndex(index, effectiveRange: nil) : textView.typingAttributes
+        let previousTypingAttributes = textView.typingAttributes
+        
+        let attributes = defaultListAttributes ?? (index < textView.text.length ? textView.attributedText.attributesAtIndex(index, effectiveRange: nil) : textView.typingAttributes)
         textView.textStorage.beginEditing()
         textView.textStorage.insertAttributedString(NSAttributedString(string: text, attributes: attributes), atIndex: index)
         textView.textStorage.endEditing()
@@ -93,7 +102,8 @@ public class RichTextViewController: UIViewController {
         } else if index <= textView.selectedRange.location {
             textView.selectedRange.location += text.length
         }
-
+        
+        textView.typingAttributes = previousTypingAttributes
         textViewDidChangeSelection(textView)
     }
 
@@ -305,16 +315,16 @@ public class RichTextViewController: UIViewController {
             return true
         } else if selectionContainsBulletedList(range) {
             let previousRange = NSRange(location: range.location - RichTextViewController.bulletedLineStarter.length, length: RichTextViewController.bulletedLineStarter.length)
+            let bulletedString = "\n" + RichTextViewController.bulletedLineStarter
 
-            let bulletedString = NSAttributedString(string: "\n" + RichTextViewController.bulletedLineStarter, attributes: textView.typingAttributes)
             textView.textStorage.beginEditing()
             if let subString = textView.attributedText?.attributedSubstringFromRange(previousRange).string where subString == RichTextViewController.bulletedLineStarter {
                 textView.textStorage.replaceCharactersInRange(previousRange, withAttributedString: NSAttributedString(string: "", attributes: textView.typingAttributes))
             } else {
-                textView.textStorage.insertAttributedString(bulletedString, atIndex: range.location)
+                addText(bulletedString, toTextView: textView, atIndex: range.location)
             }
             textView.textStorage.endEditing()
-            textView.selectedRange = NSRange(location: range.location + bulletedString.length, length: 0)
+            textView.selectedRange = NSRange(location: range.location + (bulletedString as NSString).length, length: 0)
 
             return true
         }
