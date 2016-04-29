@@ -1,6 +1,6 @@
 //
 //  NSAttributedString+MarkdownTests.swift
-//  TSSwiftMarkdownParser
+//  LTMarkdownParser
 //
 //  Created by Rhett Rogers on 4/13/16.
 //  Copyright © 2016 CocoaPods. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import XCTest
-import TSSwiftMarkdownParser
+import LTMarkdownParser
 
 class NSAttributedStringTests: XCTestCase {
     
@@ -117,7 +117,7 @@ class NSAttributedStringTests: XCTestCase {
     }
     
     func assertRoundTripFromMarkdownString(markdownString: String) {
-        let attributedString = TSSwiftMarkdownParser(withDefaultParsing: true).attributedStringFromMarkdown(markdownString)
+        let attributedString = LTMarkdownParser(withDefaultParsing: true).attributedStringFromMarkdown(markdownString)
         XCTAssertEqual(attributedString!.markdownString(), markdownString)
     }
     

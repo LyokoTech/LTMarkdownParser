@@ -1,0 +1,6 @@
+framework module LTMarkdownParser {
+  umbrella header "LTMarkdownParser-umbrella.h"
+
+  export *
+  module * { export * }
+}

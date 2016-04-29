@@ -9,7 +9,7 @@
     "Rhett Rogers": "serenade.xs@icloud.com"
   },
   "source": {
-    "git": "https://github.com/LyokoTech/LTMarkdownParser.git",
+    "git": "https://github.com/LyokoTech/LTwiftMarkdownParser.git",
     "tag": "0.3.1"
   },
   "platforms": {
