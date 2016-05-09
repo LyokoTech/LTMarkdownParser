@@ -598,4 +598,13 @@ class LTMarkdownParserTests: XCTestCase {
         let attributedString = standardParser.attributedStringFromMarkdown(markdownString)
         XCTAssertEqual(attributedString?.string, "1.\u{00A0}Hi\n2.\u{00A0}Hi\n3.\u{00A0}Hi")
     }
+    
+    func testOutOfBoundsError() {
+        let parser = LTMarkdownParser()
+        parser.listAttributes.append([NSFontAttributeName: UIFont.systemFontOfSize(20)])
+        let markdown = "1. Hello\n2. hello\n\n+ hello\n+ hello"
+        let attString = parser.attributedStringFromMarkdown(markdown)
+        XCTAssertEqual(attString?.markdownString(), markdown)
+    }
+    
 }
