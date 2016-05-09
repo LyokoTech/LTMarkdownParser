@@ -601,9 +601,10 @@ class LTMarkdownParserTests: XCTestCase {
     
     func testOutOfBoundsError() {
         let parser = LTMarkdownParser()
-        parser.listAttributes.append([NSFontAttributeName: UIFont.systemFontOfSize(20.0)])
+        parser.listAttributes.append([NSFontAttributeName: UIFont.systemFontOfSize(20)])
         let markdown = "1. Hello\n2. hello\n\n+ hello\n+ hello"
         let attString = parser.attributedStringFromMarkdown(markdown)
         XCTAssertEqual(attString?.markdownString(), markdown)
     }
+    
 }
