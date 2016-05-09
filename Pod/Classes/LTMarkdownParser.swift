@@ -62,7 +62,7 @@ public class LTMarkdownParser: TSBaseParser {
     class func addAttributes(attributesArray: [[String: AnyObject]], atIndex level: Int, toString attributedString: NSMutableAttributedString, range: NSRange) {
         guard !attributesArray.isEmpty else { return }
         
-        guard let newAttributes = level < attributesArray.count ? attributesArray[level] : attributesArray.last else { return }
+        guard let newAttributes = level < attributesArray.count && level >= 0 ? attributesArray[level] : attributesArray.last else { return }
         
         attributedString.addAttributes(newAttributes, range: range)
     }
