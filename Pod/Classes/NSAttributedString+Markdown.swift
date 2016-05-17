@@ -134,6 +134,12 @@ public extension NSAttributedString {
         markdownString += closingString
         markdownString = markdownString.stringByReplacingOccurrencesOfString("**__**", withString: "").stringByReplacingOccurrencesOfString("****", withString: "")
             .stringByReplacingOccurrencesOfString("__", withString: "")
+        // Help the user because they probably didn't intend to have empty bullets and it will make markdown have a + if we leave them
+        markdownString = markdownString.stringByReplacingOccurrencesOfString("+ \n", withString:  "")
+        if markdownString.hasSuffix("+ ") {
+            markdownString = (markdownString as NSString).substringToIndex(markdownString.characters.count - 2)
+        }
+        
         return markdownString
     }
     
