@@ -129,12 +129,10 @@ public extension NSAttributedString {
                 previousCharacter = character
                 return "\(resultString)\(stringToAppend)"
             }
-            
-            
             markdownString += processedString
         }
         markdownString += closingString
-        markdownString = markdownString.stringByReplacingOccurrencesOfString("****", withString: "")
+        markdownString = markdownString.stringByReplacingOccurrencesOfString("**__**", withString: "").stringByReplacingOccurrencesOfString("****", withString: "")
             .stringByReplacingOccurrencesOfString("__", withString: "")
         return markdownString
     }
