@@ -45,8 +45,8 @@ class TextViewController: RichTextViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillChangeFrame), name: UIKeyboardWillChangeFrameNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardDidChangeFrame), name: UIKeyboardDidChangeFrameNotification, object: nil)
         
         textView.delegate = self
         let fontSize: CGFloat = 12
@@ -66,6 +66,11 @@ class TextViewController: RichTextViewController {
         view.backgroundColor = UIColor.blueColor()
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[textView]|", options: [], metrics: nil, views: views))
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[textView]|", options: [], metrics: nil, views: views))
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
         textView.becomeFirstResponder()
     }
     
@@ -119,31 +124,32 @@ class TextViewController: RichTextViewController {
     
     // MARK: Keyboard Actions
     
-    func keyboardWillShow(notification: NSNotification) {
-        guard let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue() else { return }
+    func keyboardWillChangeFrame(notification: NSNotification) {
+        // 'keyboardWillChangeFrame is to catch most of the situations of the keyboard, except if it's undocked, in which case we'll have to let keyboardDidChangeFrame correct the constraint
+        guard let keyboardFrameEnd = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue() else { return }
         
-        let animationDuration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSTimeInterval ?? 0.4
-        
-        dispatch_async(dispatch_get_main_queue()) { [weak self] in
-            UIView.animateWithDuration(animationDuration) {
-                guard let toolbar = self?.navigationController?.toolbar else { return }
-                
-                toolbar.frame = CGRect(x: toolbar.frame.origin.x, y: toolbar.frame.origin.y - (keyboardFrame.height/2), width: toolbar.frame.width, height: toolbar.frame.height)
-            }
-        }
+        let animationDuration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double ?? 0.3
+        updateToolbarPositionForKeyboardFrame(keyboardFrameEnd, withAnimationDuration: animationDuration)
     }
     
-    func keyboardWillHide(notification: NSNotification) {
-        let animationDuration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSTimeInterval ?? 0.4
+    /// 'keyboardDidChangeFrame is to catch an undocked keyboard moving. That provides zero for the end frame on willChange, but provides a 0 for the begin frame here and the real value for the end frame
+    /// This method can be deleted if you don't want to put the toolbar above the split keyboard
+    func keyboardDidChangeFrame(notification: NSNotification) {
+        guard let keyboardFrameBegin = notification.userInfo?[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue() where keyboardFrameBegin.height == 0, let keyboardFrameEnd = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue() else { return }
         
-        dispatch_async(dispatch_get_main_queue()) { [weak self] in
-            guard let view = self?.view else { return }
-            
-            UIView.animateWithDuration(animationDuration) {
-                guard let toolbar = self?.navigationController?.toolbar else { return }
-                
-                toolbar.frame = CGRect(x: toolbar.frame.origin.x, y: view.frame.height - toolbar.frame.height, width: toolbar.frame.width, height: toolbar.frame.height)
-            }
+        let animationDuration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double ?? 0.3
+        updateToolbarPositionForKeyboardFrame(keyboardFrameEnd, withAnimationDuration: animationDuration)
+    }
+
+    private func updateToolbarPositionForKeyboardFrame(keyboardFrame: CGRect, withAnimationDuration animationDuration: NSTimeInterval) {
+        guard let window = view.window, toolbar = navigationController?.toolbar else { return }
+        
+        // This keeps the note from looking blank and broken due to a zero frame, which means the keyboard may not be covering anything
+        let maxY = view.frame.height - toolbar.bounds.size.height
+        let toolbarY = min(((keyboardFrame.height > 0) ? window.convertRect(keyboardFrame, toView: view).origin.y - toolbar.bounds.size.height : maxY), maxY)
+        
+        UIView.animateWithDuration(animationDuration) {
+            toolbar.frame = CGRect(x: toolbar.frame.origin.x, y: toolbarY, width: toolbar.frame.width, height: toolbar.frame.height)
         }
     }
     
