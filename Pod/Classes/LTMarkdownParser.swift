@@ -70,7 +70,7 @@ public class LTMarkdownParser: TSBaseParser {
     public init(withDefaultParsing: Bool = true) {
         super.init()
         
-        defaultAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(12)]
+        defaultAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(12), NSParagraphStyleAttributeName: NSParagraphStyle()]
         headerAttributes = [
             [NSFontAttributeName: UIFont.boldSystemFontOfSize(23)],
             [NSFontAttributeName: UIFont.boldSystemFontOfSize(21)],
@@ -99,6 +99,7 @@ public class LTMarkdownParser: TSBaseParser {
         
         if withDefaultParsing {
             addNumberedListParsingWithLeadFormattingBlock({ (attributedString, range, level) in
+                LTMarkdownParser.addAttributes(self.numberedListAttributes, atIndex: level - 1, toString: attributedString, range: range)
                 let substring = attributedString.attributedSubstringFromRange(range).string.stringByReplacingOccurrencesOfString(" ", withString: "\(nonBreakingSpaceCharacter)")
                 attributedString.replaceCharactersInRange(range, withString: "\(substring)")
             }, textFormattingBlock: { attributedString, range, level in
@@ -115,6 +116,7 @@ public class LTMarkdownParser: TSBaseParser {
             })
             
             addListParsingWithLeadFormattingBlock({ attributedString, range, level in
+                LTMarkdownParser.addAttributes(self.listAttributes, atIndex: level - 1, toString: attributedString, range: range)
                 let indentString = String(count: level, repeatedValue: nonBreakingSpaceCharacter)
                 attributedString.replaceCharactersInRange(range, withString: "\(indentString)\u{2022}\u{00A0}")
             }, textFormattingBlock: { attributedString, range, level in
