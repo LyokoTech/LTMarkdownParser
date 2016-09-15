@@ -94,7 +94,11 @@ public class LTMarkdownParser: TSBaseParser {
         emphasisAttributes = [NSFontAttributeName: UIFont.italicSystemFontOfSize(12)]
         
         var strongAndEmphasisFont = UIFont.systemFontOfSize(12)
-        strongAndEmphasisFont = UIFont(descriptor: strongAndEmphasisFont.fontDescriptor().fontDescriptorWithSymbolicTraits([.TraitItalic, .TraitBold]), size: strongAndEmphasisFont.pointSize)
+        if let descriptor = strongAndEmphasisFont.fontDescriptor().fontDescriptorWithSymbolicTraits([.TraitItalic, .TraitBold]) {
+            strongAndEmphasisFont = UIFont(descriptor: descriptor, size: strongAndEmphasisFont.pointSize)
+        } else {
+            strongAndEmphasisFont = UIFont.boldSystemFontOfSize(strongAndEmphasisFont.pointSize)
+        }
         strongAndEmphasisAttributes = [NSFontAttributeName: strongAndEmphasisFont]
         
         if withDefaultParsing {

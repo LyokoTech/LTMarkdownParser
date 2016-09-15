@@ -53,7 +53,7 @@ class TextViewController: RichTextViewController {
         regularFont = UIFont.systemFontOfSize(fontSize)
         boldFont = UIFont.boldSystemFontOfSize(fontSize)
         italicFont = UIFont.italicSystemFontOfSize(fontSize)
-        boldItalicFont = UIFont(descriptor: UIFont.systemFontOfSize(fontSize).fontDescriptor().fontDescriptorWithSymbolicTraits([.TraitItalic, .TraitBold]), size: fontSize)
+        boldItalicFont = UIFont(descriptor: UIFont.systemFontOfSize(fontSize).fontDescriptor().fontDescriptorWithSymbolicTraits([.TraitItalic, .TraitBold])!, size: fontSize)
         
         navigationController?.toolbarHidden = false
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)

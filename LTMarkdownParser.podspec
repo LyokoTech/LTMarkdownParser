@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "LTMarkdownParser"
-  s.version          = "1.0.7"
+  s.version          = "2.0.0"
   s.summary          = "A markdown parser written in swift"
 
 # This description is used to generate tags and improve search results.
@@ -25,17 +25,10 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "Rhett Rogers" => "serenade.xs@icloud.com" }
   s.source           = { :git => "https://github.com/LyokoTech/LTMarkdownParser.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.platform     = :ios, '8.0'
+  s.platform     = :ios, '9.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'LTMarkdownParser' => ['Pod/Assets/*.png']
-  }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.xcconfig = { 'SWIFT_VERSION' => '2.3' }
 end
