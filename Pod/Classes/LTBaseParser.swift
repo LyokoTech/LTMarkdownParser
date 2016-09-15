@@ -10,7 +10,7 @@ import Foundation
 
 
 
-public class TSBaseParser {
+open class TSBaseParser {
 
     public typealias LTMarkdownParserMatchBlock = ((NSTextCheckingResult, NSMutableAttributedString) -> Void)
     
@@ -21,15 +21,15 @@ public class TSBaseParser {
         
     }
     
-    public var defaultAttributes = [String: AnyObject]()
+    open var defaultAttributes = [String: AnyObject]()
     
-    private var parsingPairs = [TSExpressionBlockPair]()
+    fileprivate var parsingPairs = [TSExpressionBlockPair]()
     
-    public func attributedStringFromMarkdown(markdown: String) -> NSAttributedString? {
+    open func attributedStringFromMarkdown(_ markdown: String) -> NSAttributedString? {
         return attributedStringFromMarkdown(markdown, attributes: defaultAttributes)
     }
     
-    public func attributedStringFromMarkdown(markdown: String, attributes: [String: AnyObject]?) -> NSAttributedString? {
+    open func attributedStringFromMarkdown(_ markdown: String, attributes: [String: AnyObject]?) -> NSAttributedString? {
         var attributedString: NSAttributedString?
         if let attributes = attributes {
             attributedString = NSAttributedString(string: markdown, attributes: attributes)
@@ -40,7 +40,7 @@ public class TSBaseParser {
         return attributedStringFromAttributedMarkdownString(attributedString)
     }
     
-    public func attributedStringFromAttributedMarkdownString(attributedString: NSAttributedString?) -> NSAttributedString? {
+    open func attributedStringFromAttributedMarkdownString(_ attributedString: NSAttributedString?) -> NSAttributedString? {
         guard let attributedString = attributedString else { return nil }
         let mutableAttributedString = NSMutableAttributedString(attributedString: attributedString)
         
@@ -51,14 +51,14 @@ public class TSBaseParser {
         return mutableAttributedString
     }
     
-    func parseExpressionBlockPairForMutableString(mutableAttributedString: NSMutableAttributedString, expressionBlockPair: TSExpressionBlockPair) {
+    func parseExpressionBlockPairForMutableString(_ mutableAttributedString: NSMutableAttributedString, expressionBlockPair: TSExpressionBlockPair) {
         parseExpressionForMutableString(mutableAttributedString, expression: expressionBlockPair.regularExpression, block: expressionBlockPair.block)
     }
     
-    func parseExpressionForMutableString(mutableAttributedString: NSMutableAttributedString, expression: NSRegularExpression, block: LTMarkdownParserMatchBlock) {
+    func parseExpressionForMutableString(_ mutableAttributedString: NSMutableAttributedString, expression: NSRegularExpression, block: LTMarkdownParserMatchBlock) {
         var location = 0
         
-        while let match = expression.firstMatchInString(mutableAttributedString.string, options: .WithoutAnchoringBounds, range: NSRange(location: location, length: mutableAttributedString.length - location)) {
+        while let match = expression.firstMatch(in: mutableAttributedString.string, options: .withoutAnchoringBounds, range: NSRange(location: location, length: mutableAttributedString.length - location)) {
             let oldLength = mutableAttributedString.length
             block(match, mutableAttributedString)
             let newLength = mutableAttributedString.length
@@ -66,7 +66,7 @@ public class TSBaseParser {
         }
     }
     
-    public func addParsingRuleWithRegularExpression(regularExpression: NSRegularExpression, block: LTMarkdownParserMatchBlock) {
+    open func addParsingRuleWithRegularExpression(_ regularExpression: NSRegularExpression, block: @escaping LTMarkdownParserMatchBlock) {
         parsingPairs.append(TSExpressionBlockPair(regularExpression: regularExpression, block: block))
     }
     

@@ -15,27 +15,27 @@ extension NSRange {
         return location + length
     }
     
-    func containsEntireRange(range: NSRange) -> Bool {
+    func containsEntireRange(_ range: NSRange) -> Bool {
         return containsBeginningOfRange(range) && containsEndOfRange(range)
     }
     
-    func containedInRange(range: NSRange) -> Bool {
+    func containedInRange(_ range: NSRange) -> Bool {
         return range.containsEntireRange(self)
     }
     
-    func containsEndOfRange(range: NSRange) -> Bool {
+    func containsEndOfRange(_ range: NSRange) -> Bool {
         return length > 0 && location <= range.endLocation && range.endLocation < endLocation
     }
     
-    func containsBeginningOfRange(range: NSRange) -> Bool {
+    func containsBeginningOfRange(_ range: NSRange) -> Bool {
         return length > 0 && location <= range.location && endLocation >= range.location
     }
     
-    func comesBeforeRange(range: NSRange) -> Bool {
+    func comesBeforeRange(_ range: NSRange) -> Bool {
         return endLocation <= range.location
     }
     
-    func comesAfterRange(range: NSRange) -> Bool {
+    func comesAfterRange(_ range: NSRange) -> Bool {
         return range.comesBeforeRange(self)
     }
     

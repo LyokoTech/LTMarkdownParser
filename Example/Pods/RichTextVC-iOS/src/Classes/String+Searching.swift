@@ -16,14 +16,14 @@ extension String {
     /// - parameter fromIndex: The index to start the search from.  The search will move backwards from this index.
     ///
     /// - returns: Index of the searchString passed in. Nil if `fromIndex` is invalid, or if string is not found.
-    func previousIndexOfSubstring(searchString: String, fromIndex: Int) -> Int? {
+    func previousIndexOfSubstring(_ searchString: String, fromIndex: Int) -> Int? {
         if fromIndex < 0 {
             return nil
         }
 
-        let substring = substringToIndex(characters.startIndex.advancedBy(fromIndex))
-        if let range = substring.rangeOfString(searchString, options: .BackwardsSearch) {
-            return substring.startIndex.distanceTo(range.startIndex)
+        let substring = self.substring(to: characters.index(characters.startIndex, offsetBy: fromIndex))
+        if let range = substring.range(of: searchString, options: .backwards) {
+            return substring.characters.distance(from: substring.startIndex, to: range.lowerBound)
         }
 
         return nil
@@ -35,14 +35,14 @@ extension String {
     /// - parameter fromIndex: The index to start the search from.  The search will move forwards from this index.
     ///
     /// - returns: Index of the searchString passed in. Nil if `fromIndex` is invalid, or if string is not found.
-    func nextIndexOfSubstring(searchString: String, fromIndex: Int) -> Int? {
+    func nextIndexOfSubstring(_ searchString: String, fromIndex: Int) -> Int? {
         if fromIndex < 0 {
             return nil
         }
         
-        let substring = substringFromIndex(characters.startIndex.advancedBy(fromIndex))
-        if let range = substring.rangeOfString(searchString) {
-            return substring.startIndex.distanceTo(range.startIndex) + fromIndex
+        let substring = self.substring(from: characters.index(characters.startIndex, offsetBy: fromIndex))
+        if let range = substring.range(of: searchString) {
+            return substring.characters.distance(from: substring.startIndex, to: range.lowerBound) + fromIndex
         }
 
         return nil
