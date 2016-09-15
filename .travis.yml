@@ -3,6 +3,10 @@ osx_image: xcode8
 notifications:
   slack: lyokotech:7AmemNHORB2ShidELPFrYeUO
   email: false
+
+beforeinstall:
+  - gem install cocoapods --pre
+
 script:
   - set -o pipefail && xcodebuild test -workspace Example/LTMarkdownParser.xcworkspace -scheme LTMarkdownParser_Example -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 5,OS=9.3' | xcpretty
   - pod lib lint --allow-warnings --verbose
