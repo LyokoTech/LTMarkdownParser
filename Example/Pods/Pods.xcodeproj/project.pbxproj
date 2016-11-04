@@ -1,2436 +1,908 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>056F6CB4AE80A27F862CEDFB5670E755</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>8F4D5ACDCC816F1CC216DE3A0B9995BA</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/RichTextVC-iOS/RichTextVC-iOS-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/RichTextVC-iOS/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/RichTextVC-iOS/RichTextVC-iOS.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>PRODUCT_NAME</key>
-				<string>RichTextVC_iOS</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>07585D79061D8B8FA26CD1EBA1CBA97A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>7408830EF1BC476769F49D67619C9ACA</string>
-				<string>5AED51E149933AC7165E0E93D2F1E2AE</string>
-				<string>23DADC0C7574B13F4929EEEDE616D7C0</string>
-				<string>EB04FA451C66D2B05AAC8451CF7DD4F0</string>
-				<string>68BF6FA9E7959E9E4957C6EBD73E7778</string>
-				<string>89961ED8D1F532BE5B4EBF857459813F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>09C32BC04DF16DEFBA43A0648B2E4F68</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>948B342064C62F901F47A461592D52BB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>0B34431DBB68B6A347F9B82E61570F1A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>FCD71F3B4034C26987C3C8E9E771ADE6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Development Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0C462052AAA836DFB97672C6327D7710</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>LTMarkdownParser.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CCC28109EAA7C7D07B1F5ED3147F37D</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CA8B44AE86132FC82264E54ACABE0BA2</string>
-				<string>470B3CB952377C122CBF6AC8F7666B60</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>102F9F57481A4F08F2AB14311A987226</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3E4E89230EF59BC255123B67864ACF77</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>10DE1947DAC0ED28F6C0A9F9BD75D546</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>RELEASE=1</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>SYMROOT</key>
-				<string>${SRCROOT}/../build</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>110AEACB8D18BB53617ED5AEEEDFFA98</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Example-frameworks.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>131EEAB46502D30538FD573B9FEEA410</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>15201B6D917814DF96399B3EC8267278</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>A687A0E412D03A40D975FF3402F89C54</string>
-				<string>4379849F778AB797CA7A7C1316910C73</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>16EC18BA4BF2A86C2E361DFE4A15D78E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4B7BB996CCB61FFFC0B341C7A88E0BA9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>1919E3F15DA5BE4D97B61B02232D1647</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Example-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1C8225E1964CC8246178D669E458CC03</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>NSRange+Extras.swift</string>
-			<key>path</key>
-			<string>src/Classes/NSRange+Extras.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1C9AC8C4F4A857E91DAE403B9A64ADA1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>7DC6A1E2378902D83CA53CF0EE4C81B4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>1FAAEBD25AEC612604C983F8AC6EB4BA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Example-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1FCC8B64EC80D0879FB20F51C3007F61</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>LTMarkdownParser-LTMarkdownParser</string>
-			<key>target</key>
-			<string>5F2A4959FF9FC9A151FEDF64706BEBED</string>
-			<key>targetProxy</key>
-			<string>5A032DC103F241F8C2C80D3B0A94FE35</string>
-		</dict>
-		<key>210D5112E82A3C1B936F4AF3E6054E55</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>8F4D5ACDCC816F1CC216DE3A0B9995BA</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>RichTextVC-iOS</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>bundle</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>230500C9163DACAF6D251916C8286547</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>4AD2F6F0650E2F4989CE1F009D238753</string>
-				<string>94F19414CA330F9D40BA2F0C02AD6297</string>
-				<string>8F4D5ACDCC816F1CC216DE3A0B9995BA</string>
-				<string>3B9E7DB14AD980362010F99243A1A7BC</string>
-				<string>FAFF0976E935D2F9FF44AFBBD66AD8E1</string>
-				<string>8E2CC2887FC011F10A6894C547561AD8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/RichTextVC-iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23DADC0C7574B13F4929EEEDE616D7C0</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Pods_LTMarkdownParser_Example.framework</string>
-			<key>path</key>
-			<string>Pods_LTMarkdownParser_Example.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>248F7FCC2EB82864377FE8B08F8F52B4</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>276F5E9A9D37679BF115754F49921CF4</string>
-				<string>F6733FAFFC3562C99831EA710540AED1</string>
-				<string>F221B9B41EFF113407381EBD697875E6</string>
-				<string>AC95F9EBC3CF2DE600C1416A9E4BBD78</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>254AB4EF05B40189AC3C074BAEACFE4A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Tests.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>276F5E9A9D37679BF115754F49921CF4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1C8225E1964CC8246178D669E458CC03</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>552D02D5BA751AC2E8790D2811D496CA</string>
-				<string>10DE1947DAC0ED28F6C0A9F9BD75D546</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>2D90F83D84EAB21F1E09C724DCE17FE7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C083A5B35B7682413A65E08EDB1A86B6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>2E1846A59601FB8EA6D46CF6B742CE31</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>7A2A75D603B41B753B965EA497572278</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>LTMarkdownParser</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>bundle</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>2EF32B634CD264883D8603FCF4CFBCEF</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>B0086442F08E7921B16A14FB1E519E9D</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/Pods-LTMarkdownParser_Example/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/Pods-LTMarkdownParser_Example/Pods-LTMarkdownParser_Example.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_NAME</key>
-				<string>Pods_LTMarkdownParser_Example</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>322D5CC84C3ECC8483D32D00BE86D607</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3E4E89230EF59BC255123B67864ACF77</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>33AF9DB3978A35F95F3F2008870B1AE7</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>8F4D5ACDCC816F1CC216DE3A0B9995BA</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/RichTextVC-iOS/RichTextVC-iOS-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/RichTextVC-iOS/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/RichTextVC-iOS/RichTextVC-iOS.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>RichTextVC_iOS</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>349EA12A3ED081412B9DF6EAA3F3E3CE</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>79A24C8468C7F2E873D732C1913D8396</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>393FF20E4FF1702E0763EC9E73D28B99</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5C6D1F3B81A06DD3081AE9E7E770BE58</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>39627EE8501E08E26EBF304F47D224FE</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>4DE9BF6A086C917542F9AEB0DF108B9B</string>
-			<key>remoteInfo</key>
-			<string>RichTextVC-iOS-RichTextVC-iOS</string>
-		</dict>
-		<key>3B9E7DB14AD980362010F99243A1A7BC</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>RichTextVC-iOS-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3C74884B63ED07E4976E7CAB1C0101CD</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1FAAEBD25AEC612604C983F8AC6EB4BA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3CC4E665676033DA1F93577E5FCB267A</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>71D01C59CC89520101DE31DC0B15A552</string>
-			<key>buildPhases</key>
-			<array>
-				<string>C2851E34CAC7D819F181C45C05706721</string>
-				<string>49C0C6A69D70D53659E0538E4E03C9F2</string>
-				<string>5AFD15585AB9381FB447CE2D290666EF</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>DFD3F95EC01F87497F40DED5728C32E5</string>
-				<string>B8FFAD4CEAADEE1831436DA624C293C0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-LTMarkdownParser_Example</string>
-			<key>productName</key>
-			<string>Pods-LTMarkdownParser_Example</string>
-			<key>productReference</key>
-			<string>23DADC0C7574B13F4929EEEDE616D7C0</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>3D91AFCC279100AED0CDBF2633B7E1CB</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>254AB4EF05B40189AC3C074BAEACFE4A</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/Pods-LTMarkdownParser_Tests/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/Pods-LTMarkdownParser_Tests/Pods-LTMarkdownParser_Tests.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_NAME</key>
-				<string>Pods_LTMarkdownParser_Tests</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>3E4E89230EF59BC255123B67864ACF77</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>4379849F778AB797CA7A7C1316910C73</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>7A2A75D603B41B753B965EA497572278</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/LTMarkdownParser/LTMarkdownParser-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/LTMarkdownParser/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/LTMarkdownParser/LTMarkdownParser.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>PRODUCT_NAME</key>
-				<string>LTMarkdownParser</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>468B1333B9AA6435755561C307E2B990</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>5E1BF6BE90B20DBF4E93DA131536C2EE</string>
-			<key>buildPhases</key>
-			<array>
-				<string>BF5295CC6EF505419503F19F6AC30E20</string>
-				<string>DF008048325B95E73B21427490D0D891</string>
-				<string>09C32BC04DF16DEFBA43A0648B2E4F68</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>F3F7A8C86BE013C5FD6DDBFA43BB749F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-LTMarkdownParser_Tests</string>
-			<key>productName</key>
-			<string>Pods-LTMarkdownParser_Tests</string>
-			<key>productReference</key>
-			<string>EB04FA451C66D2B05AAC8451CF7DD4F0</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>470B3CB952377C122CBF6AC8F7666B60</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>131EEAB46502D30538FD573B9FEEA410</string>
-				<string>59AFA64262FBD8E308E005893D9B2C1E</string>
-				<string>D260381FF1686CB1F73B0BA725A1DE84</string>
-				<string>544397CA518BFE9F95DF85D28D784901</string>
-				<string>4B7BB996CCB61FFFC0B341C7A88E0BA9</string>
-				<string>76284CDE8AE122CE0B299D1E4FF88CF6</string>
-				<string>E7B96ABFF94721009318E23C0D2FB291</string>
-				<string>AA72E108699E10C7C644123D0AE993E1</string>
-				<string>B7D7E9BC357D409C8A8282B921FC825A</string>
-				<string>254AB4EF05B40189AC3C074BAEACFE4A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods-LTMarkdownParser_Tests</string>
-			<key>path</key>
-			<string>Target Support Files/Pods-LTMarkdownParser_Tests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4769A6C0E8149B8FDD7C8DD34C3D84FD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Example.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>49C0C6A69D70D53659E0538E4E03C9F2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>8A4C9B90735F11554962475A0E022EC7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>49F586EB2054CB6A18A2703E67F7AC73</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4BFBAAB77263A9F09E1C2F66EB199BE4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>4AD2F6F0650E2F4989CE1F009D238753</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4B7BB996CCB61FFFC0B341C7A88E0BA9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Tests-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4BFBAAB77263A9F09E1C2F66EB199BE4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>LTBaseParser.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4DE9BF6A086C917542F9AEB0DF108B9B</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>A0DB1F4B421BA50AFFA3C70E614EDE0F</string>
-			<key>buildPhases</key>
-			<array>
-				<string>85F5CC2B2A0DFD375EB315ED4D32A1A3</string>
-				<string>EFD0EA31EB1B90013F5EE7DDE5F97E16</string>
-				<string>AD246A2FF9F0663C150D761F1DFFFF5E</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>RichTextVC-iOS-RichTextVC-iOS</string>
-			<key>productName</key>
-			<string>RichTextVC-iOS-RichTextVC-iOS</string>
-			<key>productReference</key>
-			<string>68BF6FA9E7959E9E4957C6EBD73E7778</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle</string>
-		</dict>
-		<key>544397CA518BFE9F95DF85D28D784901</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Tests-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>552D02D5BA751AC2E8790D2811D496CA</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>SYMROOT</key>
-				<string>${SRCROOT}/../build</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>59AFA64262FBD8E308E005893D9B2C1E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Tests.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A032DC103F241F8C2C80D3B0A94FE35</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>5F2A4959FF9FC9A151FEDF64706BEBED</string>
-			<key>remoteInfo</key>
-			<string>LTMarkdownParser-LTMarkdownParser</string>
-		</dict>
-		<key>5AED51E149933AC7165E0E93D2F1E2AE</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>LTMarkdownParser.framework</string>
-			<key>path</key>
-			<string>LTMarkdownParser.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>5AFD15585AB9381FB447CE2D290666EF</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CA29D4CD12A2F188094F2274DD7F58D4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5B86BC9C3EB5C826001195E0477B3AAD</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5C6D1F3B81A06DD3081AE9E7E770BE58</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>1C8225E1964CC8246178D669E458CC03</string>
-				<string>920950B6E7B99B03E196999643F20927</string>
-				<string>83FDD2F8E95D880408FB9E040B3D700B</string>
-				<string>230500C9163DACAF6D251916C8286547</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>RichTextVC-iOS</string>
-			<key>path</key>
-			<string>RichTextVC-iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5CD9CA0F4EE5EF5765985D56177E2477</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E90C24BFA94DDB8067C8C2B58A0E83E3</string>
-				<string>D0BA7FEA83E17437D86E81BE6225BAE4</string>
-				<string>7A2A75D603B41B753B965EA497572278</string>
-				<string>C083A5B35B7682413A65E08EDB1A86B6</string>
-				<string>AD271BEA499D48EE6A4968BB82AA3239</string>
-				<string>E462A445224F63E12C52738D1F2956CB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>Example/Pods/Target Support Files/LTMarkdownParser</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5D7A9457BC203240105DA7AB164617B2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5E1BF6BE90B20DBF4E93DA131536C2EE</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>800AFDFBA79B3F5273D2F1D9701B7F0C</string>
-				<string>3D91AFCC279100AED0CDBF2633B7E1CB</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>5F2A4959FF9FC9A151FEDF64706BEBED</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>ECC794B7B62D9D83338DB8EF40353E52</string>
-			<key>buildPhases</key>
-			<array>
-				<string>5D7A9457BC203240105DA7AB164617B2</string>
-				<string>5B86BC9C3EB5C826001195E0477B3AAD</string>
-				<string>DAB82123F81F69069ED96C3263D068E6</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>LTMarkdownParser-LTMarkdownParser</string>
-			<key>productName</key>
-			<string>LTMarkdownParser-LTMarkdownParser</string>
-			<key>productReference</key>
-			<string>7408830EF1BC476769F49D67619C9ACA</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle</string>
-		</dict>
-		<key>601C72ED933824815905BE963360F9C6</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>8F4B1596F6BC48D05465E36D4AB2D0BD</string>
-			<key>buildPhases</key>
-			<array>
-				<string>248F7FCC2EB82864377FE8B08F8F52B4</string>
-				<string>FC644438B343BF7595C6F6858EED172F</string>
-				<string>349EA12A3ED081412B9DF6EAA3F3E3CE</string>
-				<string>9660A56B7A85258FB01D57674083F893</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>DBA935B83B88699ADC50F76656DC201E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>RichTextVC-iOS</string>
-			<key>productName</key>
-			<string>RichTextVC-iOS</string>
-			<key>productReference</key>
-			<string>89961ED8D1F532BE5B4EBF857459813F</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>61CF5B61C0867CE0499920B57B1C0A87</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>601C72ED933824815905BE963360F9C6</string>
-			<key>remoteInfo</key>
-			<string>RichTextVC-iOS</string>
-		</dict>
-		<key>631BBB439067AEB7B204CD720B4B025A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>952C093F84163B0BB86FBB26ED756EF4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>673877DBA9D125AB97C25E6DF0FC1D66</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A5F2D500ED0834E26489F6520DA41E2D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>68324C79427F45762300C31A75BD063E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>49F586EB2054CB6A18A2703E67F7AC73</string>
-				<string>2D90F83D84EAB21F1E09C724DCE17FE7</string>
-				<string>EE3D3C8D274C9E4D427CCF60B53778C1</string>
-				<string>673877DBA9D125AB97C25E6DF0FC1D66</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>68448464F54F480186A9A50B9DA433A9</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D24B1DB192236C7BB26BBBA5D0E8262E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pod</string>
-			<key>path</key>
-			<string>Pod</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>68BF6FA9E7959E9E4957C6EBD73E7778</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>RichTextVC-iOS.bundle</string>
-			<key>path</key>
-			<string>RichTextVC-iOS.bundle</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>71D01C59CC89520101DE31DC0B15A552</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>8D2C5EFFA1FC1BED7AA9872F763B7C4B</string>
-				<string>2EF32B634CD264883D8603FCF4CFBCEF</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>7408830EF1BC476769F49D67619C9ACA</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>LTMarkdownParser.bundle</string>
-			<key>path</key>
-			<string>LTMarkdownParser.bundle</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>761078F75C4A104EE6B71AAEA6D97BD8</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>991AC448C5720383F7B8DB420A8DDCE2</string>
-			<key>remoteInfo</key>
-			<string>LTMarkdownParser</string>
-		</dict>
-		<key>76284CDE8AE122CE0B299D1E4FF88CF6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Tests-frameworks.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>79A24C8468C7F2E873D732C1913D8396</key>
-		<dict>
-			<key>fileRef</key>
-			<string>68BF6FA9E7959E9E4957C6EBD73E7778</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>7A2A75D603B41B753B965EA497572278</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>LTMarkdownParser.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7DB346D0F39D3F0E887471402A8071AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
-				<string>0B34431DBB68B6A347F9B82E61570F1A</string>
-				<string>BC3CA7F9E30CC8F7E2DD044DD34432FC</string>
-				<string>393FF20E4FF1702E0763EC9E73D28B99</string>
-				<string>07585D79061D8B8FA26CD1EBA1CBA97A</string>
-				<string>0CCC28109EAA7C7D07B1F5ED3147F37D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7DC6A1E2378902D83CA53CF0EE4C81B4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7408830EF1BC476769F49D67619C9ACA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>800AFDFBA79B3F5273D2F1D9701B7F0C</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>B7D7E9BC357D409C8A8282B921FC825A</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/Pods-LTMarkdownParser_Tests/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/Pods-LTMarkdownParser_Tests/Pods-LTMarkdownParser_Tests.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_NAME</key>
-				<string>Pods_LTMarkdownParser_Tests</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>8081AAAB7850B1D05D1C5F63A3E0A8B1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>102F9F57481A4F08F2AB14311A987226</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>83FC2C1A18A1D74087CDD7350EA235AF</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>8F4D5ACDCC816F1CC216DE3A0B9995BA</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>RichTextVC-iOS</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>bundle</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>83FDD2F8E95D880408FB9E040B3D700B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>String+Searching.swift</string>
-			<key>path</key>
-			<string>src/Classes/String+Searching.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>85F5CC2B2A0DFD375EB315ED4D32A1A3</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>89961ED8D1F532BE5B4EBF857459813F</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>RichTextVC_iOS.framework</string>
-			<key>path</key>
-			<string>RichTextVC_iOS.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>8A4C9B90735F11554962475A0E022EC7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3E4E89230EF59BC255123B67864ACF77</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8D2C5EFFA1FC1BED7AA9872F763B7C4B</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F3BAC3C4BA6F4CA1931136AE243E6A55</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/Pods-LTMarkdownParser_Example/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/Pods-LTMarkdownParser_Example/Pods-LTMarkdownParser_Example.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_NAME</key>
-				<string>Pods_LTMarkdownParser_Example</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>8E2CC2887FC011F10A6894C547561AD8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>RichTextVC-iOS-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8F4B1596F6BC48D05465E36D4AB2D0BD</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>33AF9DB3978A35F95F3F2008870B1AE7</string>
-				<string>056F6CB4AE80A27F862CEDFB5670E755</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>8F4D5ACDCC816F1CC216DE3A0B9995BA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>RichTextVC-iOS.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>90434620CF67195DB6B555947007D72A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Example-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>920950B6E7B99B03E196999643F20927</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>RichTextViewController.swift</string>
-			<key>path</key>
-			<string>src/Classes/RichTextViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>948B342064C62F901F47A461592D52BB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AA72E108699E10C7C644123D0AE993E1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>94F19414CA330F9D40BA2F0C02AD6297</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>RichTextVC-iOS.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>952C093F84163B0BB86FBB26ED756EF4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E462A445224F63E12C52738D1F2956CB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>9660A56B7A85258FB01D57674083F893</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>DD99B6AA8361B35C6A05D10B7EF6498E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>991AC448C5720383F7B8DB420A8DDCE2</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>15201B6D917814DF96399B3EC8267278</string>
-			<key>buildPhases</key>
-			<array>
-				<string>68324C79427F45762300C31A75BD063E</string>
-				<string>8081AAAB7850B1D05D1C5F63A3E0A8B1</string>
-				<string>1C9AC8C4F4A857E91DAE403B9A64ADA1</string>
-				<string>631BBB439067AEB7B204CD720B4B025A</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>1FCC8B64EC80D0879FB20F51C3007F61</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>LTMarkdownParser</string>
-			<key>productName</key>
-			<string>LTMarkdownParser</string>
-			<key>productReference</key>
-			<string>5AED51E149933AC7165E0E93D2F1E2AE</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>9D35EDF4772F17B7C4AE1652E9DCBB8B</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>991AC448C5720383F7B8DB420A8DDCE2</string>
-			<key>remoteInfo</key>
-			<string>LTMarkdownParser</string>
-		</dict>
-		<key>A0DB1F4B421BA50AFFA3C70E614EDE0F</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>210D5112E82A3C1B936F4AF3E6054E55</string>
-				<string>83FC2C1A18A1D74087CDD7350EA235AF</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>A5F2D500ED0834E26489F6520DA41E2D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>NSAttributedString+Markdown.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A687A0E412D03A40D975FF3402F89C54</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>7A2A75D603B41B753B965EA497572278</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/LTMarkdownParser/LTMarkdownParser-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/LTMarkdownParser/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/LTMarkdownParser/LTMarkdownParser.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>LTMarkdownParser</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>A72EE54AA6A4A733EF5C3A1130E60BCE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AA72E108699E10C7C644123D0AE993E1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Tests-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AC95F9EBC3CF2DE600C1416A9E4BBD78</key>
-		<dict>
-			<key>fileRef</key>
-			<string>83FDD2F8E95D880408FB9E040B3D700B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AD246A2FF9F0663C150D761F1DFFFF5E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AD271BEA499D48EE6A4968BB82AA3239</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>LTMarkdownParser-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B0086442F08E7921B16A14FB1E519E9D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Example.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B7D7E9BC357D409C8A8282B921FC825A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Tests.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B8FFAD4CEAADEE1831436DA624C293C0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>RichTextVC-iOS</string>
-			<key>target</key>
-			<string>601C72ED933824815905BE963360F9C6</string>
-			<key>targetProxy</key>
-			<string>61CF5B61C0867CE0499920B57B1C0A87</string>
-		</dict>
-		<key>BA6428E9F66FD5A23C0A2E06ED26CD2F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>Podfile</string>
-			<key>path</key>
-			<string>../Podfile</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.ruby</string>
-		</dict>
-		<key>BC3CA7F9E30CC8F7E2DD044DD34432FC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BF6342C8B29F4CEEA088EFF7AB4DE362</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BD2D5556575A7FB86C8D29AF4A04FE8E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3E4E89230EF59BC255123B67864ACF77</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BF5295CC6EF505419503F19F6AC30E20</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>16EC18BA4BF2A86C2E361DFE4A15D78E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>BF6342C8B29F4CEEA088EFF7AB4DE362</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3E4E89230EF59BC255123B67864ACF77</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C083A5B35B7682413A65E08EDB1A86B6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>LTMarkdownParser-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C234E39E07EF8D37D4CFCF684AFC2CEB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Example-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C2851E34CAC7D819F181C45C05706721</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3C74884B63ED07E4976E7CAB1C0101CD</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CA29D4CD12A2F188094F2274DD7F58D4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1919E3F15DA5BE4D97B61B02232D1647</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CA8B44AE86132FC82264E54ACABE0BA2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A72EE54AA6A4A733EF5C3A1130E60BCE</string>
-				<string>4769A6C0E8149B8FDD7C8DD34C3D84FD</string>
-				<string>90434620CF67195DB6B555947007D72A</string>
-				<string>E50DEBEBEBC29665DAD4C9FE0299EA94</string>
-				<string>1FAAEBD25AEC612604C983F8AC6EB4BA</string>
-				<string>110AEACB8D18BB53617ED5AEEEDFFA98</string>
-				<string>C234E39E07EF8D37D4CFCF684AFC2CEB</string>
-				<string>1919E3F15DA5BE4D97B61B02232D1647</string>
-				<string>F3BAC3C4BA6F4CA1931136AE243E6A55</string>
-				<string>B0086442F08E7921B16A14FB1E519E9D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods-LTMarkdownParser_Example</string>
-			<key>path</key>
-			<string>Target Support Files/Pods-LTMarkdownParser_Example</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D0BA7FEA83E17437D86E81BE6225BAE4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>LTMarkdownParser.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D24B1DB192236C7BB26BBBA5D0E8262E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>4BFBAAB77263A9F09E1C2F66EB199BE4</string>
-				<string>0C462052AAA836DFB97672C6327D7710</string>
-				<string>A5F2D500ED0834E26489F6520DA41E2D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Classes</string>
-			<key>path</key>
-			<string>Classes</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D260381FF1686CB1F73B0BA725A1DE84</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Tests-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D41D8CD98F00B204E9800998ECF8427E</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0700</string>
-				<key>LastUpgradeCheck</key>
-				<string>0700</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>2D8E8EC45A3A1A1D94AE762CB5028504</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>7DB346D0F39D3F0E887471402A8071AB</string>
-			<key>productRefGroup</key>
-			<string>07585D79061D8B8FA26CD1EBA1CBA97A</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>991AC448C5720383F7B8DB420A8DDCE2</string>
-				<string>5F2A4959FF9FC9A151FEDF64706BEBED</string>
-				<string>3CC4E665676033DA1F93577E5FCB267A</string>
-				<string>468B1333B9AA6435755561C307E2B990</string>
-				<string>601C72ED933824815905BE963360F9C6</string>
-				<string>4DE9BF6A086C917542F9AEB0DF108B9B</string>
-			</array>
-		</dict>
-		<key>DAB82123F81F69069ED96C3263D068E6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DBA935B83B88699ADC50F76656DC201E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>RichTextVC-iOS-RichTextVC-iOS</string>
-			<key>target</key>
-			<string>4DE9BF6A086C917542F9AEB0DF108B9B</string>
-			<key>targetProxy</key>
-			<string>39627EE8501E08E26EBF304F47D224FE</string>
-		</dict>
-		<key>DD99B6AA8361B35C6A05D10B7EF6498E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8E2CC2887FC011F10A6894C547561AD8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>DF008048325B95E73B21427490D0D891</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>BD2D5556575A7FB86C8D29AF4A04FE8E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DFD3F95EC01F87497F40DED5728C32E5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>LTMarkdownParser</string>
-			<key>target</key>
-			<string>991AC448C5720383F7B8DB420A8DDCE2</string>
-			<key>targetProxy</key>
-			<string>761078F75C4A104EE6B71AAEA6D97BD8</string>
-		</dict>
-		<key>E462A445224F63E12C52738D1F2956CB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>LTMarkdownParser-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E50DEBEBEBC29665DAD4C9FE0299EA94</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Example-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E7B96ABFF94721009318E23C0D2FB291</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Tests-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E90C24BFA94DDB8067C8C2B58A0E83E3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EB04FA451C66D2B05AAC8451CF7DD4F0</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Pods_LTMarkdownParser_Tests.framework</string>
-			<key>path</key>
-			<string>Pods_LTMarkdownParser_Tests.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>ECC794B7B62D9D83338DB8EF40353E52</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>EE6A802AC1F517FA1941F9F412BE7ABD</string>
-				<string>2E1846A59601FB8EA6D46CF6B742CE31</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>EE3D3C8D274C9E4D427CCF60B53778C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0C462052AAA836DFB97672C6327D7710</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>EE6A802AC1F517FA1941F9F412BE7ABD</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>7A2A75D603B41B753B965EA497572278</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>LTMarkdownParser</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>bundle</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>EFD0EA31EB1B90013F5EE7DDE5F97E16</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F221B9B41EFF113407381EBD697875E6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>920950B6E7B99B03E196999643F20927</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F3BAC3C4BA6F4CA1931136AE243E6A55</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-LTMarkdownParser_Example.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F3F7A8C86BE013C5FD6DDBFA43BB749F</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>LTMarkdownParser</string>
-			<key>target</key>
-			<string>991AC448C5720383F7B8DB420A8DDCE2</string>
-			<key>targetProxy</key>
-			<string>9D35EDF4772F17B7C4AE1652E9DCBB8B</string>
-		</dict>
-		<key>F6733FAFFC3562C99831EA710540AED1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3B9E7DB14AD980362010F99243A1A7BC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FAFF0976E935D2F9FF44AFBBD66AD8E1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>RichTextVC-iOS-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FC644438B343BF7595C6F6858EED172F</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>322D5CC84C3ECC8483D32D00BE86D607</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>FCD71F3B4034C26987C3C8E9E771ADE6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>68448464F54F480186A9A50B9DA433A9</string>
-				<string>5CD9CA0F4EE5EF5765985D56177E2477</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>LTMarkdownParser</string>
-			<key>path</key>
-			<string>../..</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>D41D8CD98F00B204E9800998ECF8427E</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DDF4348777B70E2E739E87E5D6DCAFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		20FC705E5C73E02F6949C2D27B98CFDF /* LTBaseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBAAB77263A9F09E1C2F66EB199BE4 /* LTBaseParser.swift */; };
+		276BE627139D623C16B942DFF782F834 /* String+Searching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FDD2F8E95D880408FB9E040B3D700B /* String+Searching.swift */; };
+		284C0ADDA19A513898EEA40C4C693963 /* RichTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920950B6E7B99B03E196999643F20927 /* RichTextViewController.swift */; };
+		2AB041ED459526A8EB1B448FB2A158AE /* LTMarkdownParser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C083A5B35B7682413A65E08EDB1A86B6 /* LTMarkdownParser-dummy.m */; };
+		318F86AC0F93606BBA05B78A58C0B6CF /* RichTextVC-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E2CC2887FC011F10A6894C547561AD8 /* RichTextVC-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C4C105DE747316A8AAF99AD5719B292 /* NSRange+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8225E1964CC8246178D669E458CC03 /* NSRange+Extras.swift */; };
+		4A2737F971EB81990D73F91EAF7CE384 /* RichTextVC-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9E7DB14AD980362010F99243A1A7BC /* RichTextVC-iOS-dummy.m */; };
+		59680F3E7D8B0EC7DA0F6E7F3D090482 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		6CFB5344BE6222C24089E1D3307C81E6 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A4F6A0F14445D33B05871106DDB331 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-dummy.m */; };
+		75AFE9AA389D34FE2B2A1C03F5D25D42 /* LTMarkdownParser-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E462A445224F63E12C52738D1F2956CB /* LTMarkdownParser-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8640D4B63C3A71A7E7788881DDB2F29C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		87F4A5047288BB5B59B46DC081279F46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		8F3FD52B46B3B58C5C3AC16857589087 /* NSAttributedString+Markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2D500ED0834E26489F6520DA41E2D /* NSAttributedString+Markdown.swift */; };
+		A02F9063D265FC645105AB9CAF6780DB /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1274B5041C35B907ADC3A0EDB88CDAF /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-dummy.m */; };
+		AD7688426383F94955A8A8CBDD296857 /* LTMarkdownParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C462052AAA836DFB97672C6327D7710 /* LTMarkdownParser.swift */; };
+		AF9B3055B5C444338C933E9D1C0E6270 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D908D0480BF9DAA0D2AA1A579478DF71 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D32E1047024973F3B5D3A4BD27B97BCE /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A8E0071241ADB43471EEA700877E5C49 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9DEFA02D1154A7B7AB190273215A6F01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E62C95389F77EC25B3D5BF4736FE063;
+			remoteInfo = LTMarkdownParser;
+		};
+		F3901310107AF8EDD1892D4E35AADCE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E62C95389F77EC25B3D5BF4736FE063;
+			remoteInfo = LTMarkdownParser;
+		};
+		FACF17EB37C6260D5BEB73DACA92DE2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1FE47963429DA6D8286830DD77DC758;
+			remoteInfo = "RichTextVC-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C462052AAA836DFB97672C6327D7710 /* LTMarkdownParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LTMarkdownParser.swift; sourceTree = "<group>"; };
+		1333E460E52E18B509EA3FA1CCADCFB0 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1C8225E1964CC8246178D669E458CC03 /* NSRange+Extras.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSRange+Extras.swift"; path = "src/Classes/NSRange+Extras.swift"; sourceTree = "<group>"; };
+		3077E1E8616909614FB05B19C76C2444 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-frameworks.sh"; sourceTree = "<group>"; };
+		31A4F6A0F14445D33B05871106DDB331 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-dummy.m"; sourceTree = "<group>"; };
+		366E9037E45C3ED489A40FFF38DCCF7D /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		3B9E7DB14AD980362010F99243A1A7BC /* RichTextVC-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RichTextVC-iOS-dummy.m"; sourceTree = "<group>"; };
+		44ECD03CED934097FD6AF1270D71393B /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4AD2F6F0650E2F4989CE1F009D238753 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BFBAAB77263A9F09E1C2F66EB199BE4 /* LTBaseParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LTBaseParser.swift; sourceTree = "<group>"; };
+		602A716F065512DF4E88348C38C0523E /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		60895613597BB085657B1B21D923C2CE /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-resources.sh"; sourceTree = "<group>"; };
+		63380686BE7DDF1A3B2A91E115CF39EE /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.release.xcconfig"; sourceTree = "<group>"; };
+		70804E1891706944E5995525E9717416 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		7A2A75D603B41B753B965EA497572278 /* LTMarkdownParser.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LTMarkdownParser.xcconfig; sourceTree = "<group>"; };
+		80EF3E89D661A4AE1D68836E5F1756C5 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		83FDD2F8E95D880408FB9E040B3D700B /* String+Searching.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Searching.swift"; path = "src/Classes/String+Searching.swift"; sourceTree = "<group>"; };
+		8E2CC2887FC011F10A6894C547561AD8 /* RichTextVC-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RichTextVC-iOS-umbrella.h"; sourceTree = "<group>"; };
+		8F4D5ACDCC816F1CC216DE3A0B9995BA /* RichTextVC-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "RichTextVC-iOS.xcconfig"; sourceTree = "<group>"; };
+		920950B6E7B99B03E196999643F20927 /* RichTextViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RichTextViewController.swift; path = src/Classes/RichTextViewController.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94F19414CA330F9D40BA2F0C02AD6297 /* RichTextVC-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "RichTextVC-iOS.modulemap"; sourceTree = "<group>"; };
+		9737FC6754E52279579C4BDCD0D7462E /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-resources.sh"; sourceTree = "<group>"; };
+		9A834E2396C96EE12F2B93A0A0CF39A3 /* LTMarkdownParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LTMarkdownParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5F2D500ED0834E26489F6520DA41E2D /* NSAttributedString+Markdown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Markdown.swift"; sourceTree = "<group>"; };
+		A8E0071241ADB43471EEA700877E5C49 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-umbrella.h"; sourceTree = "<group>"; };
+		AD271BEA499D48EE6A4968BB82AA3239 /* LTMarkdownParser-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LTMarkdownParser-prefix.pch"; sourceTree = "<group>"; };
+		B5249A5285C9FF0FE26A7EFA86BDDD7D /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		BCCD535590C4006B344BB9306A21856C /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.modulemap"; sourceTree = "<group>"; };
+		BD2E9DECEBF1EBCAC748517D51C10622 /* Pods_LTMarkdownParser_ExampleAbstract_LTMarkdownParser_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTMarkdownParser_ExampleAbstract_LTMarkdownParser_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C083A5B35B7682413A65E08EDB1A86B6 /* LTMarkdownParser-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LTMarkdownParser-dummy.m"; sourceTree = "<group>"; };
+		C3F89B8AB6766F863F1A73C7B6992DE0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D0BA7FEA83E17437D86E81BE6225BAE4 /* LTMarkdownParser.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LTMarkdownParser.modulemap; sourceTree = "<group>"; };
+		D1274B5041C35B907ADC3A0EDB88CDAF /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-dummy.m"; sourceTree = "<group>"; };
+		D908D0480BF9DAA0D2AA1A579478DF71 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-umbrella.h"; sourceTree = "<group>"; };
+		E35B8CB01A71743BC2D4DEFFC410AAE6 /* RichTextVC_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RichTextVC_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E462A445224F63E12C52738D1F2956CB /* LTMarkdownParser-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LTMarkdownParser-umbrella.h"; sourceTree = "<group>"; };
+		E70590BABCB8169A66E0F27232915EB5 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.modulemap"; sourceTree = "<group>"; };
+		E90C24BFA94DDB8067C8C2B58A0E83E3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F02B19BD3379736BA4C7A7B9C4A47084 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F63E3632479847FC130C359F838FD072 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F83ECF6653137DD108FE42900BC58F95 /* Pods_LTMarkdownParser_ExampleAbstract_LTMarkdownParser_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTMarkdownParser_ExampleAbstract_LTMarkdownParser_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAFF0976E935D2F9FF44AFBBD66AD8E1 /* RichTextVC-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RichTextVC-iOS-prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A5B268697FC83AF1ED98BEE737EFDAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87F4A5047288BB5B59B46DC081279F46 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		624D4BBB73C4686E3D0DA9A3752A3188 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DDF4348777B70E2E739E87E5D6DCAFB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4AD8A2FA814AF9DC1FB4968A79EF169 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59680F3E7D8B0EC7DA0F6E7F3D090482 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0058E2B1037E0EE1F294DBA66601825 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8640D4B63C3A71A7E7788881DDB2F29C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A2345893AA0F8B514C3723AAA8C9470 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example */ = {
+			isa = PBXGroup;
+			children = (
+				F02B19BD3379736BA4C7A7B9C4A47084 /* Info.plist */,
+				BCCD535590C4006B344BB9306A21856C /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.modulemap */,
+				44ECD03CED934097FD6AF1270D71393B /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-acknowledgements.markdown */,
+				70804E1891706944E5995525E9717416 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-acknowledgements.plist */,
+				31A4F6A0F14445D33B05871106DDB331 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-dummy.m */,
+				3077E1E8616909614FB05B19C76C2444 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-frameworks.sh */,
+				60895613597BB085657B1B21D923C2CE /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-resources.sh */,
+				D908D0480BF9DAA0D2AA1A579478DF71 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-umbrella.h */,
+				80EF3E89D661A4AE1D68836E5F1756C5 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.debug.xcconfig */,
+				63380686BE7DDF1A3B2A91E115CF39EE /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.release.xcconfig */,
+			);
+			name = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example";
+			path = "Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example";
+			sourceTree = "<group>";
+		};
+		0B34431DBB68B6A347F9B82E61570F1A /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCD71F3B4034C26987C3C8E9E771ADE6 /* LTMarkdownParser */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		172CFE70B96951C4F021DC88054AB990 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C3F89B8AB6766F863F1A73C7B6992DE0 /* Info.plist */,
+				E70590BABCB8169A66E0F27232915EB5 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.modulemap */,
+				1333E460E52E18B509EA3FA1CCADCFB0 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-acknowledgements.markdown */,
+				B5249A5285C9FF0FE26A7EFA86BDDD7D /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-acknowledgements.plist */,
+				D1274B5041C35B907ADC3A0EDB88CDAF /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-dummy.m */,
+				366E9037E45C3ED489A40FFF38DCCF7D /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-frameworks.sh */,
+				9737FC6754E52279579C4BDCD0D7462E /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-resources.sh */,
+				A8E0071241ADB43471EEA700877E5C49 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-umbrella.h */,
+				F63E3632479847FC130C359F838FD072 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.debug.xcconfig */,
+				602A716F065512DF4E88348C38C0523E /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.release.xcconfig */,
+			);
+			name = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests";
+			path = "Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests";
+			sourceTree = "<group>";
+		};
+		230500C9163DACAF6D251916C8286547 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4AD2F6F0650E2F4989CE1F009D238753 /* Info.plist */,
+				94F19414CA330F9D40BA2F0C02AD6297 /* RichTextVC-iOS.modulemap */,
+				8F4D5ACDCC816F1CC216DE3A0B9995BA /* RichTextVC-iOS.xcconfig */,
+				3B9E7DB14AD980362010F99243A1A7BC /* RichTextVC-iOS-dummy.m */,
+				FAFF0976E935D2F9FF44AFBBD66AD8E1 /* RichTextVC-iOS-prefix.pch */,
+				8E2CC2887FC011F10A6894C547561AD8 /* RichTextVC-iOS-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RichTextVC-iOS";
+			sourceTree = "<group>";
+		};
+		393FF20E4FF1702E0763EC9E73D28B99 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C6D1F3B81A06DD3081AE9E7E770BE58 /* RichTextVC-iOS */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5C6D1F3B81A06DD3081AE9E7E770BE58 /* RichTextVC-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1C8225E1964CC8246178D669E458CC03 /* NSRange+Extras.swift */,
+				920950B6E7B99B03E196999643F20927 /* RichTextViewController.swift */,
+				83FDD2F8E95D880408FB9E040B3D700B /* String+Searching.swift */,
+				230500C9163DACAF6D251916C8286547 /* Support Files */,
+			);
+			path = "RichTextVC-iOS";
+			sourceTree = "<group>";
+		};
+		5CD9CA0F4EE5EF5765985D56177E2477 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E90C24BFA94DDB8067C8C2B58A0E83E3 /* Info.plist */,
+				D0BA7FEA83E17437D86E81BE6225BAE4 /* LTMarkdownParser.modulemap */,
+				7A2A75D603B41B753B965EA497572278 /* LTMarkdownParser.xcconfig */,
+				C083A5B35B7682413A65E08EDB1A86B6 /* LTMarkdownParser-dummy.m */,
+				AD271BEA499D48EE6A4968BB82AA3239 /* LTMarkdownParser-prefix.pch */,
+				E462A445224F63E12C52738D1F2956CB /* LTMarkdownParser-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/LTMarkdownParser";
+			sourceTree = "<group>";
+		};
+		68448464F54F480186A9A50B9DA433A9 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				D24B1DB192236C7BB26BBBA5D0E8262E /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				0B34431DBB68B6A347F9B82E61570F1A /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				393FF20E4FF1702E0763EC9E73D28B99 /* Pods */,
+				D38E9DC4956B7F5841829B8A9858E0CD /* Products */,
+				B0B2F3C46078F6D87DB4A9C6A1429725 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		B0B2F3C46078F6D87DB4A9C6A1429725 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0A2345893AA0F8B514C3723AAA8C9470 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example */,
+				172CFE70B96951C4F021DC88054AB990 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D24B1DB192236C7BB26BBBA5D0E8262E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4BFBAAB77263A9F09E1C2F66EB199BE4 /* LTBaseParser.swift */,
+				0C462052AAA836DFB97672C6327D7710 /* LTMarkdownParser.swift */,
+				A5F2D500ED0834E26489F6520DA41E2D /* NSAttributedString+Markdown.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D38E9DC4956B7F5841829B8A9858E0CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A834E2396C96EE12F2B93A0A0CF39A3 /* LTMarkdownParser.framework */,
+				F83ECF6653137DD108FE42900BC58F95 /* Pods_LTMarkdownParser_ExampleAbstract_LTMarkdownParser_Example.framework */,
+				BD2E9DECEBF1EBCAC748517D51C10622 /* Pods_LTMarkdownParser_ExampleAbstract_LTMarkdownParser_Tests.framework */,
+				E35B8CB01A71743BC2D4DEFFC410AAE6 /* RichTextVC_iOS.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCD71F3B4034C26987C3C8E9E771ADE6 /* LTMarkdownParser */ = {
+			isa = PBXGroup;
+			children = (
+				68448464F54F480186A9A50B9DA433A9 /* Pod */,
+				5CD9CA0F4EE5EF5765985D56177E2477 /* Support Files */,
+			);
+			name = LTMarkdownParser;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		01DEE9DE37A172F45C41A7EE83B6E2A4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				318F86AC0F93606BBA05B78A58C0B6CF /* RichTextVC-iOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48760266E09BE291F28210F9D942C1CF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75AFE9AA389D34FE2B2A1C03F5D25D42 /* LTMarkdownParser-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E6B2BCBD11825C1B64CA0AC8B7E9FB4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D32E1047024973F3B5D3A4BD27B97BCE /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCD40F3F410F9FC91AA976348A861A28 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF9B3055B5C444338C933E9D1C0E6270 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4E62C95389F77EC25B3D5BF4736FE063 /* LTMarkdownParser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F39B2DEF0F26C598EBE6166F4982F38 /* Build configuration list for PBXNativeTarget "LTMarkdownParser" */;
+			buildPhases = (
+				66F8B833BA7B0314740F1B089AD8F1CE /* Sources */,
+				F0058E2B1037E0EE1F294DBA66601825 /* Frameworks */,
+				48760266E09BE291F28210F9D942C1CF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LTMarkdownParser;
+			productName = LTMarkdownParser;
+			productReference = 9A834E2396C96EE12F2B93A0A0CF39A3 /* LTMarkdownParser.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5FB5BB66AE1EBB5235F4BB5E145C132D /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C6D8465F3F4496AE5608C308D8AD3F1 /* Build configuration list for PBXNativeTarget "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example" */;
+			buildPhases = (
+				80ED884ACEC681182FB98CD07D1352F0 /* Sources */,
+				A4AD8A2FA814AF9DC1FB4968A79EF169 /* Frameworks */,
+				BCD40F3F410F9FC91AA976348A861A28 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5ECB9DBF877C55826BB1D96F1FD5AD54 /* PBXTargetDependency */,
+				4CDF05135D45044D92421EDD216DBCBA /* PBXTargetDependency */,
+			);
+			name = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example";
+			productName = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example";
+			productReference = F83ECF6653137DD108FE42900BC58F95 /* Pods_LTMarkdownParser_ExampleAbstract_LTMarkdownParser_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C233687DD73C67CEA935E25A869BF9FD /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFF5CF920BA36C83E5B41FC1D05A4581 /* Build configuration list for PBXNativeTarget "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests" */;
+			buildPhases = (
+				C1CC8893D91E1A3DBA6DAA621123789D /* Sources */,
+				624D4BBB73C4686E3D0DA9A3752A3188 /* Frameworks */,
+				9E6B2BCBD11825C1B64CA0AC8B7E9FB4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC8A2C89E3E24701B0C69858E9FF6848 /* PBXTargetDependency */,
+			);
+			name = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests";
+			productName = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests";
+			productReference = BD2E9DECEBF1EBCAC748517D51C10622 /* Pods_LTMarkdownParser_ExampleAbstract_LTMarkdownParser_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F1FE47963429DA6D8286830DD77DC758 /* RichTextVC-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BECF9DE0C2BA4E600FE621F3D31602F /* Build configuration list for PBXNativeTarget "RichTextVC-iOS" */;
+			buildPhases = (
+				5A901FDDDADC43EE6ACDA4245ABF669D /* Sources */,
+				3A5B268697FC83AF1ED98BEE737EFDAE /* Frameworks */,
+				01DEE9DE37A172F45C41A7EE83B6E2A4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RichTextVC-iOS";
+			productName = "RichTextVC-iOS";
+			productReference = E35B8CB01A71743BC2D4DEFFC410AAE6 /* RichTextVC_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = D38E9DC4956B7F5841829B8A9858E0CD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E62C95389F77EC25B3D5BF4736FE063 /* LTMarkdownParser */,
+				5FB5BB66AE1EBB5235F4BB5E145C132D /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example */,
+				C233687DD73C67CEA935E25A869BF9FD /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests */,
+				F1FE47963429DA6D8286830DD77DC758 /* RichTextVC-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A901FDDDADC43EE6ACDA4245ABF669D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C4C105DE747316A8AAF99AD5719B292 /* NSRange+Extras.swift in Sources */,
+				4A2737F971EB81990D73F91EAF7CE384 /* RichTextVC-iOS-dummy.m in Sources */,
+				284C0ADDA19A513898EEA40C4C693963 /* RichTextViewController.swift in Sources */,
+				276BE627139D623C16B942DFF782F834 /* String+Searching.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66F8B833BA7B0314740F1B089AD8F1CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20FC705E5C73E02F6949C2D27B98CFDF /* LTBaseParser.swift in Sources */,
+				2AB041ED459526A8EB1B448FB2A158AE /* LTMarkdownParser-dummy.m in Sources */,
+				AD7688426383F94955A8A8CBDD296857 /* LTMarkdownParser.swift in Sources */,
+				8F3FD52B46B3B58C5C3AC16857589087 /* NSAttributedString+Markdown.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80ED884ACEC681182FB98CD07D1352F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CFB5344BE6222C24089E1D3307C81E6 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1CC8893D91E1A3DBA6DAA621123789D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A02F9063D265FC645105AB9CAF6780DB /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4CDF05135D45044D92421EDD216DBCBA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "RichTextVC-iOS";
+			target = F1FE47963429DA6D8286830DD77DC758 /* RichTextVC-iOS */;
+			targetProxy = FACF17EB37C6260D5BEB73DACA92DE2C /* PBXContainerItemProxy */;
+		};
+		5ECB9DBF877C55826BB1D96F1FD5AD54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LTMarkdownParser;
+			target = 4E62C95389F77EC25B3D5BF4736FE063 /* LTMarkdownParser */;
+			targetProxy = F3901310107AF8EDD1892D4E35AADCE9 /* PBXContainerItemProxy */;
+		};
+		AC8A2C89E3E24701B0C69858E9FF6848 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LTMarkdownParser;
+			target = 4E62C95389F77EC25B3D5BF4736FE063 /* LTMarkdownParser */;
+			targetProxy = 9DEFA02D1154A7B7AB190273215A6F01 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0AABEF73B87110F5844D30BA03D189AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F63E3632479847FC130C359F838FD072 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LTMarkdownParser_ExampleAbstract_LTMarkdownParser_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1873184AF848BBF31D9E8CC626EAD6CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80EF3E89D661A4AE1D68836E5F1756C5 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LTMarkdownParser_ExampleAbstract_LTMarkdownParser_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		636188812AFA328297C38DCDCC0A9DAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F4D5ACDCC816F1CC216DE3A0B9995BA /* RichTextVC-iOS.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RichTextVC-iOS/RichTextVC-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RichTextVC-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RichTextVC-iOS/RichTextVC-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = RichTextVC_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		72ADE43A1EF630E76DEB634130EB153E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A2A75D603B41B753B965EA497572278 /* LTMarkdownParser.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LTMarkdownParser/LTMarkdownParser-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LTMarkdownParser/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LTMarkdownParser/LTMarkdownParser.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = LTMarkdownParser;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		809030485A798FF08EF9206634D50E55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63380686BE7DDF1A3B2A91E115CF39EE /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LTMarkdownParser_ExampleAbstract_LTMarkdownParser_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9056419AA15517C6C9988337B1A2B010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 602A716F065512DF4E88348C38C0523E /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LTMarkdownParser_ExampleAbstract_LTMarkdownParser_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD15579E8B8A415797896D8A0DB5581A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F4D5ACDCC816F1CC216DE3A0B9995BA /* RichTextVC-iOS.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RichTextVC-iOS/RichTextVC-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RichTextVC-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RichTextVC-iOS/RichTextVC-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = RichTextVC_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D545AC359C1EB4F4055F29BBBC10C087 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A2A75D603B41B753B965EA497572278 /* LTMarkdownParser.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LTMarkdownParser/LTMarkdownParser-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LTMarkdownParser/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LTMarkdownParser/LTMarkdownParser.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = LTMarkdownParser;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0F39B2DEF0F26C598EBE6166F4982F38 /* Build configuration list for PBXNativeTarget "LTMarkdownParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D545AC359C1EB4F4055F29BBBC10C087 /* Debug */,
+				72ADE43A1EF630E76DEB634130EB153E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */,
+				B7324857C38B065FEB1EEE3105C2367A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BECF9DE0C2BA4E600FE621F3D31602F /* Build configuration list for PBXNativeTarget "RichTextVC-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD15579E8B8A415797896D8A0DB5581A /* Debug */,
+				636188812AFA328297C38DCDCC0A9DAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7C6D8465F3F4496AE5608C308D8AD3F1 /* Build configuration list for PBXNativeTarget "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1873184AF848BBF31D9E8CC626EAD6CB /* Debug */,
+				809030485A798FF08EF9206634D50E55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFF5CF920BA36C83E5B41FC1D05A4581 /* Build configuration list for PBXNativeTarget "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AABEF73B87110F5844D30BA03D189AA /* Debug */,
+				9056419AA15517C6C9988337B1A2B010 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
