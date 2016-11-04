@@ -7,5 +7,5 @@ before_install:
   - gem install cocoapods -v '1.1.1'
 
 script:
-- set -o pipefail && xcodebuild test -workspace Example/LTMarkdownParser.xcworkspace -scheme LTMarkdownParser_Example -sdk iphonesimulator9.3 -destination 'platform=iOS Simulator,name=iPhone 5' | xcpretty
+- set -o pipefail && xcodebuild test -workspace Example/LTMarkdownParser.xcworkspace -scheme LTMarkdownParser_Example -destination 'platform=iOS Simulator,name=iPhone 5' | xcpretty
 - pod lib lint --verbose
