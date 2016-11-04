@@ -1,11 +1,15 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target ‘LTMarkdownParser_Example', :exclusive => true do
-  pod 'LTMarkdownParser', :path => '../'
-  pod 'RichTextVC-iOS'
-end
+abstract_target 'LTMarkdownParser_ExampleAbstract' do
+  platform :ios, '9.0'
+    
+  target 'LTMarkdownParser_Example' do
+    pod 'LTMarkdownParser', :path => '../'
+    pod 'RichTextVC-iOS'
+  end
 
-target ‘LTMarkdownParser_Tests', :exclusive => true do
-  pod 'LTMarkdownParser', :path => '../'
+  target 'LTMarkdownParser_Tests' do
+    pod 'LTMarkdownParser', :path => '../'
+  end
 end

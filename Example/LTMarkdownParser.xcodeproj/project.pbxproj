@@ -13,16 +13,12 @@
 		590E00B71CA9C39E0069EEA5 /* markdown_test_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E00B61CA9C39E0069EEA5 /* markdown_test_image.png */; };
 		590E00B81CA9C39E0069EEA5 /* markdown_test_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E00B61CA9C39E0069EEA5 /* markdown_test_image.png */; };
 		595B67441CD3C081003ED656 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 595B67431CD3C081003ED656 /* Default-568h@2x.png */; };
-		595B67461CD3C0FD003ED656 /* LTMarkdownParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 595B67451CD3C0FD003ED656 /* LTMarkdownParser.framework */; };
 		5961EE0D1CD3C01E00056ADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5961EE0A1CD3C01E00056ADB /* AppDelegate.swift */; };
 		5961EE0E1CD3C01E00056ADB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5961EE0B1CD3C01E00056ADB /* Images.xcassets */; };
 		5961EE0F1CD3C01E00056ADB /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5961EE0C1CD3C01E00056ADB /* TextViewController.swift */; };
-		5969D83E57878F7353AAD062 /* Pods_LTMarkdownParser_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB36BD03912A567D9A4B4AF7 /* Pods_LTMarkdownParser_Tests.framework */; };
 		59BE00F91CBEDBCF0053D12D /* NSAttributedString+MarkdownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE00F71CBEDBBE0053D12D /* NSAttributedString+MarkdownTests.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		796CA6DC13FEEB004FB00A61 /* Pods_LTMarkdownParser_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C265977CEBCF94AEBB966CA /* Pods_LTMarkdownParser_Tests.framework */; };
-		E11816F2ADCEAA9F4AA138E7 /* Pods_LTMarkdownParser_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4951C61C543CC5E399BBE44E /* Pods_LTMarkdownParser_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,22 +32,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		328F36DD48A25803D195FC3C /* Pods-LTMarkdownParser_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTMarkdownParser_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTMarkdownParser_Example/Pods-LTMarkdownParser_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		32D050E630906B30FFD73B53 /* Pods-LTMarkdownParser_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTMarkdownParser_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTMarkdownParser_Tests/Pods-LTMarkdownParser_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		37F206FC1519DF247AF470AB /* Pods-LTMarkdownParser_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTMarkdownParser_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTMarkdownParser_Tests/Pods-LTMarkdownParser_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		2E3378832E9A3776B5910581 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		3857A7A2359DDC6F99A76901 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.release.xcconfig"; sourceTree = "<group>"; };
 		47CE1C2E5460FC64E22F023D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		4951C61C543CC5E399BBE44E /* Pods_LTMarkdownParser_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTMarkdownParser_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C265977CEBCF94AEBB966CA /* Pods_LTMarkdownParser_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTMarkdownParser_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F44336E14ED858D44EBBB47 /* Pods-LTMarkdownParser_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTMarkdownParser_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTMarkdownParser_Example/Pods-LTMarkdownParser_Example.release.xcconfig"; sourceTree = "<group>"; };
 		590B8BD11CA5A10F00890A98 /* LTMarkdownParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTMarkdownParserTests.swift; sourceTree = "<group>"; };
 		590E00B31CA9C3950069EEA5 /* markdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = markdown.png; sourceTree = "<group>"; };
 		590E00B61CA9C39E0069EEA5 /* markdown_test_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = markdown_test_image.png; sourceTree = "<group>"; };
 		595B67431CD3C081003ED656 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		595B67451CD3C0FD003ED656 /* LTMarkdownParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LTMarkdownParser.framework; path = "../../../../Library/Developer/Xcode/DerivedData/LTMarkdownParser-ccvmnakddvonifgjcepjmuxfsfvl/Build/Products/Debug-iphoneos/LTMarkdownParser.framework"; sourceTree = "<group>"; };
 		5961EE0A1CD3C01E00056ADB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = LTMarkdownParser/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		5961EE0B1CD3C01E00056ADB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = LTMarkdownParser/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		5961EE0C1CD3C01E00056ADB /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewController.swift; path = LTMarkdownParser/TextViewController.swift; sourceTree = SOURCE_ROOT; };
-		598875761CBEDA31006EE226 /* LTMarkdownParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LTMarkdownParser.framework; path = "../../../../Library/Developer/Xcode/DerivedData/LTMarkdownParser-eckkmtfcyijkwefegikmvpjwktsn/Build/Products/Debug-iphonesimulator/LTMarkdownParser.framework"; sourceTree = "<group>"; };
 		59BE00F71CBEDBBE0053D12D /* NSAttributedString+MarkdownTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+MarkdownTests.swift"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* LTMarkdownParser_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTMarkdownParser_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,9 +50,9 @@
 		607FACE51AFB9204008FA782 /* LTMarkdownParser_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTMarkdownParser_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91A021B07B89692143E65886 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		AF1EE4F65A4DDF444788C7DA /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		CDE1E6D2105B0719191AED67 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D1D2DCA1B1374A026A68465C /* LTMarkdownParser.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LTMarkdownParser.podspec; path = ../LTMarkdownParser.podspec; sourceTree = "<group>"; };
-		EB36BD03912A567D9A4B4AF7 /* Pods_LTMarkdownParser_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTMarkdownParser_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE1DD59A1BBBAB8CE6801612 /* Pods_LTMarkdownParser_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTMarkdownParser_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +60,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				595B67461CD3C0FD003ED656 /* LTMarkdownParser.framework in Frameworks */,
-				E11816F2ADCEAA9F4AA138E7 /* Pods_LTMarkdownParser_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,35 +67,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				796CA6DC13FEEB004FB00A61 /* Pods_LTMarkdownParser_Tests.framework in Frameworks */,
-				5969D83E57878F7353AAD062 /* Pods_LTMarkdownParser_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0631205271CF0C058981429A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				328F36DD48A25803D195FC3C /* Pods-LTMarkdownParser_Example.debug.xcconfig */,
-				4F44336E14ED858D44EBBB47 /* Pods-LTMarkdownParser_Example.release.xcconfig */,
-				32D050E630906B30FFD73B53 /* Pods-LTMarkdownParser_Tests.debug.xcconfig */,
-				37F206FC1519DF247AF470AB /* Pods-LTMarkdownParser_Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
 				595B67431CD3C081003ED656 /* Default-568h@2x.png */,
 				607FACD21AFB9204008FA782 /* Example */,
 				6A3F42632880ADEA9AA95A03 /* Frameworks */,
-				0631205271CF0C058981429A /* Pods */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD11AFB9204008FA782 /* Products */,
 				607FACE81AFB9204008FA782 /* Tests */,
+				9A942ABDC47444F876E1BFE8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,14 +150,19 @@
 		6A3F42632880ADEA9AA95A03 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				595B67451CD3C0FD003ED656 /* LTMarkdownParser.framework */,
-				598875761CBEDA31006EE226 /* LTMarkdownParser.framework */,
-				EE1DD59A1BBBAB8CE6801612 /* Pods_LTMarkdownParser_Example.framework */,
-				4C265977CEBCF94AEBB966CA /* Pods_LTMarkdownParser_Tests.framework */,
-				4951C61C543CC5E399BBE44E /* Pods_LTMarkdownParser_Example.framework */,
-				EB36BD03912A567D9A4B4AF7 /* Pods_LTMarkdownParser_Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A942ABDC47444F876E1BFE8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E3378832E9A3776B5910581 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.debug.xcconfig */,
+				3857A7A2359DDC6F99A76901 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.release.xcconfig */,
+				CDE1E6D2105B0719191AED67 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.debug.xcconfig */,
+				AF1EE4F65A4DDF444788C7DA /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,12 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "LTMarkdownParser_Example" */;
 			buildPhases = (
-				554FD1C22D3BBCFE30F288DC /* Check Pods Manifest.lock */,
+				48B4888CCC0355311152C930 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				56382ABE8D53DE11607FA844 /* Embed Pods Frameworks */,
-				63B0E7EA3770F4742917F27C /* Copy Pods Resources */,
+				E4EDE4302487F9CD1E1566CF /* [CP] Embed Pods Frameworks */,
+				3B93971A13FE3F4A1AB5385C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,12 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "LTMarkdownParser_Tests" */;
 			buildPhases = (
-				5E0A2D71B7C8D504D37CD4A3 /* Check Pods Manifest.lock */,
+				7B76790D26D7E04AB2334867 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				F8BDC83E7F2E4CB3BB767854 /* Embed Pods Frameworks */,
-				3CE94B3AAA1EF34A9652E7BE /* Copy Pods Resources */,
+				F32D6E9779E4E949CEA61F21 /* [CP] Embed Pods Frameworks */,
+				BFD5166EAE21DCE32D841851 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,14 +216,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0810;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0810;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -293,94 +275,94 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3CE94B3AAA1EF34A9652E7BE /* Copy Pods Resources */ = {
+		3B93971A13FE3F4A1AB5385C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LTMarkdownParser_Tests/Pods-LTMarkdownParser_Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		554FD1C22D3BBCFE30F288DC /* Check Pods Manifest.lock */ = {
+		48B4888CCC0355311152C930 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		56382ABE8D53DE11607FA844 /* Embed Pods Frameworks */ = {
+		7B76790D26D7E04AB2334867 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LTMarkdownParser_Example/Pods-LTMarkdownParser_Example-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		5E0A2D71B7C8D504D37CD4A3 /* Check Pods Manifest.lock */ = {
+		BFD5166EAE21DCE32D841851 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		63B0E7EA3770F4742917F27C /* Copy Pods Resources */ = {
+		E4EDE4302487F9CD1E1566CF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LTMarkdownParser_Example/Pods-LTMarkdownParser_Example-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F8BDC83E7F2E4CB3BB767854 /* Embed Pods Frameworks */ = {
+		F32D6E9779E4E949CEA61F21 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LTMarkdownParser_Tests/Pods-LTMarkdownParser_Tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests/Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -447,8 +429,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -471,7 +455,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -492,8 +476,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -509,17 +495,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 328F36DD48A25803D195FC3C /* Pods-LTMarkdownParser_Example.debug.xcconfig */;
+			baseConfigurationReference = 2E3378832E9A3776B5910581 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LTMarkdownParser/Info.plist;
@@ -528,14 +516,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F44336E14ED858D44EBBB47 /* Pods-LTMarkdownParser_Example.release.xcconfig */;
+			baseConfigurationReference = 3857A7A2359DDC6F99A76901 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LTMarkdownParser/Info.plist;
@@ -543,14 +533,16 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32D050E630906B30FFD73B53 /* Pods-LTMarkdownParser_Tests.debug.xcconfig */;
+			baseConfigurationReference = CDE1E6D2105B0719191AED67 /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -562,20 +554,23 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LTMarkdownParser_Example.app/LTMarkdownParser_Example";
 			};
 			name = Debug;
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37F206FC1519DF247AF470AB /* Pods-LTMarkdownParser_Tests.release.xcconfig */;
+			baseConfigurationReference = AF1EE4F65A4DDF444788C7DA /* Pods-LTMarkdownParser_ExampleAbstract-LTMarkdownParser_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LTMarkdownParser_Example.app/LTMarkdownParser_Example";
 			};
 			name = Release;

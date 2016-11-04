@@ -22,7 +22,7 @@ class LTMarkdownParserTests: XCTestCase {
     }
     
     func testBasicBoldParsing() {
-        let font = UIFont(name: "HelveticaNeue-Bold", size: 14) ?? UIFont.systemFontOfSize(14)
+        let font = UIFont(name: "HelveticaNeue-Bold", size: 14) ?? UIFont.systemFont(ofSize: 14)
         
         guard let boldRegex = TSSwiftMarkdownRegex.regexForString("\\*{2}.*\\*{2}", options: .CaseInsensitive) else {
             XCTAssert(false)
@@ -42,7 +42,7 @@ class LTMarkdownParserTests: XCTestCase {
     }
     
     func testBasicEmphasisParsing() {
-        let font = UIFont.italicSystemFontOfSize(12)
+        let font = UIFont.italicSystemFont(ofSize: 12)
         
         guard let italicRegex = TSSwiftMarkdownRegex.regexForString("\\*{1}.*\\*{1}", options: .CaseInsensitive) else {
             XCTAssert(false)
@@ -62,36 +62,36 @@ class LTMarkdownParserTests: XCTestCase {
     }
     
     func testStandardFont() {
-        let font = UIFont.systemFontOfSize(12)
+        let font = UIFont.systemFont(ofSize: 12)
         XCTAssertEqual(parser.defaultAttributes[NSFontAttributeName] as? UIFont, font)
     }
     
     func testBoldFont() {
-        let font = UIFont.boldSystemFontOfSize(12)
+        let font = UIFont.boldSystemFont(ofSize: 12)
         XCTAssertEqual(parser.strongAttributes[NSFontAttributeName] as? UIFont, font)
     }
     
     func testItalicFont() {
-        let font = UIFont.italicSystemFontOfSize(12)
+        let font = UIFont.italicSystemFont(ofSize: 12)
         XCTAssertEqual(parser.emphasisAttributes[NSFontAttributeName] as? UIFont, font)
     }
     
     func testDefaultBoldParsing() {
-        let font = UIFont.boldSystemFontOfSize(12)
+        let font = UIFont.boldSystemFont(ofSize: 12)
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\nI drink in **a café** everyday")
         XCTAssertEqual(attributedString?.attribute(NSFontAttributeName, atIndex: 20, effectiveRange: nil) as? UIFont, font)
         XCTAssertEqual(attributedString?.string, "Hello\nI drink in a café everyday")
     }
     
     func testDefaultEmphasisParsing() {
-        let font = UIFont.italicSystemFontOfSize(12)
+        let font = UIFont.italicSystemFont(ofSize: 12)
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\nI drink in *a café* everyday")
         XCTAssertEqual(attributedString?.attribute(NSFontAttributeName, atIndex: 20, effectiveRange: nil) as? UIFont, font)
         XCTAssertEqual(attributedString?.string, "Hello\nI drink in a café everyday")
     }
     
     func testDefaultBoldParsingUnderscores() {
-        let font = UIFont.boldSystemFontOfSize(12)
+        let font = UIFont.boldSystemFont(ofSize: 12)
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\nI drink in __a café__ everyday")
 
         XCTAssertEqual(attributedString?.attribute(NSFontAttributeName, atIndex: 20, effectiveRange: nil) as? UIFont, font)
@@ -99,7 +99,7 @@ class LTMarkdownParserTests: XCTestCase {
     }
     
     func testDefaultEmphasisParsingUnderscores() {
-        let font = UIFont.italicSystemFontOfSize(12)
+        let font = UIFont.italicSystemFont(ofSize: 12)
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\nI drink in _a café_ everyday")
         XCTAssertEqual(attributedString?.attribute(NSFontAttributeName, atIndex: 20, effectiveRange: nil) as? UIFont, font)
         XCTAssertEqual(attributedString?.string, "Hello\nI drink in a café everyday")
@@ -155,11 +155,11 @@ class LTMarkdownParserTests: XCTestCase {
             monospace: snippets.monospace.count
         )
         
-        func increaseCountAndRemoveSnippet(inout count: Int, snippet: String, inout snippets: [String]) {
+        func increaseCountAndRemoveSnippet(_ count: inout Int, snippet: String, snippets: inout [String]) {
             count += 1
             
-            if let index = snippets.indexOf(snippet) {
-                snippets.removeAtIndex(index)
+            if let index = snippets.index(of: snippet) {
+                snippets.remove(at: index)
             }
         }
         
@@ -207,7 +207,7 @@ class LTMarkdownParserTests: XCTestCase {
     }
     
     func testCustomListWithAsterisksParsingWithStrongText() {
-        let strongFont = UIFont.boldSystemFontOfSize(12)
+        let strongFont = UIFont.boldSystemFont(ofSize: 12)
         parser.addListParsingWithLeadFormattingBlock({ attributedString, range, level in
             attributedString.replaceCharactersInRange(range, withString: "    • ")
         }, maxLevel: 1, textFormattingBlock: nil)
@@ -261,7 +261,7 @@ class LTMarkdownParserTests: XCTestCase {
     func testDefaultLinkParsing() {
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n This is a [link](https://www.example.net/) to test Wi-Fi\nat home")
         let link = attributedString?.attribute(NSLinkAttributeName, atIndex:20, effectiveRange:nil) as? NSURL
-        XCTAssertEqual(link, NSURL(string: "https://www.example.net/"))
+        XCTAssertEqual(link, URL(string: "https://www.example.net/"))
         XCTAssertNil(attributedString?.string.rangeOfString("["))
         XCTAssertNil(attributedString?.string.rangeOfString("]"))
         XCTAssertNil(attributedString?.string.rangeOfString("("))
@@ -279,7 +279,7 @@ class LTMarkdownParserTests: XCTestCase {
     func testDefaultAutoLinkParsing() {
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n This is a link https://www.example.net/ to test Wi-Fi\nat home")
         let link = attributedString?.attribute(NSLinkAttributeName, atIndex: 24, effectiveRange: nil) as! NSURL
-        XCTAssertEqual(link, NSURL(string: "https://www.example.net/"))
+        XCTAssertEqual(link, URL(string: "https://www.example.net/"))
         let underline = attributedString?.attribute(NSUnderlineColorAttributeName, atIndex: 24, effectiveRange: nil)
         XCTAssertNotNil(underline)
         let linkColor = attributedString?.attribute(NSForegroundColorAttributeName, atIndex: 24, effectiveRange: nil) as! UIColor
@@ -289,7 +289,7 @@ class LTMarkdownParserTests: XCTestCase {
     func testDefaultLinkParsingOnEndOfStrings() {
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n This is a [link](https://www.example.net/)")
         let link = attributedString?.attribute(NSLinkAttributeName, atIndex:20, effectiveRange:nil) as? NSURL
-        XCTAssertEqual(link, NSURL(string: "https://www.example.net/"))
+        XCTAssertEqual(link, URL(string: "https://www.example.net/"))
         XCTAssertNil(attributedString?.string.rangeOfString("["))
         XCTAssertNil(attributedString?.string.rangeOfString("]"))
         XCTAssertNil(attributedString?.string.rangeOfString("("))
@@ -305,7 +305,7 @@ class LTMarkdownParserTests: XCTestCase {
         let expectedRawString = "Hello\n This is a (link) to test Wi-Fi\nat home"
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n This is a ([link](https://www.example.net/)) to test Wi-Fi\nat home")
         let link = attributedString?.attribute(NSLinkAttributeName, atIndex: 21, effectiveRange: nil) as! NSURL
-        XCTAssertEqual(link, NSURL(string: "https://www.example.net/"))
+        XCTAssertEqual(link, URL(string: "https://www.example.net/"))
         XCTAssertEqual(attributedString!.string, expectedRawString)
     }
     
@@ -313,7 +313,7 @@ class LTMarkdownParserTests: XCTestCase {
         let expectedRawString = "Hello\n a link [with brackets inside]"
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n [a link \\[with brackets inside]](https://example.net/)")
         let link = attributedString?.attribute(NSLinkAttributeName, atIndex: 35, effectiveRange: nil) as! NSURL
-        XCTAssertEqual(link, NSURL(string: "https://example.net/"))
+        XCTAssertEqual(link, URL(string: "https://example.net/"))
         XCTAssertEqual(attributedString!.string, expectedRawString)
     }
     
@@ -321,7 +321,7 @@ class LTMarkdownParserTests: XCTestCase {
         let expectedRawString = "Hello\n [This is not a link] but this is a link to test [the difference]"
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n [This is not a link] but this is a [link](https://www.example.net/) to test [the difference]")
         let link = attributedString?.attribute(NSLinkAttributeName, atIndex: 44, effectiveRange: nil) as! NSURL
-        XCTAssertEqual(link, NSURL(string: "https://www.example.net/"))
+        XCTAssertEqual(link, URL(string: "https://www.example.net/"))
         XCTAssertEqual(attributedString!.string, expectedRawString)
     }
     
@@ -332,7 +332,7 @@ class LTMarkdownParserTests: XCTestCase {
         let underline = attributedString?.attribute(NSUnderlineColorAttributeName, atIndex: 17, effectiveRange: nil)
         let linkColor = attributedString?.attribute(NSForegroundColorAttributeName, atIndex: 17, effectiveRange: nil) as! UIColor
         
-        XCTAssertEqual(link, NSURL(string: "https://www.example.net/"))
+        XCTAssertEqual(link, URL(string: "https://www.example.net/"))
         XCTAssertNotNil(underline)
         XCTAssertEqual(linkColor, UIColor.blueColor())
         
@@ -340,7 +340,7 @@ class LTMarkdownParserTests: XCTestCase {
         let underline2 = attributedString?.attribute(NSUnderlineColorAttributeName, atIndex: 37, effectiveRange: nil)
         let linkColor2 = attributedString?.attribute(NSForegroundColorAttributeName, atIndex: 37, effectiveRange: nil) as! UIColor
         
-        XCTAssertEqual(link2, NSURL(string: "https://www.example.com/"))
+        XCTAssertEqual(link2, URL(string: "https://www.example.com/"))
         XCTAssertNotNil(underline2)
         XCTAssertEqual(linkColor2, UIColor.blueColor())
     }
@@ -349,7 +349,7 @@ class LTMarkdownParserTests: XCTestCase {
         let expectedRawString = "Hello (link). Bye"
         let attributedString = standardParser.attributedStringFromMarkdown("Hello ([link](https://www.example.net/|)). Bye")
         let link = attributedString?.attribute(NSLinkAttributeName, atIndex: 8, effectiveRange: nil) as! NSURL
-        XCTAssertEqual(link, NSURL(string: "https://www.example.net/|".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet(charactersInString: "htp://.wexamlns"))!))
+        XCTAssertEqual(link, URL(string: "https://www.example.net/|".stringByAddingPercentEncodingWithAllowedCharacters(CharacterSet(charactersInString: "htp://.wexamlns"))!))
         XCTAssertEqual(attributedString!.string, expectedRawString)
     }
     
@@ -357,12 +357,12 @@ class LTMarkdownParserTests: XCTestCase {
         let expectedRawString = "Hello (link). Bye"
         let attributedString = standardParser.attributedStringFromMarkdown("Hello ([link](https://www.example.net/#)). Bye")
         let link = attributedString?.attribute(NSLinkAttributeName, atIndex: 8, effectiveRange: nil) as! NSURL
-        XCTAssertEqual(link, NSURL(string: "https://www.example.net/#"))
+        XCTAssertEqual(link, URL(string: "https://www.example.net/#"))
         XCTAssertEqual(attributedString!.string, expectedRawString)
     }
     
     func testDefaultFont() {
-        let font = UIFont.systemFontOfSize(12)
+        let font = UIFont.systemFont(ofSize: 12)
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n Men att Pär är här\nmen inte Pia")
         XCTAssertEqual(attributedString?.attribute(NSFontAttributeName, atIndex: 6, effectiveRange: nil) as? UIFont, font)
     }
@@ -472,7 +472,7 @@ class LTMarkdownParserTests: XCTestCase {
     func testDefaultH6NextLine() {
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n###### Men att Pär är här\nmen inte Pia")
         let font = attributedString?.attribute(NSFontAttributeName, atIndex: 30, effectiveRange: nil) as? UIFont
-        let expectedFont = UIFont.systemFontOfSize(12)
+        let expectedFont = UIFont.systemFont(ofSize: 12)
         XCTAssertNotNil(font);
         XCTAssertEqual(font, expectedFont);
         XCTAssertEqual(font?.pointSize, 12.0)
@@ -553,7 +553,7 @@ class LTMarkdownParserTests: XCTestCase {
     }
     
     func testDefaultBoldParsingCustomFont() {
-        let customFont = UIFont.boldSystemFontOfSize(19)
+        let customFont = UIFont.boldSystemFont(ofSize: 19)
         standardParser.strongAttributes = [NSFontAttributeName: customFont]
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\nMen att **Pär är här** men inte Pia")
         XCTAssertEqual((attributedString?.attribute(NSFontAttributeName, atIndex: 16, effectiveRange: nil) as? UIFont)!.pointSize, 19.0)
@@ -562,7 +562,7 @@ class LTMarkdownParserTests: XCTestCase {
     func testURLWithParenthesesInTheTitleText() {
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n Men att [Pär och (Mia)](https://www.example.net/) är här.")
         let link = attributedString?.attribute(NSLinkAttributeName, atIndex: 17, effectiveRange: nil) as? NSURL
-        XCTAssertEqual(link, NSURL(string: "https://www.example.net/"))
+        XCTAssertEqual(link, URL(string: "https://www.example.net/"))
         XCTAssertNotNil(attributedString?.string.rangeOfString("Pär"))
     }
     

@@ -116,7 +116,7 @@ class NSAttributedStringTests: XCTestCase {
         XCTAssertEqual(attributedString.markdownString(), escapedMarkdown)
     }
     
-    func assertRoundTripFromMarkdownString(markdownString: String) {
+    func assertRoundTripFromMarkdownString(_ markdownString: String) {
         let attributedString = LTMarkdownParser(withDefaultParsing: true).attributedStringFromMarkdown(markdownString)
         XCTAssertEqual(attributedString!.markdownString(), markdownString)
     }
