@@ -1,6 +1,6 @@
 # RichTextVC-iOS
 
-[![CI Status](http://img.shields.io/travis/Rhett Rogers/RichTextVC-iOS.svg?style=flat)](https://travis-ci.org/Rhett Rogers/RichTextVC-iOS)
+[![CI Status](http://img.shields.io/travis/LyokoTech/RichTextVC-iOS.svg?style=flat)](https://travis-ci.org/LyokoTech/RichTextVC-iOS)
 [![Version](https://img.shields.io/cocoapods/v/RichTextVC-iOS.svg?style=flat)](http://cocoapods.org/pods/RichTextVC-iOS)
 [![License](https://img.shields.io/cocoapods/l/RichTextVC-iOS.svg?style=flat)](http://cocoapods.org/pods/RichTextVC-iOS)
 [![Platform](https://img.shields.io/cocoapods/p/RichTextVC-iOS.svg?style=flat)](http://cocoapods.org/pods/RichTextVC-iOS)

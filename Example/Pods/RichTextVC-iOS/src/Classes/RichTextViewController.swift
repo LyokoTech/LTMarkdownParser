@@ -84,11 +84,13 @@ open class RichTextViewController: UIViewController {
     ///
     /// - parameter range: The range of the text to remove.
     /// - parameter toTextView: The `UITextView` to remove the text from.
-    fileprivate func removeTextFromRange(_ range: NSRange, fromTextView textView: UITextView) {
+    fileprivate func removeTextFromRange(_ range: NSRange, fromTextView textView: UITextView, applyDefault: Bool = true) {
         let substringLength = (textView.text as NSString).substring(with: range).length
         let initialRange = textView.selectedRange
         
-        applyDefaultParagraphStyleToSelectedRange(range)
+        if applyDefault {
+            applyDefaultParagraphStyleToSelectedRange(range)
+        }
         
         textView.textStorage.beginEditing()
         textView.textStorage.replaceCharacters(in: range, with: NSAttributedString(string: ""))
@@ -183,8 +185,7 @@ open class RichTextViewController: UIViewController {
                 numbersInSelection = true
                 var index = textView.selectedRange.location
                 while index < textView.text.length {
-                    guard let newRange = nextNumberedRangeFromIndex(index, inString: textView.text)
-                        , newRange.location < textView.selectedRange.endLocation &&
+                    guard let newRange = nextNumberedRangeFromIndex(index, inString: textView.text), newRange.location < textView.selectedRange.endLocation &&
                             newRange.endLocation < textView.text.length &&
                             newRange.length > -1
                         else {
@@ -210,7 +211,7 @@ open class RichTextViewController: UIViewController {
                 var index = textView.selectedRange.location
 
                 while index < textView.text.length {
-                    guard let newLineIndex = textView.text.nextIndexOfSubstring("\n", fromIndex: index) , newLineIndex < textView.selectedRange.endLocation else { break }
+                    guard let newLineIndex = textView.text.nextIndexOfSubstring("\n", fromIndex: index), newLineIndex < textView.selectedRange.endLocation else { break }
                     
                     addText("\(newNumber)\(RichTextViewController.numberedListTrailer)", toTextView: textView, atIndex: newLineIndex + 1)
                     newNumber += 1
@@ -268,7 +269,7 @@ open class RichTextViewController: UIViewController {
         if selection.length == 0 {
             if let previousIndex = textView.text.previousIndexOfSubstring(RichTextViewController.numberedListTrailer, fromIndex: selection.location) {
                 let newLineIndex = textView.text.previousIndexOfSubstring("\n", fromIndex: selection.location) ?? 0
-                if let comparisonIndex = textView.text.nextIndexOfSubstring(RichTextViewController.numberedListTrailer, fromIndex: newLineIndex) , previousIndex == comparisonIndex {
+                if let comparisonIndex = textView.text.nextIndexOfSubstring(RichTextViewController.numberedListTrailer, fromIndex: newLineIndex), previousIndex == comparisonIndex {
                     containsNumberedList = true
                 }
             }
@@ -352,7 +353,7 @@ open class RichTextViewController: UIViewController {
             let bulletedString = "\n" + RichTextViewController.bulletedLineStarter
             
             textView.textStorage.beginEditing()
-            if let subString = textView.attributedText?.attributedSubstring(from: previousRange).string , subString == RichTextViewController.bulletedLineStarter {
+            if let subString = textView.attributedText?.attributedSubstring(from: previousRange).string, subString == RichTextViewController.bulletedLineStarter {
                 textView.textStorage.replaceCharacters(in: previousRange, with: NSAttributedString(string: "", attributes: textView.typingAttributes))
             } else {
                 addText(bulletedString, toTextView: textView, atIndex: range.location)
@@ -375,7 +376,7 @@ open class RichTextViewController: UIViewController {
         
         let previousNumber = previousNumberOfNumberedList(textView.selectedRange) ?? 0
         let previousNumberString = "\(previousNumber)\(RichTextViewController.numberedListTrailer)"
-        let previousNumberRange = NSRange(location: range.location - previousNumberString.length + 1, length: previousNumberString.length)
+        var previousNumberRange = NSRange(location: range.location - previousNumberString.length + 1, length: previousNumberString.length)
         let previousBulletRange = NSRange(location: range.location - RichTextViewController.bulletedLineStarter.length + 1, length: RichTextViewController.bulletedLineStarter.length)
         let adjustedRange = NSRange(location: range.location + 1, length: 0)
         
@@ -385,7 +386,35 @@ open class RichTextViewController: UIViewController {
             let subString = (textView.text as NSString).substring(with: previousNumberRange)
             
             if subString == previousNumberString {
-                removeTextFromRange(previousNumberRange, fromTextView: textView)
+                if previousNumber > 1 {
+                    // Not at the beginning of the list, so collapse the list
+                    let space = CharacterSet.whitespacesAndNewlines
+                    let text = textView.text as NSString
+                    while previousNumberRange.location > 0 {
+                        if space.contains(UnicodeScalar(text.character(at: previousNumberRange.location - 1))!) {
+                            previousNumberRange.location = previousNumberRange.location - 1
+                            previousNumberRange.length = previousNumberRange.length + 1
+                        } else {
+                            break
+                        }
+                    }
+                }
+                
+                // Update following numbers in list so there isn't a hole
+                var newNumber = previousNumber
+                var index = previousNumberRange.location
+                
+                repeat {
+                    let stringToReplace = "\(newNumber + 1)\(RichTextViewController.numberedListTrailer)"
+                    index = textView.text.nextIndexOfSubstring(stringToReplace, fromIndex: index) ?? -1
+                    guard index >= 0 else { break }
+                    
+                    replaceTextInRange(NSRange(location: index, length: stringToReplace.length), withText: "\(newNumber)\(RichTextViewController.numberedListTrailer)", inTextView: textView)
+                    newNumber += 1
+                    index += 1
+                } while index < textView.text.length
+                
+                removeTextFromRange(previousNumberRange, fromTextView: textView, applyDefault: previousNumber == 1)
                 removed = true
             }
             return removed
@@ -463,8 +492,7 @@ open class RichTextViewController: UIViewController {
                 }
             } else if range.location > 0 && range.location < textView.text.length - 1 && stringAtRange(NSRange(location: range.location - 1, length: 1)) == "\n",
                 let nextTrailerIndex = textView.text.nextIndexOfSubstring(RichTextViewController.numberedListTrailer, fromIndex: range.location),
-                let nextLineIndex = textView.text.nextIndexOfSubstring("\n", fromIndex: range.location)
-                , nextTrailerIndex < nextLineIndex {
+                let nextLineIndex = textView.text.nextIndexOfSubstring("\n", fromIndex: range.location), nextTrailerIndex < nextLineIndex {
                 if previousSelection.location < range.location {
                     let oldLocation = range.location
                     range.location = textView.text.nextIndexOfSubstring(RichTextViewController.numberedListTrailer, fromIndex: range.location) ?? textView.text.length - 2
