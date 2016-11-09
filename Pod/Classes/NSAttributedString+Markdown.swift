@@ -10,14 +10,14 @@ public extension NSAttributedString {
         var markdownString = ""
         
         enum FormattingChange {
-            case Enable
-            case Disable
-            case Keep
+            case enable
+            case disable
+            case keep
             
-            static func getFormattingChange(before: Bool, after: Bool) -> FormattingChange {
-                if !before && after { return .Enable }
-                if before && !after { return .Disable }
-                return .Keep
+            static func getFormattingChange(_ before: Bool, after: Bool) -> FormattingChange {
+                if !before && after { return .enable }
+                if before && !after { return .disable }
+                return .keep
             }
         }
         
@@ -29,50 +29,50 @@ public extension NSAttributedString {
         var characterOnNumberedListLine = false
         var numberedListIsFirstLine = false
         var previousCharacter: Character?
-        enumerateAttributesInRange(NSRange(location: 0, length: length), options: []) { attributes, range, shouldStop in
-            if let traits = (attributes[NSFontAttributeName] as? UIFont)?.fontDescriptor().symbolicTraits {
-                let boldChange = FormattingChange.getFormattingChange(stringHasBoldEnabled, after: traits.contains(.TraitBold))
-                let italicChange = FormattingChange.getFormattingChange(stringHasItalicEnabled, after: traits.contains(.TraitItalic))
+        enumerateAttributes(in: NSRange(location: 0, length: length), options: []) { attributes, range, shouldStop in
+            if let traits = (attributes[NSFontAttributeName] as? UIFont)?.fontDescriptor.symbolicTraits {
+                let boldChange = FormattingChange.getFormattingChange(stringHasBoldEnabled, after: traits.contains(.traitBold))
+                let italicChange = FormattingChange.getFormattingChange(stringHasItalicEnabled, after: traits.contains(.traitItalic))
                 var formatString = ""
                 switch boldChange {
-                case .Enable:
+                case .enable:
                     formatString += "**"
                     closingString = "**\(closingString)"
-                case .Disable:
-                    if stringHasItalicEnabled && italicChange == .Keep {
+                case .disable:
+                    if stringHasItalicEnabled && italicChange == .keep {
                         formatString += "_**_"
                         closingString = "_"
                     } else {
                         formatString += "**"
                         closingString = ""
                     }
-                case .Keep:
+                case .keep:
                     break
                 }
                 
                 switch italicChange {
-                case .Enable:
+                case .enable:
                     formatString += "_"
                     closingString = "_\(closingString)"
-                case .Disable:
-                    if stringHasBoldEnabled && boldChange == .Keep {
+                case .disable:
+                    if stringHasBoldEnabled && boldChange == .keep {
                         formatString = "**_**\(formatString)"
                         closingString = "**"
                     } else {
                         formatString = "_\(formatString)"
                         closingString = ""
                     }
-                case .Keep:
+                case .keep:
                     break
                 }
                 
                 markdownString += formatString
                 
-                stringHasBoldEnabled = traits.contains(.TraitBold)
-                stringHasItalicEnabled = traits.contains(.TraitItalic)
+                stringHasBoldEnabled = traits.contains(.traitBold)
+                stringHasItalicEnabled = traits.contains(.traitItalic)
             }
             
-            let preprocessedString = (self.string as NSString).substringWithRange(range)
+            let preprocessedString = (self.string as NSString).substring(with: range)
             let processedString = preprocessedString.characters.reduce("") { resultString, character in
                 var stringToAppend = ""
                 
@@ -82,7 +82,7 @@ public extension NSAttributedString {
                 case "\n", "\u{2028}":
                     stringToAppend = "\(closingString)\(character)"
                     if !characterOnBulletedListLine && !characterOnNumberedListLine {
-                        stringToAppend += String(closingString.characters.reverse())
+                        stringToAppend += String(closingString.characters.reversed())
                     }
                     
                     characterOnBulletedListLine = false
@@ -96,14 +96,14 @@ public extension NSAttributedString {
                     stringToAppend = "\(character)"
                 case bulletCharacter:
                     characterOnBulletedListLine = true
-                    stringToAppend = "+ \(previousCharacter != nil ? String(closingString.characters.reverse()) : markdownString)"
+                    stringToAppend = "+ \(previousCharacter != nil ? String(closingString.characters.reversed()) : markdownString)"
                     markdownString = previousCharacter == nil ? "" : markdownString
                 case ".":
                     if openedNumberedListStarter {
                         openedNumberedListStarter = false
                         characterOnNumberedListLine = true
                         
-                        stringToAppend = "\(character) \(!numberedListIsFirstLine ? String(closingString.characters.reverse()) : markdownString)"
+                        stringToAppend = "\(character) \(!numberedListIsFirstLine ? String(closingString.characters.reversed()) : markdownString)"
                         
                         if numberedListIsFirstLine {
                             markdownString = ""
@@ -120,7 +120,7 @@ public extension NSAttributedString {
                 default:
                     if (previousCharacter == "\n" || previousCharacter == "\u{2028}") && characterOnBulletedListLine {
                         characterOnBulletedListLine = false
-                        stringToAppend = "\(String(closingString.characters.reverse()))\(character)"
+                        stringToAppend = "\(String(closingString.characters.reversed()))\(character)"
                     } else {
                         stringToAppend = "\(character)"
                     }
@@ -132,12 +132,12 @@ public extension NSAttributedString {
             markdownString += processedString
         }
         markdownString += closingString
-        markdownString = markdownString.stringByReplacingOccurrencesOfString("**__**", withString: "").stringByReplacingOccurrencesOfString("****", withString: "")
-            .stringByReplacingOccurrencesOfString("__", withString: "")
+        markdownString = markdownString.replacingOccurrences(of: "**__**", with: "").replacingOccurrences(of: "****", with: "")
+            .replacingOccurrences(of: "__", with: "")
         // Help the user because they probably didn't intend to have empty bullets and it will make markdown have a + if we leave them
-        markdownString = markdownString.stringByReplacingOccurrencesOfString("+ \n", withString:  "")
+        markdownString = markdownString.replacingOccurrences(of: "+ \n", with:  "")
         if markdownString.hasSuffix("+ ") {
-            markdownString = (markdownString as NSString).substringToIndex(markdownString.characters.count - 2)
+            markdownString = (markdownString as NSString).substring(to: markdownString.characters.count - 2)
         }
         
         return markdownString
