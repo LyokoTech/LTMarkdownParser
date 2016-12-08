@@ -82,7 +82,7 @@ open class LTMarkdownParser: TSBaseParser {
         
         linkAttributes = [
             NSForegroundColorAttributeName: UIColor.blue,
-            NSUnderlineColorAttributeName: NSUnderlineStyle.styleSingle.rawValue as AnyObject
+            NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue as AnyObject
         ]
         
         monospaceAttributes = [

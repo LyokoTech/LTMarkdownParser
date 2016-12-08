@@ -267,7 +267,7 @@ class LTMarkdownParserTests: XCTestCase {
         XCTAssertFalse((attributedString?.string.contains("("))!)
         XCTAssertFalse((attributedString?.string.contains(")"))!)
         XCTAssertTrue((attributedString?.string.contains("link"))!)
-        let underline = attributedString?.attribute(NSUnderlineColorAttributeName, at: 20, effectiveRange: nil)
+        let underline = attributedString?.attribute(NSUnderlineStyleAttributeName, at: 20, effectiveRange: nil)
         XCTAssertNotNil(underline)
         let linkColor = attributedString?.attribute(NSForegroundColorAttributeName, at: 20, effectiveRange: nil) as! UIColor
         XCTAssertEqual(linkColor, UIColor.blue)
@@ -280,7 +280,7 @@ class LTMarkdownParserTests: XCTestCase {
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n This is a link https://www.example.net/ to test Wi-Fi\nat home")
         let link = attributedString?.attribute(NSLinkAttributeName, at: 24, effectiveRange: nil) as! URL
         XCTAssertEqual(link, URL(string: "https://www.example.net/"))
-        let underline = attributedString?.attribute(NSUnderlineColorAttributeName, at: 24, effectiveRange: nil)
+        let underline = attributedString?.attribute(NSUnderlineStyleAttributeName, at: 24, effectiveRange: nil)
         XCTAssertNotNil(underline)
         let linkColor = attributedString?.attribute(NSForegroundColorAttributeName, at: 24, effectiveRange: nil) as! UIColor
         XCTAssertEqual(linkColor, UIColor.blue)
@@ -295,7 +295,7 @@ class LTMarkdownParserTests: XCTestCase {
         XCTAssertFalse((attributedString?.string.contains("("))!)
         XCTAssertFalse((attributedString?.string.contains(")"))!)
         XCTAssertTrue((attributedString?.string.contains("link"))!)
-        let underline = attributedString?.attribute(NSUnderlineColorAttributeName, at: 20, effectiveRange: nil)
+        let underline = attributedString?.attribute(NSUnderlineStyleAttributeName, at: 20, effectiveRange: nil)
         XCTAssertNotNil(underline)
         let linkColor = attributedString?.attribute(NSForegroundColorAttributeName, at: 20, effectiveRange: nil) as! UIColor
         XCTAssertEqual(linkColor, UIColor.blue)
@@ -329,7 +329,7 @@ class LTMarkdownParserTests: XCTestCase {
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n This is a [link](https://www.example.net/) and this is [a link](https://www.example.com/) too")
         
         let link = attributedString?.attribute(NSLinkAttributeName, at: 17, effectiveRange: nil) as! URL
-        let underline = attributedString?.attribute(NSUnderlineColorAttributeName, at: 17, effectiveRange: nil)
+        let underline = attributedString?.attribute(NSUnderlineStyleAttributeName, at: 17, effectiveRange: nil)
         let linkColor = attributedString?.attribute(NSForegroundColorAttributeName, at: 17, effectiveRange: nil) as! UIColor
         
         XCTAssertEqual(link, URL(string: "https://www.example.net/"))
@@ -337,7 +337,7 @@ class LTMarkdownParserTests: XCTestCase {
         XCTAssertEqual(linkColor, UIColor.blue)
         
         let link2 = attributedString?.attribute(NSLinkAttributeName, at: 37, effectiveRange: nil) as! URL
-        let underline2 = attributedString?.attribute(NSUnderlineColorAttributeName, at: 37, effectiveRange: nil)
+        let underline2 = attributedString?.attribute(NSUnderlineStyleAttributeName, at: 37, effectiveRange: nil)
         let linkColor2 = attributedString?.attribute(NSForegroundColorAttributeName, at: 37, effectiveRange: nil) as! UIColor
         
         XCTAssertEqual(link2, URL(string: "https://www.example.com/"))
