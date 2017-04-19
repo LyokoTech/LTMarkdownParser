@@ -285,8 +285,6 @@ open class LTMarkdownParser: TSBaseParser {
             urlCharacterSet.formUnion(with: CharacterSet.urlPathAllowed)
             urlCharacterSet.formUnion(with: CharacterSet.urlQueryAllowed)
             urlCharacterSet.formUnion(with: CharacterSet.urlFragmentAllowed)
-
-            
             
             if let URL = URL(string: linkURLString) ?? URL(string: linkURLString.addingPercentEncoding(withAllowedCharacters: urlCharacterSet as CharacterSet) ?? linkURLString) {
                 attributedString.addAttribute(NSLinkAttributeName, value: URL, range: linkTextRange)
@@ -327,9 +325,8 @@ open class LTMarkdownParser: TSBaseParser {
         do {
             let linkDataDetector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
             addParsingRuleWithRegularExpression(linkDataDetector) { match, attributedString in
-                let linkURLString = (attributedString.string as NSString).substring(with: match.range)
-                if let URL = URL(string: linkURLString) {
-                    attributedString.addAttribute(NSLinkAttributeName, value: URL, range: match.range)
+                if let url = match.url {
+                    attributedString.addAttribute(NSLinkAttributeName, value: url, range: match.range)
                 }
                 formattingBlock(attributedString, match.range)
             }

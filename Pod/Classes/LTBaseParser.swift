@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 open class TSBaseParser {
 
     public typealias LTMarkdownParserMatchBlock = ((NSTextCheckingResult, NSMutableAttributedString) -> Void)
