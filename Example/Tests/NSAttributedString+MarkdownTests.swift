@@ -116,6 +116,12 @@ class NSAttributedStringTests: XCTestCase {
         XCTAssertEqual(attributedString.markdownString(), escapedMarkdown)
     }
     
+    func testEscapedUrlCharacters() {
+        let attributedString = NSAttributedString(string: "This is text that has a url https://www.example.net/wi-fi.")
+        let escapedMarkdown = "This is text that has a url https://www\\.example\\.net/wi\\-fi\\."
+        XCTAssertEqual(attributedString.markdownString(), escapedMarkdown)
+    }
+    
     func assertRoundTripFromMarkdownString(_ markdownString: String) {
         let attributedString = LTMarkdownParser(withDefaultParsing: true).attributedStringFromMarkdown(markdownString)
         XCTAssertEqual(attributedString!.markdownString(), markdownString)

@@ -12,6 +12,7 @@ import UIKit
 private let nonBreakingSpaceCharacter = Character("\u{00A0}")
 
 public struct TSSwiftMarkdownRegex {
+    public static let CodeEscaping = "(?<!\\\\)(?:\\\\\\\\)*+(`+)(.*?[^`].*?)(\\1)(?!`)"
     public static let Escaping = "\\\\."
     public static let Unescaping = "\\\\[0-9a-z]{4}"
     
@@ -98,6 +99,9 @@ open class LTMarkdownParser: TSBaseParser {
         strongAndEmphasisAttributes = [NSFontAttributeName: strongAndEmphasisFont]
         
         if withDefaultParsing {
+            addCodeEscapingParsing()
+            addEscapingParsing()
+            
             addNumberedListParsingWithLeadFormattingBlock({ (attributedString, range, level) in
                 LTMarkdownParser.addAttributes(self.numberedListAttributes, atIndex: level - 1, toString: attributedString, range: range)
                 let substring = attributedString.attributedSubstring(from: range).string.replacingOccurrences(of: " ", with: "\(nonBreakingSpaceCharacter)")
@@ -105,9 +109,6 @@ open class LTMarkdownParser: TSBaseParser {
             }, textFormattingBlock: { attributedString, range, level in
                 LTMarkdownParser.addAttributes(self.numberedListAttributes, atIndex: level - 1, toString: attributedString, range: range)
             })
-            
-            addEscapingParsing()
-            addCodeEscapingParsing()
             
             addHeaderParsingWithLeadFormattingBlock({ attributedString, range, level in
                 attributedString.replaceCharacters(in: range, with: "")
@@ -186,7 +187,7 @@ open class LTMarkdownParser: TSBaseParser {
     }
     
     open func addCodeEscapingParsing() {
-        guard let codingParsingRegex = TSSwiftMarkdownRegex.regexForString(TSSwiftMarkdownRegex.Monospace) else { return }
+        guard let codingParsingRegex = TSSwiftMarkdownRegex.regexForString(TSSwiftMarkdownRegex.CodeEscaping) else { return }
         
         addParsingRuleWithRegularExpression(codingParsingRegex) { match, attributedString in
             let range = match.rangeAt(2)
@@ -272,22 +273,16 @@ open class LTMarkdownParser: TSBaseParser {
     open func addLinkParsingWithFormattingBlock(_ formattingBlock: @escaping LTMarkdownParserFormattingBlock) {
         guard let linkRegex = TSSwiftMarkdownRegex.regexForString(TSSwiftMarkdownRegex.Link, options: .dotMatchesLineSeparators) else { return }
         
-        addParsingRuleWithRegularExpression(linkRegex) { match, attributedString in
+        addParsingRuleWithRegularExpression(linkRegex) { [weak self] match, attributedString in
             let linkStartinResult = (attributedString.string as NSString).range(of: "(", options: .backwards, range: match.range).location
             let linkRange = NSRange(location: linkStartinResult, length: match.range.length + match.range.location - linkStartinResult - 1)
-            let linkURLString = (attributedString.string as NSString).substring(with: NSRange(location: linkRange.location + 1, length: linkRange.length - 1))
+            let linkUrlString = (attributedString.string as NSString).substring(with: NSRange(location: linkRange.location + 1, length: linkRange.length - 1))
             
             let linkTextRange = NSRange(location: match.range.location + 1, length: linkStartinResult - match.range.location - 2)
             attributedString.deleteCharacters(in: NSRange(location: linkRange.location - 1, length: linkRange.length + 2))
             
-            let urlCharacterSet: NSMutableCharacterSet = NSMutableCharacterSet(charactersIn: "")
-            urlCharacterSet.formUnion(with: CharacterSet.urlPathAllowed)
-            urlCharacterSet.formUnion(with: CharacterSet.urlPathAllowed)
-            urlCharacterSet.formUnion(with: CharacterSet.urlQueryAllowed)
-            urlCharacterSet.formUnion(with: CharacterSet.urlFragmentAllowed)
-            
-            if let URL = URL(string: linkURLString) ?? URL(string: linkURLString.addingPercentEncoding(withAllowedCharacters: urlCharacterSet as CharacterSet) ?? linkURLString) {
-                attributedString.addAttribute(NSLinkAttributeName, value: URL, range: linkTextRange)
+            if let linkUrlString = self?.unescaped(string: linkUrlString), let url = URL(string: linkUrlString) ?? URL(string: linkUrlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? linkUrlString) {
+                attributedString.addAttribute(NSLinkAttributeName, value: url, range: linkTextRange)
             }
             formattingBlock(attributedString, linkTextRange)
             
@@ -324,13 +319,31 @@ open class LTMarkdownParser: TSBaseParser {
     open func addLinkDetectionWithFormattingBlock(_ formattingBlock: @escaping LTMarkdownParserFormattingBlock) {
         do {
             let linkDataDetector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
-            addParsingRuleWithRegularExpression(linkDataDetector) { match, attributedString in
-                if let url = match.url {
+            addParsingRuleWithRegularExpression(linkDataDetector) { [weak self] match, attributedString in
+                if let urlString = match.url?.absoluteString.removingPercentEncoding, let unescapedUrlString = self?.unescaped(string: urlString), let url = URL(string: unescapedUrlString) {
                     attributedString.addAttribute(NSLinkAttributeName, value: url, range: match.range)
                 }
                 formattingBlock(attributedString, match.range)
             }
         } catch { }
+    }
+    
+    func unescaped(string: String) -> String? {
+        guard let unescapingRegex = TSSwiftMarkdownRegex.regexForString(TSSwiftMarkdownRegex.Unescaping, options: .dotMatchesLineSeparators) else { return nil }
+        
+        var location = 0
+        let unescapedMutableString = NSMutableString(string: string)
+        while let match = unescapingRegex.firstMatch(in: unescapedMutableString as String, options: .withoutAnchoringBounds, range: NSRange(location: location, length: unescapedMutableString.length - location)) {
+            let oldLength = unescapedMutableString.length
+            let range = NSRange(location: match.range.location + 1, length: 4)
+            let matchString = unescapedMutableString.substring(with: range)
+            let unescapedString = LTMarkdownParser.stringWithHexaString(matchString, atIndex: 0)
+            unescapedMutableString.replaceCharacters(in: match.range, with: unescapedString)
+            let newLength = unescapedMutableString.length
+            location = match.range.location + match.range.length + newLength - oldLength
+        }
+        
+        return unescapedMutableString as String
     }
     
     fileprivate class func stringWithHexaString(_ hexaString: String, atIndex index: Int) -> String {
@@ -342,7 +355,7 @@ open class LTMarkdownParser: TSBaseParser {
     }
     
     open func addCodeUnescapingParsingWithFormattingBlock(_ formattingBlock: @escaping LTMarkdownParserFormattingBlock) {
-        addMonospacedParsingWithFormattingBlock { attributedString, range in
+        addEnclosedParsingWithPattern(TSSwiftMarkdownRegex.CodeEscaping) { attributedString, range in
             let matchString = attributedString.attributedSubstring(from: range).string
             var unescapedString = ""
             for index in 0..<range.length {
