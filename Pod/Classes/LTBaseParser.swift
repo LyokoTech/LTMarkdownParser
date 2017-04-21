@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 open class TSBaseParser {
 
     public typealias LTMarkdownParserMatchBlock = ((NSTextCheckingResult, NSMutableAttributedString) -> Void)
@@ -30,14 +28,7 @@ open class TSBaseParser {
     }
     
     open func attributedStringFromMarkdown(_ markdown: String, attributes: [String: Any]?) -> NSAttributedString? {
-        var attributedString: NSAttributedString?
-        if let attributes = attributes {
-            attributedString = NSAttributedString(string: markdown, attributes: attributes)
-        } else {
-            attributedString = NSAttributedString(string: markdown)
-        }
-        
-        return attributedStringFromAttributedMarkdownString(attributedString)
+        return attributedStringFromAttributedMarkdownString(NSAttributedString(string: markdown, attributes: attributes))
     }
     
     open func attributedStringFromAttributedMarkdownString(_ attributedString: NSAttributedString?) -> NSAttributedString? {

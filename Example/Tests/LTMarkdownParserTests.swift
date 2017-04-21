@@ -276,10 +276,81 @@ class LTMarkdownParserTests: XCTestCase {
         XCTAssertNil(linkAtTheNextCharacter);
     }
     
+    func testDefaultLinkParsingWithEscapedHyphen() {
+        let attributedString = standardParser.attributedStringFromMarkdown("Hello\n This is a [link](https://www\\.example\\.net/wi\\-fi) to test Wi\\-Fi\nat home")
+        
+        let link = attributedString?.attribute(NSLinkAttributeName, at:20, effectiveRange:nil) as? URL
+        XCTAssertEqual(link, URL(string: "https://www.example.net/wi-fi"))
+        XCTAssertFalse((attributedString?.string.contains("["))!)
+        XCTAssertFalse((attributedString?.string.contains("]"))!)
+        XCTAssertFalse((attributedString?.string.contains("("))!)
+        XCTAssertFalse((attributedString?.string.contains(")"))!)
+        XCTAssertTrue((attributedString?.string.contains("link"))!)
+        let underline = attributedString?.attribute(NSUnderlineStyleAttributeName, at: 20, effectiveRange: nil)
+        XCTAssertNotNil(underline)
+        let linkColor = attributedString?.attribute(NSForegroundColorAttributeName, at: 20, effectiveRange: nil) as! UIColor
+        XCTAssertEqual(linkColor, UIColor.blue)
+        
+        let linkAtTheNextCharacter = attributedString?.attribute(NSLinkAttributeName, at: 21, effectiveRange: nil)
+        XCTAssertNil(linkAtTheNextCharacter);
+    }
+    
+    func testDefaultLinkParsingWithUnescapedHyphen() {
+        let attributedString = standardParser.attributedStringFromMarkdown("Hello\n This is a [link](https://www.example.net/wi-fi) to test Wi-Fi\nat home")
+        
+        let link = attributedString?.attribute(NSLinkAttributeName, at:20, effectiveRange:nil) as? URL
+        XCTAssertEqual(link, URL(string: "https://www.example.net/wi-fi"))
+        XCTAssertFalse((attributedString?.string.contains("["))!)
+        XCTAssertFalse((attributedString?.string.contains("]"))!)
+        XCTAssertFalse((attributedString?.string.contains("("))!)
+        XCTAssertFalse((attributedString?.string.contains(")"))!)
+        XCTAssertTrue((attributedString?.string.contains("link"))!)
+        let underline = attributedString?.attribute(NSUnderlineStyleAttributeName, at: 20, effectiveRange: nil)
+        XCTAssertNotNil(underline)
+        let linkColor = attributedString?.attribute(NSForegroundColorAttributeName, at: 20, effectiveRange: nil) as! UIColor
+        XCTAssertEqual(linkColor, UIColor.blue)
+        
+        let linkAtTheNextCharacter = attributedString?.attribute(NSLinkAttributeName, at: 21, effectiveRange: nil)
+        XCTAssertNil(linkAtTheNextCharacter);
+    }
+    
     func testDefaultAutoLinkParsing() {
         let attributedString = standardParser.attributedStringFromMarkdown("Hello\n This is a link https://www.example.net/ to test Wi-Fi\nat home")
         let link = attributedString?.attribute(NSLinkAttributeName, at: 24, effectiveRange: nil) as! URL
         XCTAssertEqual(link, URL(string: "https://www.example.net/"))
+        let underline = attributedString?.attribute(NSUnderlineStyleAttributeName, at: 24, effectiveRange: nil)
+        XCTAssertNotNil(underline)
+        let linkColor = attributedString?.attribute(NSForegroundColorAttributeName, at: 24, effectiveRange: nil) as! UIColor
+        XCTAssertEqual(linkColor, UIColor.blue)
+    }
+    
+    func testDefaultAutoLinkParsingWithEscapedHyphen() {
+        let attributedString = standardParser.attributedStringFromMarkdown("Hello\n This is a link https://www\\.example\\.net/wi\\-fi to test Wi\\-Fi\nat home")
+        
+        let link = attributedString?.attribute(NSLinkAttributeName, at: 24, effectiveRange: nil) as! URL
+        XCTAssertEqual(link, URL(string: "https://www.example.net/wi-fi"))
+        let underline = attributedString?.attribute(NSUnderlineStyleAttributeName, at: 24, effectiveRange: nil)
+        XCTAssertNotNil(underline)
+        let linkColor = attributedString?.attribute(NSForegroundColorAttributeName, at: 24, effectiveRange: nil) as! UIColor
+        XCTAssertEqual(linkColor, UIColor.blue)
+    }
+    
+    func testDefaultAutoLinkParsingWithUnescapedHyphen() {
+        let attributedString = standardParser.attributedStringFromMarkdown("Hello\n This is a link https://www.example.net/wi-fi to test Wi-Fi\nat home")
+        
+        let link = attributedString?.attribute(NSLinkAttributeName, at: 24, effectiveRange: nil) as! URL
+        XCTAssertEqual(link, URL(string: "https://www.example.net/wi-fi"))
+        let underline = attributedString?.attribute(NSUnderlineStyleAttributeName, at: 24, effectiveRange: nil)
+        XCTAssertNotNil(underline)
+        let linkColor = attributedString?.attribute(NSForegroundColorAttributeName, at: 24, effectiveRange: nil) as! UIColor
+        XCTAssertEqual(linkColor, UIColor.blue)
+    }
+    
+    func testDefaultAutoLinkParsingWithConvertedEscapedHyphen() {
+        let attributedString = standardParser.attributedStringFromMarkdown(standardParser.attributedStringFromMarkdown("Hello\n This is a link https://www.example.net/wi-fi to test Wi-Fi\nat home")!.markdownString())
+        
+        let link = attributedString?.attribute(NSLinkAttributeName, at: 24, effectiveRange: nil) as! URL
+        XCTAssertEqual(link, URL(string: "https://www.example.net/wi-fi"))
         let underline = attributedString?.attribute(NSUnderlineStyleAttributeName, at: 24, effectiveRange: nil)
         XCTAssertNotNil(underline)
         let linkColor = attributedString?.attribute(NSForegroundColorAttributeName, at: 24, effectiveRange: nil) as! UIColor
